@@ -38,7 +38,7 @@ const Sidenav: React.FC = () => {
                 <div className="flex justify-between items-center">
                     <a href="#" className="">
                     <span className="logo">
-                        <img src='../assets/images/PostReachLogo.png' alt="logo" width={192} />
+                        <img src='../assets/images/PostReachLogo.svg' alt="logo" width={192} />
                     </span>
                     </a>
                     <div className="p-2">

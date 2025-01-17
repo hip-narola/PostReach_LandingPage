@@ -35,7 +35,7 @@ const { setIsLoading } = useLoading();
           <div className="flex">
             <a href="#" className="">
               <span className="logo">
-                <img src='../assets/images/PostReachLogo.png' alt="logo" width={192} />
+                <img src='../assets/images/PostReachLogo.svg' alt="logo" width={192} />
               </span>
             </a>
           </div>
