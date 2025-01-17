@@ -46,11 +46,32 @@ const MainLayout: React.FC = () => {
   }, [context.getData]);
 
   const customerReview = [
-    { img: '../assets/images/ricky.png' },
-    { img: '../assets/images/ricky.png' },
-    { img: '../assets/images/ricky.png' },
-    { img: '../assets/images/ricky.png' },
-    { img: '../assets/images/ricky.png' },
+    { title : 'A Game-Changer for My Business',
+      description :' “PostReach AI has saved me countless hours. The content is engaging, the visuals are stunning, and the automation makes my life so much easier.”',
+      img: '../assets/images/ricky.png',
+      profileImage:"../assets/images/testimonial.png"
+    },
+    { title : 'A Game-Changer for My Business',
+      description :' “PostReach AI has saved me countless hours. The content is engaging, the visuals are stunning, and the automation makes my life so much easier.”',
+      img: '../assets/images/ricky.png',
+      profileImage:"../assets/images/testimonial.png"
+    }, { title : 'A Game-Changer for My Business',
+      description :' “PostReach AI has saved me countless hours. The content is engaging, the visuals are stunning, and the automation makes my life so much easier.”',
+      img: '../assets/images/ricky.png',
+      profileImage:"../assets/images/testimonial.png"
+    }, { title : 'A Game-Changer for My Business',
+      description :' “PostReach AI has saved me countless hours. The content is engaging, the visuals are stunning, and the automation makes my life so much easier.”',
+      img: '../assets/images/ricky.png',
+      profileImage:"../assets/images/testimonial.png"
+    }, { title : 'A Game-Changer for My Business',
+      description :' “PostReach AI has saved me countless hours. The content is engaging, the visuals are stunning, and the automation makes my life so much easier.”',
+      img: '../assets/images/ricky.png',
+      profileImage:"../assets/images/testimonial.png"
+    }, { title : 'A Game-Changer for My Business',
+      description :' “PostReach AI has saved me countless hours. The content is engaging, the visuals are stunning, and the automation makes my life so much easier.”',
+      img: '../assets/images/ricky.png',
+      profileImage:"../assets/images/testimonial.png"
+    },
   ]
 
   const handleViewBlog = () => {
@@ -128,7 +149,7 @@ const MainLayout: React.FC = () => {
           </h1>
 
           <p className="mt-6 text-base lg:text-lg  text-textlight max-w-[985px] mx-auto">Elevate your social media presence with PostReach. Our intelligent AI engine understands your business goals and audience preferences, delivering engaging content and automating your entire social media workflow.</p>
-          <div className="flex items-center justify-center gap-2 mt-6   text-base text-textdark font-semibold">
+          <div className="flex items-center justify-center gap-2 mt-6  text-sm md:text-base text-textdark font-semibold">
             <img src="../assets/icons/banner-members.svg" alt="banner-title-icon" />
             500+ members in our waitlist
           </div>
@@ -483,7 +504,7 @@ const MainLayout: React.FC = () => {
           <motion.div initial={{ opacity: 0, x: 150 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
             <ul className="flex flex-col gap-4  simple-easy-list">
               <li className="flex gap-6">
-                <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark bg-white">
+                <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
                   1
                 </div>
                 <div className="">
@@ -492,7 +513,7 @@ const MainLayout: React.FC = () => {
                 </div>
               </li>
               <li className="flex gap-6">
-                <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark bg-white">
+                <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
                   2
                 </div>
                 <div className="">
@@ -501,7 +522,7 @@ const MainLayout: React.FC = () => {
                 </div>
               </li>
               <li className="flex gap-6">
-                <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark bg-white">
+                <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
                   3
                 </div>
                 <div className="">
@@ -510,7 +531,7 @@ const MainLayout: React.FC = () => {
                 </div>
               </li>
               <li className="flex gap-6">
-                <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark bg-white">
+                <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
                   4
                 </div>
                 <div className="">
@@ -648,11 +669,11 @@ const MainLayout: React.FC = () => {
 
                 <div className="flex  flex-col items-start bg-white rounded-3xl pt-6 pb-6 xl:pb-12 px-6 xl:px-8 h-full">
                   <div className="ml-auto">
-                    <img src="../assets/images/testimonial.png" className="max-w-9" alt="testimonial" />
+                    <img src={item.profileImage} className="max-w-9" alt="testimonial" />
                   </div>
-                  <h4 className="text-[#292929] text-base font-bold">A Game-Changer for My Business</h4>
+                  <h4 className="text-[#292929] text-base font-bold">{item.title}</h4>
                   <p className="text-base text-[#656565] mt-1 mb-6">
-                    “PostReach AI has saved me countless hours. The content is engaging, the visuals are stunning, and the automation makes my life so much easier.”
+                      {item.description} 
                   </p>
                   <div className="mt-auto flex items-center gap-3">
                     <div className="w-12 h-12 min-w-12 rounded-full overflow-hidden">
@@ -731,23 +752,19 @@ const MainLayout: React.FC = () => {
 
       <div className="custom-container relative z-0 pt-7 my-12">
         <div className="absolute left-0 top-0 h-full w-full overflow-hidden -z-10">
-          <img src="../assets/images/SeamlessIntegrations-bg.png" className="max-w-full min-[1365px]:max-w-[1200px] mx-auto  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
+          <img src="../assets/images/SeamlessIntegrations-bg.png" className="max-w-full max-[575px]:hidden block min-[1365px]:max-w-[1200px] mx-auto  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
+          <img src="../assets/images/SeamlessIntegrations-bg-mobile.svg" className="max-w-full max-[575px]:block hidden object-top min-[1365px]:max-w-[1200px] mx-auto  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
         </div>
         <div className="grid grid-cols-1 items-center gap-x-6 lg:gap-x-10 xl:gap-x-16">
           <div className="col-span-1 text-center">
-            <div className="mx-auto max-w-[520px]">
+            <div className="mx-auto max-w-[520px] max-[520px]:px-5 max-[520px]:pt-6">
               <h4 className="sec-title w-full text-white"><span className="text-themeblue">Seamless Integrations</span> with Your Favorite Platforms</h4>
               <p className="para-text  mx-auto">PostReach AI seamlessly integrates with your favorite social media platforms, simplifying your management and boosting efficiency.</p>
             </div>
           </div>
           <div className="col-span-1 text-center">
             <ul className="w-full inline-flex justify-center gap-x-0 gap-y-4 max-[767px]:max-w-[235px] max-[767px]:flex-wrap md:gap-12 lg:gap-20 xl:gap-24 items-center pt-10 pb-10 lg:pt-28 lg:pb-16 ">
-              <li className="max-[767px]:text-center max-[767px]:w-1/2">
-                <div className="h-12 w-12 md:h-16 md:w-16 rounded-full border-[6px] bg-white border-white  mx-auto animate-updown-sm delay-0">
-                  <img src="../assets/icons/Social-icons/linkedin.svg" alt="linkedin" />
-                </div>
-                <p className="text-white text-sm md:text-lg font-normal text-center mt-3 md:mt-5 ">LinkedIn</p>
-              </li>
+             
               <li className="max-[767px]:text-center max-[767px]:w-1/2">
                 <div className="h-12 w-12 md:h-16 md:w-16 rounded-full border-[6px] bg-white border-white  mx-auto animate-downup-sm delay-50">
                   <img src="../assets/icons/Social-icons/facebook.svg" alt="facebook" />
@@ -767,10 +784,18 @@ const MainLayout: React.FC = () => {
                 <p className="text-white text-sm md:text-lg font-normal text-center mt-3 md:mt-5">X</p>
               </li>
               <li className="max-[767px]:text-center max-[767px]:w-1/2">
+                <div className="h-12 w-12 md:h-16 md:w-16 rounded-full border-[6px] bg-white border-white  mx-auto animate-updown-sm delay-0">
+                  <img src="../assets/icons/Social-icons/linkedIn.svg" alt="linkedin" />
+                </div>
+                <p className="text-white text-sm md:text-lg font-normal text-center mt-3 md:mt-5 ">LinkedIn</p>
+              </li>
+            
+             
+              <li className="max-[767px]:text-center max-[767px]:w-1/2">
                 <div className="h-12 w-12 md:h-16 md:w-16 rounded-full flex items-center justify-center  mx-auto">
                   <img src="../assets/icons/Social-icons/more.svg" alt="coming soon" />
                 </div>
-                <p className="text-white text-sm md:text-lg font-normal text-center mt-3 md:mt-5">more coming soon</p>
+                <p className="text-white text-sm md:text-lg font-normal text-center mt-3 md:mt-5">More coming soon</p>
               </li>
             </ul>
           </div>
@@ -831,7 +856,7 @@ const MainLayout: React.FC = () => {
                 </li>
               </ul>
               <div className="mt-6 pt-6 border-t border-[#EFEFEF]">
-                <h4 className=" text-3xl lg:text-4xl xl:text-[48px] xl:leading-[56px] text-[#292929] font-bold mb-3">$29.00<span className="text-[#7C7C7C] font-normal text-base leading-5">(Per Month)</span></h4>
+                <h4 className=" text-3xl lg:text-4xl xl:text-[48px] xl:leading-[56px] text-[#292929] font-bold mb-3">$29.00<span className="text-[#7C7C7C] font-normal text-base leading-5"> (Per Month)</span></h4>
 
               </div>
             </div>
@@ -872,7 +897,7 @@ const MainLayout: React.FC = () => {
                 </li>
               </ul>
               <div className="my-6 py-6 border-t border-b border-[#EFEFEF]">
-                <h4 className=" text-3xl lg:text-4xl xl:text-[48px] xl:leading-[56px] text-white font-bold mb-3">$20.00<span className="opacity-80 font-normal text-base leading-5">(Per Month)</span></h4>
+                <h4 className=" text-3xl lg:text-4xl xl:text-[48px] xl:leading-[56px] text-white font-bold mb-3">$20.00<span className="opacity-80 font-normal text-base leading-5"> (Per Month)</span></h4>
                 <a href="#" className="theme-primary-btn block w-full bg-white hover:bg-white font-bold text-textdark mt-auto w-full text-center py-3 leading-[22px]">Get Started</a>
 
               </div>

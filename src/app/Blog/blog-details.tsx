@@ -114,7 +114,7 @@ const BlogDetail: React.FC = () => {
                     {blog?.description}
                   </p>
                   <div className="highlight-content">
-                <p className="font-semibold mb-3 text-sm md:text-base">{blog?.quote_description}</p>
+                <p className="font-semibold mb-3 text-sm md:text-base text-textdark">{blog?.quote_description}</p>
                 <div className="blog-author">
                   {blog?.quote_author_image_url && <div className="blog-u-img h-10 w-10">
                     <img src={urlFor(blog?.quote_author_image_url).url()} className="h-full w-full rounded-xl" alt="blog-1" />

@@ -259,7 +259,7 @@ const BlogList: React.FC = () => {
                 }
                 isClearable={false}>
               {searchList.map((option, index) => (
-                  <AutocompleteItem key={index} textValue={option}>{option}</AutocompleteItem>
+                  <AutocompleteItem className="text-textdark" key={index} textValue={option}>{option}</AutocompleteItem>
                
               ))}
               </Autocomplete>
