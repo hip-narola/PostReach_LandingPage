@@ -82,6 +82,7 @@ const MainLayout: React.FC = () => {
     router.push(`${navigations.blogDetail}/${postId}`)
   }
 
+  const homeRef = useRef<HTMLDivElement | null>(null);
   const featureRef = useRef<HTMLDivElement | null>(null);
   const integrationRef = useRef<HTMLDivElement | null>(null);
   const pricingRef = useRef<HTMLDivElement | null>(null);
@@ -92,9 +93,12 @@ const MainLayout: React.FC = () => {
     const offset = 100;
     let ref;
 
+    if(activeTab == 'home' && homeRef.current){
+      ref = homeRef.current
+    }
+
     if(activeTab == 'feature' && featureRef.current){
       ref =   featureRef.current;
-    // featureRef.current.scrollIntoView({ behavior: 'smooth' });
     }
 
     if(activeTab == 'integration' && integrationRef.current){
@@ -131,13 +135,24 @@ const MainLayout: React.FC = () => {
     <div className="">
 
       {/* <!-- Section Banner --> */}
-      <div className="mx-auto   relative z-0 px-6 lg:px-0 pt-24 pb-12 lg:pt-28 lg:pb-0 xl:pt-40 overflow-hidden">
+      <div className="mx-auto   relative z-0 px-6 lg:px-0 pt-24 pb-12 lg:pt-28 lg:pb-0 xl:pt-40 overflow-hidden" ref={homeRef}>
         <div className="absolute max-[767px]:bottom-0  md:top-0 left-0 -z-10 flex justify-center w-full text-center">
           <img src="../assets/images/banner-bg.png" alt="banner-bg" />
         </div>
         <div className="text-center max-w-[calc(100%-2rem)] min-[1365px]:max-w-[1200px] mx-auto">
-          <h1 className="banner-title relative">Automate Your
-            <span className="inline md:block">Social Media
+          <h1 className="banner-title max-[600px]:hidden block relative">Automate Your
+            <span className="inline md:block"> Social Media
+              <span className="gradient-title relative max-[767px]:max-w-max max-[767px]:m-auto max-[767px]:block"> Effortlessly
+                <div className="absolute -top-2 -right-10 max-[767px]:top-0 max-[767px]:-right-5 max-[767px]:max-w-5">
+                  <img src="../assets/icons/banner-title-icon.svg" alt="banner-title-icon" />
+
+                </div>
+              </span>
+            </span>
+
+          </h1>
+          <h1 className="banner-title max-[600px]:block hidden relative">Automate 
+            <span className="block">Your Social Media
               <span className="gradient-title relative max-[767px]:max-w-max max-[767px]:m-auto max-[767px]:block"> Effortlessly
                 <div className="absolute -top-2 -right-10 max-[767px]:top-0 max-[767px]:-right-5 max-[767px]:max-w-5">
                   <img src="../assets/icons/banner-title-icon.svg" alt="banner-title-icon" />
