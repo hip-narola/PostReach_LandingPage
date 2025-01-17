@@ -980,13 +980,13 @@ const MainLayout: React.FC = () => {
               <AccordionItem className="" key="4" aria-label="Accordion 4" indicator={({ isOpen }) => (isOpen ? <AccOpenIcon /> : <AccCloseIcon />)} title="Can I control what gets posted on my social media?">
                 <p className="text-sm md:text-base font-normal text-[#7C7C7C]">Yes! With our Approval Queue feature, you can preview and approve all content before it’s posted, ensuring everything aligns with your brand.</p>
               </AccordionItem>
-              <AccordionItem className="" key="4" aria-label="Accordion 4" indicator={({ isOpen }) => (isOpen ? <AccOpenIcon /> : <AccCloseIcon />)} title="What platforms does PostReach AI support?">
+              <AccordionItem className="" key="5" aria-label="Accordion 5" indicator={({ isOpen }) => (isOpen ? <AccOpenIcon /> : <AccCloseIcon />)} title="What platforms does PostReach AI support?">
                 <p className="text-sm md:text-base font-normal text-[#7C7C7C]">PostReach AI seamlessly integrates with Facebook, Instagram, LinkedIn, and X (formerly Twitter), with more platforms planned for the future.</p>
               </AccordionItem>
-              <AccordionItem className="" key="4" aria-label="Accordion 4" indicator={({ isOpen }) => (isOpen ? <AccOpenIcon /> : <AccCloseIcon />)} title="How does the AI know what content to create?">
+              <AccordionItem className="" key="6" aria-label="Accordion 6" indicator={({ isOpen }) => (isOpen ? <AccOpenIcon /> : <AccCloseIcon />)} title="How does the AI know what content to create?">
                 <p className="text-sm md:text-base font-normal text-[#7C7C7C]">Our AI engine learns about your business through a simple onboarding questionnaire. It uses this information to craft content tailored to your brand, audience, and goals.</p>
               </AccordionItem>
-              <AccordionItem className="" key="4" aria-label="Accordion 4" indicator={({ isOpen }) => (isOpen ? <AccOpenIcon /> : <AccCloseIcon />)} title="Can I edit the generated content or posts?">
+              <AccordionItem className="" key="7" aria-label="Accordion 7" indicator={({ isOpen }) => (isOpen ? <AccOpenIcon /> : <AccCloseIcon />)} title="Can I edit the generated content or posts?">
                 <p className="text-sm md:text-base font-normal text-[#7C7C7C]">In this initial version, editing is not available. PostReach&apos;s Social Media Expert AI uses advanced SEO techniques, adheres to community guidelines, and leverages data to maximise post performance. Trust our AI to handle the hard work and deliver optimised, engaging content tailored to your needs.</p>
               </AccordionItem>
             </Accordion>
