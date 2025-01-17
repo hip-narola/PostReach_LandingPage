@@ -2,7 +2,7 @@
 // import moment from 'moment';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import navigations from '../Routes/navigation';
+import navigations from '../navigation-list/navigation';
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import { AccCloseIcon } from './AccCloseIcon';
 import { AccOpenIcon } from './AccOpenIcon';
@@ -11,7 +11,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { motion } from 'framer-motion';
 import { DataContext } from '../context/shareData';
-import routes from '../Routes/route';
+import routes from '../navigation-list/route-list';
 import { client } from "../../sanity/client";
 import { BlogType } from '../response/responseTyep';
 import moment from 'moment';
@@ -58,7 +58,7 @@ const MainLayout: React.FC = () => {
   }
 
   const handleBlogDetail = (postId :string ) => {
-    router.push(`${navigations.blogDetail}?postId=${postId}`)
+    router.push(`${navigations.blogDetail}/${postId}`)
   }
 
   const featureRef = useRef<HTMLDivElement | null>(null);

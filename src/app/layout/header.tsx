@@ -1,7 +1,7 @@
 'use client'
 import { usePathname, useRouter } from 'next/navigation';
 import React, { useContext } from 'react';
-import navigations from '../Routes/navigation';
+import navigations from '../navigation-list/navigation';
 import { DataContext } from '../context/shareData';
 import { useLoading } from '../context/LoadingContext';
 

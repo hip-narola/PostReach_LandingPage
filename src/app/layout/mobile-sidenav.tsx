@@ -2,7 +2,7 @@
 import React, { useContext } from 'react';
 import { DataContext } from '../context/shareData';
 import { useLoading } from '../context/LoadingContext';
-import navigations from '../Routes/navigation';
+import navigations from '../navigation-list/navigation';
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 

@@ -2,12 +2,12 @@
 import moment from 'moment';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-import navigations from '../Routes/navigation';
+import navigations from '../navigation-list/navigation';
 import {CheckboxGroup, Checkbox ,Autocomplete, AutocompleteItem, Pagination, Button} from "@nextui-org/react";
 import { urlFor } from '../../sanity/client';
 
 import { client } from "../../sanity/client";
-import routes from '../Routes/route';
+import routes from '../navigation-list/route-list';
 import { BlogType, CategoryType } from '../response/responseTyep';
 import { useLoading } from '../context/LoadingContext';
 
@@ -94,7 +94,7 @@ const BlogList: React.FC = () => {
    
   
    const handleBlogDetail = (postId :string ) => {
-        router.push(`${navigations.blogDetail}?postId=${postId}`)
+        router.push(`${navigations.blogDetail}/${postId}`)
    }
 
    const handleFilter = () => {

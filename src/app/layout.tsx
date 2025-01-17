@@ -8,7 +8,7 @@ import { DataProvider, DataContext } from "./context/shareData";
 import Sidenav from "./layout/mobile-sidenav";
 import { LoadingProvider } from "./context/LoadingContext";
 import { usePathname } from "next/navigation";
-import { routeTitleMapping } from "./Routes/Match-Route";
+import { routeTitleMapping } from "./navigation-list/match-route";
 import GlobalLoader from "./common/Loader/common-loader";
 import { useContext } from "react";
 

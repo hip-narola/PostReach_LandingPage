@@ -1,12 +1,12 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { urlFor } from '../../sanity/client';
 import { client } from "../../sanity/client";
 import { BlogDetailType, BlogType } from '../response/responseTyep';
 import moment from 'moment';
-import routes from '../Routes/route';
-import navigations from '../Routes/navigation';
+import routes from '../navigation-list/route-list';
+import navigations from '../navigation-list/navigation';
 import ProgressLoader from '../common/progress-loader';
 import { PortableText } from 'next-sanity';
 
@@ -17,15 +17,16 @@ const BlogDetail: React.FC = () => {
   const [blog, setBlog] = useState<BlogType>();
   const [blogDetail, setBlogDetail] = useState<BlogDetailType[]>([]);
   const [recommondedBlogs, setRecommonded] = useState<BlogType[]>([]);
-  const params = useSearchParams();
   const router = useRouter();
-
+  const { postId } = useParams();
   // Dynamic refs for blog detail sections
   const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   useEffect(() => {
-    getBlog(params.get('postId') || '');
-    getBlogDetail(params.get('postId') || '');
+    if (typeof postId === 'string') {
+      getBlog(postId);
+      getBlogDetail(postId);
+    }
     getRecommondedBlogs();
   }, []);
 
@@ -82,7 +83,7 @@ const BlogDetail: React.FC = () => {
 
           {/* Blog Content */}
           <div className="grid grid-cols-1 md:grid-cols-[1fr,44px] gap-4 lg:gap-6">
-            <div className="blog-col gap-3">
+            <div className="blog-col gap-3 cursor-default">
               {blog && (
                 <div>
                   <p className="blog-category-tag">{blog.category_id.name}</p>
@@ -142,11 +143,13 @@ const BlogDetail: React.FC = () => {
                     components={{
                       types: {
                         image: ({ value }) => (
-                          <img
+                          <div className='blog-img-lg'>
+                            <img
                             src={urlFor(value.asset._ref).url()}
                             alt="Blog Visual"
-                            className="rounded-md my-4"
+                            className="rounded-md my-4 w-full"
                           />
+                          </div>
                         ),
                       },
                     }}

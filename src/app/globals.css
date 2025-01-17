@@ -106,6 +106,12 @@ body {
 .blog-img-thumb-sm{
   @apply h-auto lg:h-36 mb-0;
 }
+.blog-content-img{
+  @apply h-auto w-96 rounded-xl overflow-hidden mx-auto text-center;
+}
+.blog-content-img img{
+  @apply object-cover h-full w-full;
+}
 .blog-img-thumb-sm img{
   object-fit: cover;
 }
