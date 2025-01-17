@@ -62,7 +62,7 @@ function RootLayoutContent({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${
           getMobilenav ? "overflow-y-hidden" : ""
-        } overflow-x-hidden antialiased`}
+        } overflow-x-hidden antialiased bg-white`}
       >
         <NextUIProvider className="max-[1280px]:max-w-[100vw] max-[1280px]:overflow-x-hidden">
           <LoadingProvider>
