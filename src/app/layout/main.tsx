@@ -135,11 +135,11 @@ const MainLayout: React.FC = () => {
     <div className="">
 
       {/* <!-- Section Banner --> */}
-      <div className="mx-auto   relative z-0 px-6 lg:px-0 pt-24 pb-12 lg:pt-28 lg:pb-0 xl:pt-40 overflow-hidden" ref={homeRef}>
+      <div className="mx-auto   relative z-0 px-4 lg:px-0 pt-24 pb-12 lg:pt-28 lg:pb-0 xl:pt-40 overflow-hidden" ref={homeRef}>
         <div className="absolute max-[767px]:bottom-0  md:top-0 left-0 -z-10 flex justify-center w-full text-center">
           <img src="../assets/images/banner-bg.png" alt="banner-bg" />
         </div>
-        <div className="text-center max-w-[calc(100%-2rem)] min-[1365px]:max-w-[1200px] mx-auto">
+        <div className="text-center max-w-full md:max-w-[calc(100%-2rem)] min-[1365px]:max-w-[1200px] mx-auto">
           <h1 className="banner-title max-[600px]:hidden block relative">Automate Your
             <span className="inline md:block"> Social Media
               <span className="gradient-title relative max-[767px]:max-w-max max-[767px]:m-auto max-[767px]:block"> Effortlessly
@@ -163,7 +163,7 @@ const MainLayout: React.FC = () => {
 
           </h1>
 
-          <p className="mt-6 text-base lg:text-lg  text-textlight max-w-[985px] mx-auto">Elevate your social media presence with PostReach. Our intelligent AI engine understands your business goals and audience preferences, delivering engaging content and automating your entire social media workflow.</p>
+          <p className="mt-4 lg:mt-6 text-sm md:text-base lg:text-lg  text-textlight max-w-[985px] mx-auto">Elevate your social media presence with PostReach. Our intelligent AI engine understands your business goals and audience preferences, delivering engaging content and automating your entire social media workflow.</p>
           <div className="flex items-center justify-center gap-2 mt-6  text-sm md:text-base text-textdark font-semibold">
             <img src="../assets/icons/banner-members.svg" alt="banner-title-icon" />
             500+ members in our waitlist
@@ -175,7 +175,7 @@ const MainLayout: React.FC = () => {
 
           {/* banner image */}
           <div className="relative mt-20 md:mt-10">
-            <div className="absolute -top-14 md:-top-24 -right-6 md:-right-5 max-[767px]:max-w-40">
+            <div className="absolute -top-14 md:-top-24 -right-4 md:-right-5 max-[767px]:max-w-40">
               <img src="../assets/icons/just-few-steps-arrow.svg" alt="just-few-steps-arrow.svg" />
             </div>
             <a href="#" className="abosolute-div-center video-play-button absolute">
@@ -192,7 +192,7 @@ const MainLayout: React.FC = () => {
             <div className="banner-like-icon absolute -left-5 top-1/2 mt-10 lg:mt-20 max-[767px]:max-w-20 max-[1280px]:max-w-24">
               <img src="../assets/images/banner-like.png" alt="banner-like-icon" />
             </div>
-            <div className="banner-thumb-icon absolute -right-5 xl:-right-9 top-1/2 mt-8 lg:mt-20 max-[1280px]:max-w-20">
+            <div className="banner-thumb-icon absolute -right-5 xl:-right-9 top-1/2 mt-10 lg:mt-20 max-[1280px]:max-w-16">
               <img src="../assets/images/banner-thumb.png" alt="banner-thumb-icon" />
             </div>
           </div>
@@ -218,21 +218,21 @@ const MainLayout: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 lg:gap-6">
       
           <div className="flex  flex-col items-start bg-white rounded-2xl p-4 lg:p-6">
-            <div className="max-w-12 lg:max-w-14">
+            <div className="max-w-10 lg:max-w-14">
               <img src="../assets/icons/SocialMediaExpert.svg" alt="SocialMediaExpert" />
             </div>
             <h4 className="text-base lg:text-xl font-bold text-textdark mt-3 lg:mt-4 mb-1 lg:mb-2">Social Media Expert</h4>
             <p className="para-text">Our AI engine crafts personalised posts tailored to your goals, audience, and brand voice.</p>
           </div>
           <div className="flex  flex-col items-start bg-white rounded-2xl p-4 lg:p-6">
-            <div className="max-w-12 lg:max-w-14">
+            <div className="max-w-10 lg:max-w-14">
               <img src="../assets/icons/Automated-Scheduling.svg" alt="Automated-Scheduling" />
             </div>
             <h4 className="text-base lg:text-xl font-bold text-textdark mt-3 lg:mt-4 mb-1 lg:mb-2">Automated Scheduling</h4>
             <p className="para-text">Save time with fully automated content creation, scheduling, and posting to ensure effortless consistency for your business.</p>
           </div>
           <div className="flex  flex-col items-start bg-white rounded-2xl p-4 lg:p-6">
-            <div className="max-w-12 lg:max-w-14">
+            <div className="max-w-10 lg:max-w-14">
               <img src="../assets/icons/built-for-you.svg" alt="built-for-you" />
             </div>
             <h4 className="text-base lg:text-xl font-bold text-textdark mt-3 lg:mt-4 mb-1 lg:mb-2">Built for You</h4>
@@ -278,13 +278,13 @@ const MainLayout: React.FC = () => {
                     <p className="para-text text-textdark">
                       Automate your social media completely, ensuring consistent posting without the hassle.
                     </p>
-                    <ul className="flex flex-col gap-3 md:gap-7 mt-10">
+                    <ul className="flex flex-col gap-6 md:gap-7 mt-10">
                       <li className="flex gap-4">
                         <div className="min-w-12">
                           <img src="../assets/icons/tabs/fully-automated-icon.svg" alt="fully-automated-icon" />
                         </div>
                         <div className="">
-                          <h4 className="text-base  font-semibold text-textdark">Fully Automated Content Creation</h4>
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Fully Automated Content Creation</h4>
                           <p className="small-text">Our AI learns your business goals and audience, crafting engaging posts.</p>
                         </div>
                       </li>
@@ -293,7 +293,7 @@ const MainLayout: React.FC = () => {
                           <img src="../assets/icons/tabs/IntelligentScheduling-icon.svg" alt="IntelligentScheduling-icon" />
                         </div>
                         <div className="">
-                          <h4 className="text-base  font-semibold text-textdark">Intelligent Scheduling</h4>
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Intelligent Scheduling</h4>
                           <p className="small-text">Posts are automatically scheduled at the optimal times for maximum reach and engagement.</p>
                         </div>
                       </li>
@@ -302,7 +302,7 @@ const MainLayout: React.FC = () => {
                           <img src="../assets/icons/tabs/Hands-Free Posting-icon.svg" alt="Hands-Free Posting-icon" />
                         </div>
                         <div className="">
-                          <h4 className="text-base  font-semibold text-textdark">Hands-Free Posting</h4>
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Hands-Free Posting</h4>
                           <p className="small-text">Enjoy a consistent online presence while PostReach handles the entire posting process.</p>
                         </div>
                       </li>
@@ -332,13 +332,13 @@ const MainLayout: React.FC = () => {
                     <p className="para-text text-textdark">
                       Review, edit, or approve posts before publishing to control over your content.
                     </p>
-                    <ul className="flex flex-col gap-3 md:gap-7 mt-10">
+                    <ul className="flex flex-col gap-6 md:gap-7 mt-10">
                       <li className="flex gap-4">
                         <div className="min-w-12">
                           <img src="../assets/icons/tabs/FullControlOverContent.svg" alt="FullControlOverContent" />
                         </div>
                         <div className="">
-                          <h4 className="text-base  font-semibold text-textdark">Full Control Over Content</h4>
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Full Control Over Content</h4>
                           <p className="small-text">Review and approve AI-generated posts to ensure they align perfectly with your brand.</p>
                         </div>
                       </li>
@@ -347,7 +347,7 @@ const MainLayout: React.FC = () => {
                           <img src="../assets/icons/tabs/PreviewYourPosts.svg" alt="PreviewYourPosts" />
                         </div>
                         <div className="">
-                          <h4 className="text-base  font-semibold text-textdark">Preview Your Posts</h4>
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Preview Your Posts</h4>
                           <p className="small-text">Visualise your post before it’s scheduled to go live.</p>
                         </div>
                       </li>
@@ -356,7 +356,7 @@ const MainLayout: React.FC = () => {
                           <img src="../assets/icons/tabs/StreamlinedWorkflow.svg" alt="StreamlinedWorkflow" />
                         </div>
                         <div className="">
-                          <h4 className="text-base  font-semibold text-textdark">Streamlined Workflow</h4>
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Streamlined Workflow</h4>
                           <p className="small-text">Manage approvals effortlessly in one centralised location, saving you time. </p>
                         </div>
                       </li>
@@ -387,13 +387,13 @@ const MainLayout: React.FC = () => {
                     <p className="para-text text-textdark">
                       Visualize your posting schedule with an intuitive calendar to plan ahead and stay organized.
                     </p>
-                    <ul className="flex flex-col gap-3 md:gap-7 mt-10">
+                    <ul className="flex flex-col gap-6 md:gap-7 mt-10">
                       <li className="flex gap-4">
                         <div className="min-w-12">
                           <img src="../assets/icons/tabs/ClearScheduleOverview.svg" alt="Clear Schedule Overview" />
                         </div>
                         <div className="">
-                          <h4 className="text-base  font-semibold text-textdark">Clear Schedule Overview</h4>
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Clear Schedule Overview</h4>
                           <p className="small-text">See all your scheduled posts in one clear, easy-to-navigate calendar.</p>
                         </div>
                       </li>
@@ -402,7 +402,7 @@ const MainLayout: React.FC = () => {
                           <img src="../assets/icons/tabs/Platform-SpecificInsights.svg" alt="Platform-Specific Insights-icon" />
                         </div>
                         <div className="">
-                          <h4 className="text-base  font-semibold text-textdark">Platform-Specific Insights</h4>
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Platform-Specific Insights</h4>
                           <p className="small-text">Quickly identify which posts are scheduled for each platform. </p>
                         </div>
                       </li>
@@ -411,7 +411,7 @@ const MainLayout: React.FC = () => {
                           <img src="../assets/icons/tabs/PlanWeeksAdvance.svg" alt="Plan Weeks in Advance" />
                         </div>
                         <div className="">
-                          <h4 className="text-base  font-semibold text-textdark">Plan Weeks in Advance</h4>
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Plan Weeks in Advance</h4>
                           <p className="small-text">Maintain a consistent posting schedule by mapping out your content weeks in advance.</p>
                         </div>
                       </li>
@@ -440,13 +440,13 @@ const MainLayout: React.FC = () => {
                     <p className="para-text text-textdark">
                       See your social media growth in one easy-to-read dashboard and optimize your strategy.
                     </p>
-                    <ul className="flex flex-col gap-3 md:gap-7 mt-10">
+                    <ul className="flex flex-col gap-6 md:gap-7 mt-10">
                       <li className="flex gap-4">
                         <div className="min-w-12">
                           <img src="../assets/icons/tabs/ActionableInsights.svg" alt="Actionable Insights-icon" />
                         </div>
                         <div className="">
-                          <h4 className="text-base  font-semibold text-textdark">Actionable Insights</h4>
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Actionable Insights</h4>
                           <p className="small-text">Track key metrics like reach, engagement, and audience growth to understand what’s working.</p>
                         </div>
                       </li>
@@ -455,7 +455,7 @@ const MainLayout: React.FC = () => {
                           <img src="../assets/icons/tabs/Data-DrivenOptimisation.svg" alt="Data-Driven Optimisation-icon" />
                         </div>
                         <div className="">
-                          <h4 className="text-base  font-semibold text-textdark">Data-Driven Optimisation</h4>
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Data-Driven Optimisation</h4>
                           <p className="small-text">Our AI engine learns from your data and analytics, continuously improving the content.</p>
                         </div>
                       </li>
@@ -464,7 +464,7 @@ const MainLayout: React.FC = () => {
                           <img src="../assets/icons/tabs/SimplifiedReporting-icon.svg" alt="Simplified Reporting-icon" />
                         </div>
                         <div className="">
-                          <h4 className="text-base  font-semibold text-textdark">Simplified Reporting</h4>
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Simplified Reporting</h4>
                           <p className="small-text">Access easy-to-read reports that help you measure success and plan your next move.</p>
                         </div>
                       </li>
@@ -488,10 +488,10 @@ const MainLayout: React.FC = () => {
       {/* <!-- End Section features --> */}
 
       {/* <!-- Section Getting Started --> */}
-      <div className="custom-container container-lg relative z-0 max-[767px]:my-2 p-4 lg:p-10 xl:p-16" >
+      <div className="custom-container container-lg relative z-0 max-[767px]:my-2 p-0 lg:p-10 xl:p-16" >
         <div className="grid grid-cols-1 items-center justify-center mb-8 lg:mb-12">
           <div className="flex  flex-col items-start justify-center text-center">
-            <h4 className="sec-title  w-full">Getting Started is<span className="text-themeblue"> Simple and Easy</span></h4>
+            <h4 className="sec-title  w-full">Getting Started is<span className="text-themeblue max-[575px]:block"> Simple and Easy</span></h4>
             <p className="para-text  mx-auto">
               Get started in minutes and let PostReach handle the rest – Social Media has never been this easy. </p>
           </div>
@@ -523,7 +523,7 @@ const MainLayout: React.FC = () => {
                   1
                 </div>
                 <div className="">
-                  <h4 className="text-base  font-semibold text-textdark">Sign Up in Seconds</h4>
+                  <h4 className="text-base  font-semibold text-textdark mb-1">Sign Up in Seconds</h4>
                   <p className="small-text">Create your account quickly and start your journey to effortless social media management.</p>
                 </div>
               </li>
@@ -532,7 +532,7 @@ const MainLayout: React.FC = () => {
                   2
                 </div>
                 <div className="">
-                  <h4 className="text-base  font-semibold text-textdark">Complete a 5-Minute Questionnaire</h4>
+                  <h4 className="text-base  font-semibold text-textdark mb-1">Complete a 5-Minute Questionnaire</h4>
                   <p className="small-text">Answer a few easy questions about your business and audience to help our AI understand your needs.</p>
                 </div>
               </li>
@@ -541,7 +541,7 @@ const MainLayout: React.FC = () => {
                   3
                 </div>
                 <div className="">
-                  <h4 className="text-base  font-semibold text-textdark">Let the AI Work Its Magic</h4>
+                  <h4 className="text-base  font-semibold text-textdark mb-1">Let the AI Work Its Magic</h4>
                   <p className="small-text">Watch as PostReach AI generates tailored posts designed to engage your audience.</p>
                 </div>
               </li>
@@ -550,7 +550,7 @@ const MainLayout: React.FC = () => {
                   4
                 </div>
                 <div className="">
-                  <h4 className="text-base  font-semibold text-textdark">Review and Approve Content</h4>
+                  <h4 className="text-base  font-semibold text-textdark mb-1">Review and Approve Content</h4>
                   <p className="small-text">Preview and approve your posts to ensure they align perfectly with your brand.</p>
                 </div>
               </li>
@@ -559,7 +559,7 @@ const MainLayout: React.FC = () => {
                   <img src='../assets/icons/done.svg' alt="check" />
                 </div>
                 <div className="">
-                  <h4 className="text-base  font-semibold text-textdark">Sit Back as Posts Go Live</h4>
+                  <h4 className="text-base  font-semibold text-textdark mb-1">Sit Back as Posts Go Live</h4>
                   <p className="small-text">Our AI schedules and publishes your approved content, keeping your social media active and consistent.</p>
                 </div>
               </li>
@@ -576,7 +576,7 @@ const MainLayout: React.FC = () => {
 
       {/* <!-- Section Generative AI --> */}
       <div className="custom-container">
-        <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-2 xl:grid-cols-[495px,1fr] ">
+        <div className="grid grid-cols-1 items-center gap-0 md:gap-6 lg:grid-cols-2 xl:grid-cols-[495px,1fr] ">
         <motion.div initial={{ opacity: 0, x: -150 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
           <div className="flex  flex-col items-start justify-between">
             <h4 className="sec-title">Stunning Visuals Powered by<span className="text-themeblue"> Generative AI</span></h4>
@@ -587,7 +587,7 @@ const MainLayout: React.FC = () => {
             </a>
           </div>
           </motion.div>
-          <div className="flex  flex-col items-star max-[767px]:-order-1">
+          <div className="flex  flex-col items-star max-[767px]:-order-1 max-[575px]:w-[calc(100%+2rem)] max-[575px]:-ml-4">
           <motion.div initial={{ opacity: 0, x: 150 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
             <div className=" w-full relative max-[767px]:pt-5 max-[1280px]:overflow-hidden">
               <img src="../assets/images/Generative-Ai.png" alt="GenerativeAI" className="relative z-10" />
@@ -604,7 +604,7 @@ const MainLayout: React.FC = () => {
 
       {/* <!-- Section advance-AI-Engine --> */}
       <div className="custom-container">
-        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 xl:grid-cols-[550px,1fr]">
+        <div className="grid grid-cols-1 items-center max-[575px]:my-4 gap-8 lg:gap-14 lg:grid-cols-2 xl:grid-cols-[550px,1fr]">
           <div className="flex  flex-col items-star">
           <motion.div initial={{ opacity: 0, x: -150 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
             <div className=" w-full">
@@ -614,7 +614,7 @@ const MainLayout: React.FC = () => {
           </div>
           <motion.div initial={{ opacity: 0, x: 150 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
           <div className="flex  flex-col items-start justify-between">
-            <h4 className="sec-title">Smarter Social Media Powered by our <span className="text-themeblue"> Advanced AI Engine</span></h4>
+            <h4 className="sec-title max-[575px]:text-[28px] max-[575px]:leading-10">Smarter Social Media Powered by our <span className="text-themeblue"> Advanced AI Engine</span></h4>
             <p className="para-text">
               PostReach harnesses the most advanced large language models (LLMs), always updated to the latest versions for maximum performance. Unlike other tools, there’s no need to choose a model – we handle it all to deliver the best results effortlessly.
             </p>
@@ -633,9 +633,9 @@ const MainLayout: React.FC = () => {
         <div className="absolute left-0 top-0 h-full w-full overflow-hidden -z-10">
           <img src="../assets/images/dot-bg.png" className="max-w-[1440px]" alt="dot-bg" />
         </div>
-        <div className="grid grid-cols-1 items-center justify-center mb-6 lg:mb-8 xl:mb-14">
+        <div className="grid grid-cols-1 items-center justify-center mb-6 lg:mb-0">
           <div className="flex  flex-col items-start justify-center text-left">
-            <h4 className="sec-title  w-full">What Our<span className="text-themeblue"> Happy Clients Say</span></h4>
+            <h4 className="sec-title  w-full max-[575px]:text-[28px] max-[575px]:leading-10">What Our<span className="text-themeblue"> Happy Clients Say</span></h4>
             <p className="para-text">
               Hear why businesses and creators love PostReach</p>
           </div>
@@ -682,7 +682,7 @@ const MainLayout: React.FC = () => {
             {customerReview && customerReview.map((item, index) => (
               <div className="flex  relative z-10 px-1 md:px-3" key={index}>
 
-                <div className="flex  flex-col items-start bg-white rounded-3xl pt-6 pb-6 xl:pb-12 px-6 xl:px-8 h-full">
+                <div className="flex  flex-col items-start bg-white rounded-3xl pt-6 pb-6 xl:pb-12 px-5 md:px-6 xl:px-8 h-full">
                   <div className="ml-auto">
                     <img src={item.profileImage} className="max-w-9" alt="testimonial" />
                   </div>
@@ -742,7 +742,7 @@ const MainLayout: React.FC = () => {
       <div className="custom-container" ref={integrationRef}>
         <div className="grid grid-cols-1 items-center gap-x-6 lg:gap-x-10 xl:gap-x-16">
           <div className="col-span-1 text-center">
-            <h4 className="sec-title w-full">As Featured In</h4>
+            <h4 className="sec-title w-full max-[575px]:text-[28px] max-[575px]:leading-10">As Featured In</h4>
           </div>
           <div className="col-span-1 our-customer-slider mt-5">
             <div className="marquee-container flex relative z-10 px-8">
@@ -765,7 +765,7 @@ const MainLayout: React.FC = () => {
 
       {/* <!-- Section Seamless Integrations --> */}
 
-      <div className="custom-container relative z-0 pt-7 my-12">
+      <div className="custom-container relative z-0 max-[575px]:pt-10 max-[575px]:pb-4  pt-7 my-12">
         <div className="absolute left-0 top-0 h-full w-full overflow-hidden -z-10">
           <img src="../assets/images/SeamlessIntegrations-bg.png" className="max-w-full max-[575px]:hidden block min-[1365px]:max-w-[1200px] mx-auto  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
           <img src="../assets/images/SeamlessIntegrations-bg-mobile.svg" className="max-w-full max-[575px]:block hidden object-top min-[1365px]:max-w-[1200px] mx-auto  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
@@ -778,28 +778,28 @@ const MainLayout: React.FC = () => {
             </div>
           </div>
           <div className="col-span-1 text-center">
-            <ul className="w-full inline-flex justify-center gap-x-0 gap-y-4 max-[767px]:max-w-[235px] max-[767px]:flex-wrap md:gap-12 lg:gap-20 xl:gap-24 items-center pt-10 pb-10 lg:pt-28 lg:pb-16 ">
+            <ul className="w-full inline-flex justify-center gap-x-0 gap-y-12 max-[767px]:max-w-[235px] max-[767px]:flex-wrap md:gap-12 lg:gap-20 xl:gap-24 items-center pt-14 pb-10 lg:pt-28 lg:pb-16 ">
              
               <li className="max-[767px]:text-center max-[767px]:w-1/2">
-                <div className="h-12 w-12 md:h-16 md:w-16 rounded-full border-[6px] bg-white border-white  mx-auto animate-downup-sm delay-50">
+                <div className="h-16 w-16 rounded-full border-[6px] bg-white border-white  mx-auto animate-downup-sm delay-50">
                   <img src="../assets/icons/Social-icons/facebook.svg" alt="facebook" />
                 </div>
                 <p className="text-white text-sm md:text-lg font-normal text-center mt-3 md:mt-5">Facebook</p>
               </li>
               <li className="max-[767px]:text-center max-[767px]:w-1/2">
-                <div className="h-12 w-12 md:h-16 md:w-16 rounded-full border-[6px] bg-white border-white  mx-auto animate-updown-sm delay-75">
+                <div className="h-16 w-16 rounded-full border-[6px] bg-white border-white  mx-auto animate-updown-sm delay-75">
                   <img src="../assets/icons/Social-icons/instagram.svg" alt="instagram" />
                 </div>
                 <p className="text-white text-sm md:text-lg font-normal text-center mt-3 md:mt-5">Instagram</p>
               </li>
               <li className="max-[767px]:text-center max-[767px]:w-1/2">
-                <div className="h-12 w-12 md:h-16 md:w-16 rounded-full border-[6px] bg-white border-white  mx-auto animate-downup-sm delay-100">
+                <div className="h-16 w-16 rounded-full border-[6px] bg-white border-white  mx-auto animate-downup-sm delay-100">
                   <img src="../assets/icons/Social-icons/twitter.svg" alt="twitter" />
                 </div>
                 <p className="text-white text-sm md:text-lg font-normal text-center mt-3 md:mt-5">X</p>
               </li>
               <li className="max-[767px]:text-center max-[767px]:w-1/2">
-                <div className="h-12 w-12 md:h-16 md:w-16 rounded-full border-[6px] bg-white border-white  mx-auto animate-updown-sm delay-0">
+                <div className="h-16 w-16 rounded-full border-[6px] bg-white border-white  mx-auto animate-updown-sm delay-0">
                   <img src="../assets/icons/Social-icons/linkedIn.svg" alt="linkedin" />
                 </div>
                 <p className="text-white text-sm md:text-lg font-normal text-center mt-3 md:mt-5 ">LinkedIn</p>
@@ -807,7 +807,7 @@ const MainLayout: React.FC = () => {
             
              
               <li className="max-[767px]:text-center max-[767px]:w-1/2">
-                <div className="h-12 w-12 md:h-16 md:w-16 rounded-full flex items-center justify-center  mx-auto">
+                <div className="h-16 w-16 rounded-full flex items-center justify-center  mx-auto">
                   <img src="../assets/icons/Social-icons/more.svg" alt="coming soon" />
                 </div>
                 <p className="text-white text-sm md:text-lg font-normal text-center mt-3 md:mt-5">More coming soon</p>
@@ -820,11 +820,11 @@ const MainLayout: React.FC = () => {
 
       {/* <!-- Section Pricing  --> */}
 
-      <div className="custom-container" ref={pricingRef}>
+      <div className="custom-container max-[575px]:mt-10" ref={pricingRef}>
         <div className="grid grid-cols-1 items-center gap-x-6 lg:gap-x-10 xl:gap-x-16 ">
           <div className="col-span-1 text-center">
             {/* <p className="sec-sub-title w-full">Pricing</p> */}
-            <h4 className="sec-title w-full">Choose the Plan That <span className="text-themeblue">Fits Your Needs</span></h4>
+            <h4 className="sec-title w-full max-[575px]:text-[28px] max-[575px]:leading-10">Choose the Plan That <span className="text-themeblue max-[575px]:block">Fits Your Needs</span></h4>
             <p className="para-text max-w-[520px] mx-auto">
               Choose a plan that suits your business needs and unlock all the tools you need to grow your social media effortlessly. </p>
           </div>
@@ -992,7 +992,10 @@ const MainLayout: React.FC = () => {
       <div className="custom-container max-[767px]:mt-10">
 
         <div className="items-start grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-[485px,1fr] gap-x-4 lg:gap-x-6 xl:gap-x-14 z-10 relative">
-          <div className="absolute top-12 -left-16 -z-10  h-full max-w-[400px]">
+          <div className="max-[575px]:hidden block absolute top-12 -left-16 -z-10  h-full max-w-[400px]">
+            <img src="../assets/images/blur-circle.png" className="h-full w-full" alt="blur-circle" />
+          </div>
+          <div className="max-[575px]:block hidden absolute -bottom-1/2 -left-[7rem] -z-10  h-full max-w-full">
             <img src="../assets/images/blur-circle.png" className="h-full w-full" alt="blur-circle" />
           </div>
           <div className="flex  flex-col items-start justify-between gap-3 text-left">
@@ -1004,7 +1007,7 @@ const MainLayout: React.FC = () => {
 
           </div>
 
-          <div className="flex  flex-col items-start justify-start">
+          <div className="flex  flex-col items-start justify-start max-[575px]:-mx-2">
             <Accordion showDivider={false}
               disableIndicatorAnimation={true}
               itemClasses={itemClasses}>
@@ -1041,7 +1044,7 @@ const MainLayout: React.FC = () => {
           <div className="grid grid-cols-1 items-center justify-center mb-10">
             <div className="flex  flex-col items-start justify-center text-center">
               <h4 className="sec-title  w-full"><span className="text-themeblue">Insights & Tips </span>to Grow Your Social Media</h4>
-              <p className="para-text mx-auto">
+              <p className="para-text max-[575px]:text-base mx-auto">
                 Got questions? We’ve got answers! Here are some of the most common queries about PostReach AI.</p>
             </div>
           </div>
@@ -1084,7 +1087,7 @@ const MainLayout: React.FC = () => {
           <div className="items-center grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[400px,1fr] gap-x-10 mb-0 md:mb-12 lg:mb-24  relative max-[767px]:pl-5">
             {/* <div className="absolute h-[530px] w-[398px] bg-[#ACE1F333] backdrop-blur-2xl rounded-full"></div> */}
             <div className="flex  flex-col items-start justify-between gap-3 text-left pr-5 lg:pr-0">
-              <h4 className="sec-title w-full mb-0 text-white">Ready to Boost Your Social Media?</h4>
+              <h4 className="sec-title max-[575px]:text-[32px] max-[575px]:leading-[48px] w-full mb-0 text-white">Ready to Boost Your Social Media?</h4>
               <p className="para-text max-w-[520px] mb-3 text-white">
                 Start your free trial today and experience the power of PostReach AI. Simplify your social media management, save time, and grow your Business or Brand effortlessly. </p>
               <a href="#" className="my-6 md:my-0 w-full sm:w-auto  min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-[#0A2761] bg-white  hover:bg-[#0A2761] hover:border-white hover:text-white">Start Your Free Trial Now!

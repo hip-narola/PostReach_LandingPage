@@ -29,16 +29,16 @@ body {
 
 @layer components{
   .custom-nav{
-      @apply flex items-center justify-start max-w-[calc(100%-1.5rem)] min-[1365px]:max-w-[1200px]  w-full  mx-auto px-0 py-[6px] lg:py-3 rounded-2xl text-[#525252] gap-6 xl:gap-10;
+      @apply flex items-center justify-start max-w-[calc(100%-2rem)] min-[1365px]:max-w-[1200px]  w-full  mx-auto px-0 py-[6px] lg:py-3 rounded-2xl text-[#525252] gap-6 xl:gap-10;
   }
   .sidenav{
     @apply w-full h-[100vh] bg-[#000000B2] z-[100] fixed top-0 left-0;
   }
   .custom-container{
-      @apply mx-auto max-w-[calc(100%-1.5rem)] pt-6 pb-6  min-[1365px]:max-w-[1200px] px-0 xl:px-0 xl:pt-12 xl:pb-12;
+      @apply mx-auto max-w-[calc(100%-2rem)] pt-6 pb-6  min-[1365px]:max-w-[1200px] px-0 xl:px-0 xl:pt-12 xl:pb-12;
   }
   .container-lg{
-    @apply mx-auto max-w-[calc(100%-1.5rem)] pt-6 pb-6  min-[1365px]:max-w-[1328px];
+    @apply mx-auto max-w-[calc(100%-2rem)] pt-6 pb-6  min-[1365px]:max-w-[1328px];
   }
   .card-F7FCFF{
       @apply p-3 md:p-6 border-0 md:border border-[#E4E7EC] bg-[#F7FCFF] rounded-none md:rounded-[32px];
@@ -47,10 +47,10 @@ body {
       @apply p-3 md:p-6  border-0 md:border border-[#F3F3F3] bg-[#FCFBFF] rounded-none md:rounded-[32px];
   }
   .banner-title{
-    @apply relative text-[32px] md:text-4xl lg:text-[48px] lg:leading-[58px]  xl:text-[64px] xl:leading-[78px] font-bold  text-textdark;
+    @apply relative text-[32px] leading-[38px] md:text-4xl lg:text-[48px] lg:leading-[58px]  xl:text-[64px] xl:leading-[78px] font-bold  text-textdark;
   }
   .sec-title{
-      @apply  text-2xl leading-[36px] lg:text-4xl lg:leading-[40px]  xl:text-[40px] xl:leading-[52px]  font-bold text-textdark-100 mb-2 lg:mb-3;
+      @apply  text-2xl leading-7 lg:text-4xl lg:leading-[40px]  xl:text-[40px] xl:leading-[52px]  font-bold text-textdark-100 mb-2 lg:mb-3;
   }
   .pagebanner-title{
       @apply  text-2xl lg:text-3xl   xl:text-[32px] xl:leading-[48px]  font-bold text-textdark-100 mb-2 lg:mb-3;
