@@ -55,8 +55,14 @@ const Footer: React.FC = () => {
                 <div className="">
                 <div className="marquee-container">
                     <div className="marquee">
-                        {images}
-                        {images} {/* Duplicate the images for seamless scrolling */}
+                    <img
+          
+          src="../assets/images/marquee.png"
+          alt={`Marquee`}
+        />
+                        {/* {images}
+                        {images}  */}
+                        {/* Duplicate the images for seamless scrolling */}
                     </div>
                 </div>
                 </div>
@@ -138,7 +144,7 @@ const Footer: React.FC = () => {
                 <a href="#">Sitemap</a>
                 </li>
                 <li>
-                <a href="#">Privacy Policy</a>
+                <a href="#privacy-policy">Privacy Policy</a>
                 </li>
                 <li>
                 <a href="#">Term of Service</a>

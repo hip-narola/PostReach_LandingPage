@@ -36,7 +36,7 @@ const Sidenav: React.FC = () => {
             <div className="sidenav">
              <div className="flex flex-col gap-8 p-2 bg-white min-h-[100vh] max-w-[calc(100vw-32px)]">
                 <div className="flex justify-between items-center">
-                    <a href="#" className="">
+                    <a  onClick={() => handleNavigation('home')} className="cursor-pointer">
                     <span className="logo">
                         <img src='../assets/images/PostReachLogo.svg' alt="logo" width={192} />
                     </span>
@@ -48,7 +48,7 @@ const Sidenav: React.FC = () => {
              <div className="flex flex-col lg:hidden gap-2">
                   <a onClick={() => handleNavigation('home')} className="flex items-center justify-between flex-row p-2 text-base font-normal leading-6 text-[#525252] cursor-pointer">Home <img src="../assets/icons/caret-right.svg" alt="caret-right" /></a>
                   <a onClick={() => handleNavigation('feature')} className="flex items-center justify-between flex-row p-2 text-base font-normal leading-6 text-[#525252] cursor-pointer">Features <img src="../assets/icons/caret-right.svg" alt="caret-right" /></a>
-                  <a onClick={() => handleNavigation('integration')} className="flex items-center justify-between flex-row p-2 text-base font-normal leading-6 text-[#525252] cursor-pointer">Integrations <img src="../assets/icons/caret-right.svg" alt="caret-right" /></a>
+                  <a  onClick={() => handleNavigation('integration')} className="flex items-center justify-between flex-row p-2 text-base font-normal leading-6 text-[#525252] cursor-pointer">Integrations <img src="../assets/icons/caret-right.svg" alt="caret-right" /></a>
                   <a onClick={() => handleNavigation('pricing')} className="flex items-center justify-between flex-row p-2 text-base font-normal leading-6 text-[#525252] cursor-pointer">Pricing <img src="../assets/icons/caret-right.svg" alt="caret-right" /></a>
                   <a onClick={() => handleNavigation('blog')} className="flex items-center justify-between flex-row p-2 text-base font-normal leading-6 text-[#525252] cursor-pointer">Blog <img src="../assets/icons/caret-right.svg" alt="caret-right" /></a>
                 </div>

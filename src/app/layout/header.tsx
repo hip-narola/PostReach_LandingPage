@@ -33,7 +33,7 @@ const { setIsLoading } = useLoading();
         <header className="fixed  bg-white inset-x-0 top-0 z-50 max-w-[100vw] max-[1023px]:shadow-[0px_4px_12px_0px_#10194208]">
         <nav className="custom-nav" aria-label="Global">
           <div className="flex">
-            <a href="#" className="">
+            <a onClick={() => handleNavigation('home')} className="cursor-pointer">
               <span className="logo">
                 <img src='../assets/images/PostReachLogo.svg' alt="logo" width={192} />
               </span>

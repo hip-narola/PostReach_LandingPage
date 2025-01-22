@@ -240,7 +240,19 @@ ul.simple-easy-list li:not(:last-child):before {
   z-index: -1;
   position: absolute;
   content: "";
-  border: 1px dashed #BDBDBD;
+  /* border: 1px dashed #BDBDBD; */
+  background:url("/../assets/icons/dotted-line.svg");
+  height: 100%;
+  width: 1px;
+  left: 15px;
+  top: 15px;
+}
+ul.simple-easy-list .list-dotted-line:before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  /* border: 1px dashed #BDBDBD; */
+  background:url("/../assets/icons/dotted-line.svg");
   height: 100%;
   width: 1px;
   left: 15px;
@@ -403,7 +415,7 @@ ul.simple-easy-list li:not(:last-child):before {
 .marquee {
   display: flex;
   gap: 16px; /* Space between images */
-  animation: marquee 10s linear infinite;
+  /* animation: marquee 10s linear infinite; */
 }
 
 .marquee img {

@@ -215,7 +215,7 @@ const MainLayout: React.FC = () => {
           </div>
         </div>
         <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 lg:gap-6">
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-3 lg:gap-6 ">
       
           <div className="flex  flex-col items-start bg-white rounded-2xl p-4 lg:p-6">
             <div className="max-w-10 lg:max-w-14">
@@ -241,6 +241,37 @@ const MainLayout: React.FC = () => {
 
         </div>
         </motion.div>
+
+        <div className="grid md:hidden grid-cols-1 md:grid-cols-3 gap-3 lg:gap-6">
+        <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3,delay: 0.1 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
+          <div className="flex  flex-col items-start bg-white rounded-2xl p-4 lg:p-6">
+            <div className="max-w-10 lg:max-w-14">
+              <img src="../assets/icons/SocialMediaExpert.svg" alt="SocialMediaExpert" />
+            </div>
+            <h4 className="text-base lg:text-xl font-bold text-textdark mt-3 lg:mt-4 mb-1 lg:mb-2">Social Media Expert</h4>
+            <p className="para-text">Our AI engine crafts personalised posts tailored to your goals, audience, and brand voice.</p>
+          </div>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3,delay: 0.2 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
+          <div className="flex  flex-col items-start bg-white rounded-2xl p-4 lg:p-6">
+            <div className="max-w-10 lg:max-w-14">
+              <img src="../assets/icons/Automated-Scheduling.svg" alt="Automated-Scheduling" />
+            </div>
+            <h4 className="text-base lg:text-xl font-bold text-textdark mt-3 lg:mt-4 mb-1 lg:mb-2">Automated Scheduling</h4>
+            <p className="para-text">Save time with fully automated content creation, scheduling, and posting to ensure effortless consistency for your business.</p>
+          </div>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3,delay: 0.3 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
+          <div className="flex  flex-col items-start bg-white rounded-2xl p-4 lg:p-6">
+            <div className="max-w-10 lg:max-w-14">
+              <img src="../assets/icons/built-for-you.svg" alt="built-for-you" />
+            </div>
+            <h4 className="text-base lg:text-xl font-bold text-textdark mt-3 lg:mt-4 mb-1 lg:mb-2">Built for You</h4>
+            <p className="para-text">Affordable, easy to use, and designed to simplify social media for busy businesses and creators.</p>
+          </div>
+</motion.div>
+        </div>
+        
       </div>
       {/* <!-- End Section Why Choose PostReach? --> */}
 
@@ -497,27 +528,28 @@ const MainLayout: React.FC = () => {
           </div>
         </div>
        
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1fr,410px] gap-8 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1fr,410px] gap-8 max-[640px]:w-[calc(100%+2rem)] max-[640px]:max-w-[calc(100%+2rem)]  max-[640px]:-ml-4">
         <motion.div initial={{ opacity: 0, x: -150 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
           <div className="flex relative max-[1280px]:overflow-hidden">
-            <img src="../assets/images/getting-started-img.png" className="max-w-full w-full z-10" alt="about" />
-            <div className="absolute left-4 xl:left-20 top-16 z-10 animate-updown">
+            <img src="../assets/images/getting-started-img.png" className="max-w-full w-full z-10 hidden sm:block" alt="about" />
+            <img src="../assets/images/getting-started-img-mobile.png" className="max-w-full w-full z-10 block sm:hidden " alt="about" />
+            <div className="absolute max-[640px]:max-w-16 left-16 sm:left-4 xl:left-20 top-16 z-10 animate-updown">
               <img src="../assets/images/cursor.png" className="" alt="Cursor" />
             </div>
-            <div className="absolute top-24 right-4 xl:right-20 z-10 animate-updown">
+            <div className="absolute max-[640px]:max-w-20 top-24 right-4 xl:right-20 z-10 animate-updown">
               <img src="../assets/images/insta-gs.png" className="" alt="instagram" />
             </div>
-            <div className="absolute left-1/2 -translate-x-1/2 bottom-4 xl:bottom-20 -ml-14 z-10 animate-downup">
+            <div className="absolute max-[640px]:max-w-24 left-1/2 -translate-x-1/2 bottom-4 xl:bottom-20 -ml-14 z-10 animate-downup">
               <img src="../assets/images/linkedin-gs.png" className="" alt="Linkedin" />
             </div>
-            <div className="absolute -left-20 -bottom-20">
+            <div className="absolute -left-20 -bottom-20 max-[640px]:hidden">
             <img src="../assets/images/getting-started-shadow.png" className="" alt="getting-started-shadow" />
             </div>
           </div>
           </motion.div>
-          <div className="flex self-center  flex-col items-start ">
+          <div className="hidden sm:flex self-center  flex-col items-start ">
           <motion.div initial={{ opacity: 0, x: 150 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
-            <ul className="flex flex-col gap-4  simple-easy-list">
+            <ul className="flex flex-col gap-4  simple-easy-list ">
               <li className="flex gap-6">
                 <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
                   1
@@ -568,6 +600,77 @@ const MainLayout: React.FC = () => {
             <a href="#" className="mt-7 w-full sm:w-auto min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Get Started
             </a>
             </motion.div>
+          </div>
+          <div className="flex sm:hidden self-center  flex-col items-start ">
+         
+            <ul className="flex flex-col gap-0  simple-easy-list max-[640px]:px-4">
+            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5,  delay: 0.1  }} viewport={{ once: true, amount: 0.3 }} className="my-section">
+              <li className="flex gap-6 list-dotted-line mb-4">
+                <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
+                  1
+                </div>
+                <div className="">
+                  <h4 className="text-base  font-semibold text-textdark mb-1">Sign Up in Seconds</h4>
+                  <p className="small-text">Create your account quickly and start your journey to effortless social media management.</p>
+                </div>
+              </li>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 , delay: 0.2 }} viewport={{ once: true, amount: 0.4 }} className="my-section">
+              <li className="flex gap-6 list-dotted-line mb-4">
+                <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
+                  2
+                </div>
+                <div className="">
+                  <h4 className="text-base  font-semibold text-textdark mb-1">Complete a 5-Minute Questionnaire</h4>
+                  <p className="small-text">Answer a few easy questions about your business and audience to help our AI understand your needs.</p>
+                </div>
+              </li>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5,  delay: 0.3 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+              <li className="flex gap-6 list-dotted-line mb-4">
+                <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
+                  3
+                </div>
+                <div className="">
+                  <h4 className="text-base  font-semibold text-textdark mb-1">Let the AI Work Its Magic</h4>
+                  <p className="small-text">Watch as PostReach AI generates tailored posts designed to engage your audience.</p>
+                </div>
+              </li>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 , delay: 0.4 }} viewport={{ once: true, amount: 0.6 }} className="my-section">
+              <li className="flex gap-6 list-dotted-line mb-4">
+                <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
+                  4
+                </div>
+                <div className="">
+                  <h4 className="text-base  font-semibold text-textdark mb-1">Review and Approve Content</h4>
+                  <p className="small-text">Preview and approve your posts to ensure they align perfectly with your brand.</p>
+                </div>
+              </li>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 , delay: 0.2  }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+              <li className="flex gap-6">
+                <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full">
+                  <img src='../assets/icons/done.svg' alt="check" />
+                </div>
+                <div className="">
+                  <h4 className="text-base  font-semibold text-textdark mb-1">Sit Back as Posts Go Live</h4>
+                  <p className="small-text">Our AI schedules and publishes your approved content, keeping your social media active and consistent.</p>
+                </div>
+              </li>
+</motion.div>
+<motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 , delay: 0.25 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+              <li className="flex gap-6">
+              <a href="#" className="mt-7 w-full sm:w-auto min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Get Started
+              </a>
+              </li>
+</motion.div>
+            </ul>
+            {/* <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 , delay: 0.3 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+            <a href="#" className="mt-7 w-full sm:w-auto min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Get Started
+            </a>
+            </motion.div> */}
+          
           </div>
         </div>
        
@@ -739,7 +842,7 @@ const MainLayout: React.FC = () => {
 
       {/* <!-- Section As Featured In --> */}
 
-      <div className="custom-container" ref={integrationRef}>
+      <div className="custom-container" >
         <div className="grid grid-cols-1 items-center gap-x-6 lg:gap-x-10 xl:gap-x-16">
           <div className="col-span-1 text-center">
             <h4 className="sec-title w-full max-[575px]:text-[28px] max-[575px]:leading-10">As Featured In</h4>
@@ -765,7 +868,7 @@ const MainLayout: React.FC = () => {
 
       {/* <!-- Section Seamless Integrations --> */}
 
-      <div className="custom-container relative z-0 max-[575px]:pt-10 max-[575px]:pb-4  pt-7 my-12">
+      <div className="custom-container relative z-0 max-[575px]:pt-10 max-[575px]:pb-4  pt-7 my-12" ref={integrationRef}>
         <div className="absolute left-0 top-0 h-full w-full overflow-hidden -z-10">
           <img src="../assets/images/SeamlessIntegrations-bg.png" className="max-w-full max-[575px]:hidden block min-[1365px]:max-w-[1200px] mx-auto  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
           <img src="../assets/images/SeamlessIntegrations-bg-mobile.svg" className="max-w-full max-[575px]:block hidden object-top min-[1365px]:max-w-[1200px] mx-auto  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
