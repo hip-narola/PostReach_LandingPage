@@ -3,13 +3,13 @@ import React from 'react';
 
 const Footer: React.FC = () => {
 
-    const images = Array.from({ length: 10 }).map((_, index) => (
-        <img
-          key={index}
-          src="../assets/images/marquee.png"
-          alt={`Marquee ${index}`}
-        />
-      ));
+    // const images = Array.from({ length: 10 }).map((_, index) => (
+    //     <img
+    //       key={index}
+    //       src="../assets/images/marquee.png"
+    //       alt={`Marquee ${index}`}
+    //     />
+    //   ));
 
   return (
     <div className="">
@@ -55,11 +55,7 @@ const Footer: React.FC = () => {
                 <div className="">
                 <div className="marquee-container">
                     <div className="marquee">
-                    <img
-          
-          src="../assets/images/marquee.png"
-          alt={`Marquee`}
-        />
+                    <img  src="../assets/images/marquee.png"  alt="marquee" />
                         {/* {images}
                         {images}  */}
                         {/* Duplicate the images for seamless scrolling */}
