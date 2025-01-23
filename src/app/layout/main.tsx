@@ -304,7 +304,8 @@ const MainLayout: React.FC = () => {
               <CardBody className=" p-0">
                 {/* Autopilot Mode tabs content */}
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
+                <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
                   <div className="flex  flex-col items-start max-[767px]:order-2">
                     <p className="para-text text-textdark">
                       Automate your social media completely, ensuring consistent posting without the hassle.
@@ -340,9 +341,12 @@ const MainLayout: React.FC = () => {
 
                     </ul>
                   </div>
+                  </motion.div>
+                  <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
                   <div className="flex justify-center">
                     <img src="../assets/images/autopilot-mode.png" className="max-w-full object-contain" alt="autopilot-mode" />
                   </div>
+                  </motion.div>
                 </div>
                 {/* End Autopilot Mode tabs content */}
               </CardBody>
@@ -358,7 +362,8 @@ const MainLayout: React.FC = () => {
             <Card className="shadow-none">
               <CardBody className=" p-0">
                 {/* ApprovalQueue tabs content */}
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
+                <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
                   <div className="flex  flex-col items-start max-[767px]:order-2">
                     <p className="para-text text-textdark">
                       Review, edit, or approve posts before publishing to control over your content.
@@ -394,10 +399,13 @@ const MainLayout: React.FC = () => {
 
                     </ul>
                   </div>
+                  </motion.div>
+                  <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
                   <div className="flex justify-center">
                     <img src="../assets/images/ApprovalQueue.png" className="max-w-full object-contain" alt="ApprovalQueue" />
 
                   </div>
+                  </motion.div>
                 </div>
                 {/* End ApprovalQueue tabs content */}
               </CardBody>
@@ -413,7 +421,8 @@ const MainLayout: React.FC = () => {
             <Card className="shadow-none">
               <CardBody className=" p-0">
                 {/* Calendar View tabs content */}
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
+                <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
                   <div className="flex  flex-col items-start max-[767px]:order-2">
                     <p className="para-text text-textdark">
                       Visualize your posting schedule with an intuitive calendar to plan ahead and stay organized.
@@ -449,9 +458,12 @@ const MainLayout: React.FC = () => {
 
                     </ul>
                   </div>
+                  </motion.div>
+                  <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
                   <div className="flex justify-center">
                     <img src="../assets/images/calendar-view.png" className="max-w-full object-contain" alt="calendar-view" />
                   </div>
+                  </motion.div>
                 </div>
                 {/* End Calendar View tabs content */}
               </CardBody>
@@ -466,7 +478,8 @@ const MainLayout: React.FC = () => {
             <Card className="shadow-none">
               <CardBody className="mt-10 p-0">
                 {/* analytics tabs content */}
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
+                <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
                   <div className="flex  flex-col items-start max-[767px]:order-2">
                     <p className="para-text text-textdark">
                       See your social media growth in one easy-to-read dashboard and optimize your strategy.
@@ -503,10 +516,13 @@ const MainLayout: React.FC = () => {
 
                     </ul>
                   </div>
+                  </motion.div>
+                  <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
                   <div className="flex justify-center">
                     <img src="../assets/images/analytics.png" className="max-w-full object-contain" alt="analytics" />
 
                   </div>
+                  </motion.div>
                 </div>
                 {/* End analytics tabs content */}
               </CardBody>
@@ -529,7 +545,7 @@ const MainLayout: React.FC = () => {
         </div>
        
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1fr,410px] gap-8 max-[640px]:w-[calc(100%+2rem)] max-[640px]:max-w-[calc(100%+2rem)]  max-[640px]:-ml-4">
-        <motion.div initial={{ opacity: 0, x: -150 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+        <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
           <div className="flex relative max-[1280px]:overflow-hidden">
             <img src="../assets/images/getting-started-img.png" className="max-w-full w-full z-10 hidden sm:block" alt="about" />
             <img src="../assets/images/getting-started-img-mobile.png" className="max-w-full w-full z-10 block sm:hidden " alt="about" />
@@ -548,7 +564,8 @@ const MainLayout: React.FC = () => {
           </div>
           </motion.div>
           <div className="hidden sm:flex self-center  flex-col items-start ">
-          <motion.div initial={{ opacity: 0, x: 150 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+          <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
+       
             <ul className="flex flex-col gap-4  simple-easy-list ">
               <li className="flex gap-6">
                 <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
@@ -680,7 +697,7 @@ const MainLayout: React.FC = () => {
       {/* <!-- Section Generative AI --> */}
       <div className="custom-container">
         <div className="grid grid-cols-1 items-center gap-0 md:gap-6 lg:grid-cols-2 xl:grid-cols-[495px,1fr] ">
-        <motion.div initial={{ opacity: 0, x: -150 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+       
           <div className="flex  flex-col items-start justify-between">
             <h4 className="sec-title">Stunning Visuals Powered by<span className="text-themeblue"> Generative AI</span></h4>
             <p className="para-text">
@@ -689,9 +706,9 @@ const MainLayout: React.FC = () => {
             <a  className="mt-7  w-full sm:w-auto min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Get Started
             </a>
           </div>
-          </motion.div>
+         
           <div className="flex  flex-col items-star max-[767px]:-order-1 max-[575px]:w-[calc(100%+2rem)] max-[575px]:-ml-4">
-          <motion.div initial={{ opacity: 0, x: 150 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+          <motion.div initial={{ opacity: 0, x: 160 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
             <div className=" w-full relative max-[767px]:pt-5 max-[1280px]:overflow-hidden">
               <img src="../assets/images/Generative-Ai.png" alt="GenerativeAI" className="relative z-10" />
               <div className="absolute -right-20 -bottom-8 lg:-bottom-20">
@@ -709,14 +726,13 @@ const MainLayout: React.FC = () => {
       <div className="custom-container">
         <div className="grid grid-cols-1 items-center max-[575px]:my-4 gap-8 lg:gap-14 lg:grid-cols-2 xl:grid-cols-[550px,1fr]">
           <div className="flex  flex-col items-star">
-          <motion.div initial={{ opacity: 0, x: -150 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+          <motion.div initial={{ opacity: 0, x: -160 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5,delay: 0.1 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
             <div className=" w-full">
               <img src="../assets/images/advance-Ai-Engine.png" alt="GenerativeAI Engine" />
             </div>
             </motion.div>
           </div>
-          <motion.div initial={{ opacity: 0, x: 150 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
-          <div className="flex  flex-col items-start justify-between">
+        <div className="flex  flex-col items-start justify-between">
             <h4 className="sec-title max-[575px]:text-[28px] max-[575px]:leading-10">Smarter Social Media Powered by our <span className="text-themeblue"> Advanced AI Engine</span></h4>
             <p className="para-text">
               PostReach harnesses the most advanced large language models (LLMs), always updated to the latest versions for maximum performance. Unlike other tools, there’s no need to choose a model – we handle it all to deliver the best results effortlessly.
@@ -724,7 +740,7 @@ const MainLayout: React.FC = () => {
             <a href="#" className="mt-7 w-full sm:w-auto min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Get Started
             </a>
           </div>
-          </motion.div>
+          
 
 
         </div>
@@ -933,7 +949,7 @@ const MainLayout: React.FC = () => {
           </div>
 
         </div>
-        <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+        <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
         <div className="grid grid-cols-1 md:grid-cols-3 items-center  gap-3 lg:gap-6 max-w-[1200px] mx-auto mt-8 lg:mt-10 xl:mt-20 ">
           <div className="col-span-1 mb-8 md:mb-0">
             <div className="flex flex-wrap flex-col p-4 lg:py-8 lg:px-6 rounded-[40px] border border-[#D9D9D9] relative z-10">
@@ -1151,7 +1167,7 @@ const MainLayout: React.FC = () => {
                 Got questions? We’ve got answers! Here are some of the most common queries about PostReach AI.</p>
             </div>
           </div>
-          <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+          <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.1 }} className="my-section">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 mb-8 xl:mb-10">
           {latestBlog.map((item,index) => (
               <div className="blog-col" onClick={() => handleBlogDetail(item._id)} key={index}>
@@ -1182,8 +1198,9 @@ const MainLayout: React.FC = () => {
       </div>
       {/* <!-- End Section Insights & Tips to Grow Your Social Media --> */}
      {/* <!-- Section Ready to Boost Your Social Media? --> */}
-      <div className="custom-container  relative z-0 pl-0 md:pl-6 lg:pl-16 pt-8 lg:pt-12 pb-0 my-12">
-        <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+     <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+      <div className="custom-container  relative z-0 pl-0 md:pl-6 lg:pl-16 pt-8 lg:pt-12 pb-0  my-12">
+       
           <div className="absolute left-0 top-0 h-full w-full rounded-3xl overflow-hidden -z-10">
             <img src="../assets/images/maskbg.png" className="max-w-[1200px] h-full w-full" alt="mask-bg" />
           </div>
@@ -1207,8 +1224,9 @@ const MainLayout: React.FC = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        
       </div>
+      </motion.div>
       {/* <!-- End Section Ready to Boost Your Social Media? --> */}
     </div>
 

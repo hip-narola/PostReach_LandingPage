@@ -29,7 +29,7 @@ body {
 
 @layer components{
   .custom-nav{
-      @apply flex items-center justify-start max-w-[calc(100%-2rem)] min-[1365px]:max-w-[1200px]  w-full  mx-auto px-0 py-[6px] lg:py-3 rounded-2xl text-[#525252] gap-6 xl:gap-10;
+      @apply flex items-center justify-start max-w-[calc(100%-2rem)] min-[1365px]:max-w-[1200px]  w-full  mx-auto px-0 py-4 lg:py-3 rounded-2xl text-[#525252] gap-6 xl:gap-10;
   }
   .sidenav{
     @apply w-full h-[100vh] bg-[#000000B2] z-[100] fixed top-0 left-0;

@@ -1,15 +1,33 @@
 'use client'
-import React from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import React, { useContext } from 'react';
+import navigations from '../navigation-list/navigation';
+import { DataContext } from '../context/shareData';
+import { useLoading } from '../context/LoadingContext';
 
 const Footer: React.FC = () => {
+    const router = useRouter();
+    const pathname = usePathname();
+    const { setIsLoading } = useLoading();
+    const context = useContext(DataContext);
 
-    // const images = Array.from({ length: 10 }).map((_, index) => (
-    //     <img
-    //       key={index}
-    //       src="../assets/images/marquee.png"
-    //       alt={`Marquee ${index}`}
-    //     />
-    //   ));
+    if (!context) {
+        throw new Error('DataContext must be used within a DataProvider');
+    }
+
+    const handleNavigation = (type:string) => {
+        if(type == 'privacy'){
+            router.push(navigations.privacyPolicy);
+        }else  if(type == 'terms'){
+            router.push(navigations.termsCondition);
+        }else if(type == 'home'){
+            context.setData(type);
+            if(pathname !== navigations.home) {
+              setIsLoading(true);
+              router.push(navigations.home);
+            };
+        }
+    }
 
   return (
     <div className="">
@@ -19,11 +37,11 @@ const Footer: React.FC = () => {
        <div className="custom-container max-w-full p-0">
         <div className="bg-[#05183F]">
         <div className="custom-container max-[767px]:p-0">
-            <div className="grid  grid-cols-1 w-full items-center gap-6 md:gap-8 lg:gap-28 lg:grid-cols-[260px,1fr] py-10">
+            <div className="grid  grid-cols-1 w-full items-center gap-6 md:gap-8 lg:gap-28 lg:grid-cols-[260px,1fr] py-8 md:py-10">
             <div className="flex  flex-col">
-                <a href="#" className="">
+                <a onClick={() =>handleNavigation('home')} className="cursor-pointer">
                 <span className="logo">
-                    <img src='../assets/images/logo-white.png' alt="logo" />
+                <img src='../assets/images/PostReachLogo-white.webp' alt="logo" className="max-w-48" />
                 </span>
                 </a>
                 <ul className="w-full inline-flex justify-start gap-3 items-center mt-3 mb-7">
@@ -31,23 +49,23 @@ const Footer: React.FC = () => {
                     Follow us:
                 </li>
                 <li className="h-6 w-6">
-                    <a href="#">
+                    <a href="https://www.facebook.com/postreachai" target='blank'>
                     <img src='../assets/icons/Social-icons/facebook-white.svg' alt="facebook" />
                     </a>
                 </li>
                 <li className="h-6 w-6">
-                    <a href="#">
+                    <a href="https://www.instagram.com/postreachai" target='blank'>
                     <img src='../assets/icons/Social-icons/instagram-white.svg' alt="Instagram" />
                     </a>
                 </li>
 
                 <li className="h-6 w-6">
-                    <a href="#">
+                    <a href="https://www.linkedin.com/postreachai" target='blank'>
                     <img src='../assets/icons/Social-icons/linkedin-white.svg' alt="linkdein" />
                     </a>
                 </li>
                 <li className="h-6 w-6">
-                    <a href="#">
+                    <a href="https://x.com/PostReachAI" target='blank'>
                     <img src='../assets/icons/Social-icons/twitter-whte.svg' alt="twitter" />
                     </a>
                 </li>
@@ -140,10 +158,10 @@ const Footer: React.FC = () => {
                 <a href="#">Sitemap</a>
                 </li>
                 <li>
-                <a href="#privacy-policy">Privacy Policy</a>
+                <a onClick={() =>handleNavigation('privacy')} className='cursor-pointer'>Privacy Policy</a>
                 </li>
                 <li>
-                <a href="#">Term of Service</a>
+                <a onClick={() =>handleNavigation('terms')} className='cursor-pointer'>Term of Service</a>
                 </li>
 
             </ul>
