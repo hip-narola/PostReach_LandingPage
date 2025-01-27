@@ -1415,8 +1415,8 @@ const MainLayout: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 mb-8 xl:mb-10">
          
           {latestBlog.map((item,index) => (
-             <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.1 }} className="my-section">
-              <div className="blog-col" onClick={() => handleBlogDetail(item._id)} key={index}>
+             <motion.div key={index} initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.1 }} className="my-section">
+              <div className="blog-col" onClick={() => handleBlogDetail(item._id)}>
               <div className="blog-img-thumb">
               <img src={urlFor(item.blog_image).url()} className="h-full w-full rounded-xl" alt="blog-1" />
               </div>
