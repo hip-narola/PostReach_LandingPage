@@ -317,7 +317,7 @@ const MainLayout: React.FC = () => {
         </div>
         {/* tab */}
 
-        <Tabs fullWidth aria-label="Options" color="primary" variant="bordered" radius="full" onSelectionChange={handleTabChange}
+        <Tabs fullWidth aria-label="Options" color="primary" variant="bordered" radius="full"  onSelectionChange={handleTabChange}
           classNames={{
             tabList: "feature-tabs w-full border-none shadow-none bg-white p-[2px] mb-4",
             cursor: "",
@@ -336,8 +336,13 @@ const MainLayout: React.FC = () => {
               <CardBody className=" p-0">
                 {/* Autopilot Mode tabs content */}
               
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
+                <div className="grid md:hidden grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
                 {/* <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section"> */}
+                <motion.div initial={{ opacity: 0, x:(animationSide) }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <div className="flex justify-center">
+                    <img src="../assets/images/autopilot-mode.webp" className="max-w-full object-contain" alt="autopilot-mode" />
+                  </div>
+                  </motion.div>
                 <motion.div initial={{ opacity: 0, x: animationSide}} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
                   <div className="flex  flex-col items-start max-[767px]:order-2">
                     <p className="para-text text-textdark">
@@ -375,9 +380,51 @@ const MainLayout: React.FC = () => {
                     </ul>
                   </div>
                   </motion.div>
-                  <motion.div initial={{ opacity: 0, x:(animationSide) }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  
+                </div>
+                <div className="hidden md:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
+                <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                {/* <motion.div initial={{ opacity: 0, x: animationSide}} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section"> */}
+                  <div className="flex  flex-col items-start max-[767px]:order-2">
+                    <p className="para-text text-textdark">
+                      Automate your social media completely, ensuring consistent posting without the hassle.
+                    </p>
+                    <ul className="flex flex-col gap-6 md:gap-7 mt-10">
+                      <li className="flex gap-4">
+                        <div className="min-w-12">
+                          <img src="../assets/icons/tabs/fully-automated-icon.svg" alt="fully-automated-icon" />
+                        </div>
+                        <div className="">
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Fully Automated Content Creation</h4>
+                          <p className="small-text">Our AI learns your business goals and audience, crafting engaging posts.</p>
+                        </div>
+                      </li>
+                      <li className="flex gap-4">
+                        <div className="min-w-12">
+                          <img src="../assets/icons/tabs/IntelligentScheduling-icon.svg" alt="IntelligentScheduling-icon" />
+                        </div>
+                        <div className="">
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Intelligent Scheduling</h4>
+                          <p className="small-text">Posts are automatically scheduled at the optimal times for maximum reach and engagement.</p>
+                        </div>
+                      </li>
+                      <li className="flex gap-4">
+                        <div className="min-w-12">
+                          <img src="../assets/icons/tabs/Hands-Free Posting-icon.svg" alt="Hands-Free Posting-icon" />
+                        </div>
+                        <div className="">
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Hands-Free Posting</h4>
+                          <p className="small-text">Enjoy a consistent online presence while PostReach handles the entire posting process.</p>
+                        </div>
+                      </li>
+
+                    </ul>
+                  </div>
+                  </motion.div>
+                  <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  {/* <motion.div initial={{ opacity: 0, x:(animationSide) }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section"> */}
                   <div className="flex justify-center">
-                    <img src="../assets/images/autopilot-mode.png" className="max-w-full object-contain" alt="autopilot-mode" />
+                    <img src="../assets/images/autopilot-mode.webp" className="max-w-full object-contain" alt="autopilot-mode" />
                   </div>
                   </motion.div>
                 </div>
@@ -395,8 +442,15 @@ const MainLayout: React.FC = () => {
             <Card className="shadow-none">
               <CardBody className=" p-0">
                 {/* ApprovalQueue tabs content */}
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
-                <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                <div className="grid md:hidden grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
+               
+                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <div className="flex justify-center">
+                    <img src="../assets/images/ApprovalQueue.webp" className="max-w-full object-contain" alt="ApprovalQueue" />
+
+                  </div>
+                  </motion.div>
+                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
                   <div className="flex  flex-col items-start max-[767px]:order-2">
                     <p className="para-text text-textdark">
                       Review, edit, or approve posts before publishing to control over your content.
@@ -433,9 +487,49 @@ const MainLayout: React.FC = () => {
                     </ul>
                   </div>
                   </motion.div>
-                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                </div>
+
+                <div className="hidden md:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
+                <motion.div initial={{ opacity: 0, x: -100  }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <div className="flex  flex-col items-start max-[767px]:order-2">
+                    <p className="para-text text-textdark">
+                      Review, edit, or approve posts before publishing to control over your content.
+                    </p>
+                    <ul className="flex flex-col gap-6 md:gap-7 mt-10">
+                      <li className="flex gap-4">
+                        <div className="min-w-12">
+                          <img src="../assets/icons/tabs/FullControlOverContent.svg" alt="FullControlOverContent" />
+                        </div>
+                        <div className="">
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Full Control Over Content</h4>
+                          <p className="small-text">Review and approve AI-generated posts to ensure they align perfectly with your brand.</p>
+                        </div>
+                      </li>
+                      <li className="flex gap-4">
+                        <div className="min-w-12">
+                          <img src="../assets/icons/tabs/PreviewYourPosts.svg" alt="PreviewYourPosts" />
+                        </div>
+                        <div className="">
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Preview Your Posts</h4>
+                          <p className="small-text">Visualise your post before it’s scheduled to go live.</p>
+                        </div>
+                      </li>
+                      <li className="flex gap-4">
+                        <div className="min-w-12">
+                          <img src="../assets/icons/tabs/StreamlinedWorkflow.svg" alt="StreamlinedWorkflow" />
+                        </div>
+                        <div className="">
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Streamlined Workflow</h4>
+                          <p className="small-text">Manage approvals effortlessly in one centralised location, saving you time. </p>
+                        </div>
+                      </li>
+
+                    </ul>
+                  </div>
+                  </motion.div>
+                  <motion.div initial={{ opacity: 0, x: 100  }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
                   <div className="flex justify-center">
-                    <img src="../assets/images/ApprovalQueue.png" className="max-w-full object-contain" alt="ApprovalQueue" />
+                    <img src="../assets/images/ApprovalQueue.webp" className="max-w-full object-contain" alt="ApprovalQueue" />
 
                   </div>
                   </motion.div>
@@ -454,8 +548,14 @@ const MainLayout: React.FC = () => {
             <Card className="shadow-none">
               <CardBody className=" p-0">
                 {/* Calendar View tabs content */}
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
-                <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                <div className="grid md:hidden grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
+                
+                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <div className="flex justify-center">
+                    <img src="../assets/images/calendar-view.webp" className="max-w-full object-contain" alt="calendar-view" />
+                  </div>
+                  </motion.div>
+                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
                   <div className="flex  flex-col items-start max-[767px]:order-2">
                     <p className="para-text text-textdark">
                       Visualize your posting schedule with an intuitive calendar to plan ahead and stay organized.
@@ -492,9 +592,48 @@ const MainLayout: React.FC = () => {
                     </ul>
                   </div>
                   </motion.div>
-                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                </div>
+                <div className="hidden md:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
+                <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <div className="flex  flex-col items-start max-[767px]:order-2">
+                    <p className="para-text text-textdark">
+                      Visualize your posting schedule with an intuitive calendar to plan ahead and stay organized.
+                    </p>
+                    <ul className="flex flex-col gap-6 md:gap-7 mt-10">
+                      <li className="flex gap-4">
+                        <div className="min-w-12">
+                          <img src="../assets/icons/tabs/ClearScheduleOverview.svg" alt="Clear Schedule Overview" />
+                        </div>
+                        <div className="">
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Clear Schedule Overview</h4>
+                          <p className="small-text">See all your scheduled posts in one clear, easy-to-navigate calendar.</p>
+                        </div>
+                      </li>
+                      <li className="flex gap-4">
+                        <div className="min-w-12">
+                          <img src="../assets/icons/tabs/Platform-SpecificInsights.svg" alt="Platform-Specific Insights-icon" />
+                        </div>
+                        <div className="">
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Platform-Specific Insights</h4>
+                          <p className="small-text">Quickly identify which posts are scheduled for each platform. </p>
+                        </div>
+                      </li>
+                      <li className="flex gap-4">
+                        <div className="min-w-12">
+                          <img src="../assets/icons/tabs/PlanWeeksAdvance.svg" alt="Plan Weeks in Advance" />
+                        </div>
+                        <div className="">
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Plan Weeks in Advance</h4>
+                          <p className="small-text">Maintain a consistent posting schedule by mapping out your content weeks in advance.</p>
+                        </div>
+                      </li>
+
+                    </ul>
+                  </div>
+                  </motion.div>
+                  <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
                   <div className="flex justify-center">
-                    <img src="../assets/images/calendar-view.png" className="max-w-full object-contain" alt="calendar-view" />
+                    <img src="../assets/images/calendar-view.webp" className="max-w-full object-contain" alt="calendar-view" />
                   </div>
                   </motion.div>
                 </div>
@@ -509,10 +648,17 @@ const MainLayout: React.FC = () => {
             </div>
           } >
             <Card className="shadow-none">
-              <CardBody className="mt-10 p-0">
+              <CardBody className=" p-0">
                 {/* analytics tabs content */}
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
-                <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                <div className="grid md:hidden grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
+              
+                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <div className="flex justify-center">
+                    <img src="../assets/images/analytics.webp" className="max-w-full object-contain" alt="analytics" />
+
+                  </div>
+                  </motion.div>
+                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
                   <div className="flex  flex-col items-start max-[767px]:order-2">
                     <p className="para-text text-textdark">
                       See your social media growth in one easy-to-read dashboard and optimize your strategy.
@@ -550,9 +696,49 @@ const MainLayout: React.FC = () => {
                     </ul>
                   </div>
                   </motion.div>
-                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                </div>
+                <div className="hidden md:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
+                <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <div className="flex  flex-col items-start max-[767px]:order-2">
+                    <p className="para-text text-textdark">
+                      See your social media growth in one easy-to-read dashboard and optimize your strategy.
+                    </p>
+                    <ul className="flex flex-col gap-6 md:gap-7 mt-10">
+                      <li className="flex gap-4">
+                        <div className="min-w-12">
+                          <img src="../assets/icons/tabs/ActionableInsights.svg" alt="Actionable Insights-icon" />
+                        </div>
+                        <div className="">
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Actionable Insights</h4>
+                          <p className="small-text">Track key metrics like reach, engagement, and audience growth to understand what’s working.</p>
+                        </div>
+                      </li>
+                      <li className="flex gap-4">
+                        <div className="min-w-12">
+                          <img src="../assets/icons/tabs/Data-DrivenOptimisation.svg" alt="Data-Driven Optimisation-icon" />
+                        </div>
+                        <div className="">
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Data-Driven Optimisation</h4>
+                          <p className="small-text">Our AI engine learns from your data and analytics, continuously improving the content.</p>
+                        </div>
+                      </li>
+                      <li className="flex gap-4">
+                        <div className="min-w-12">
+                          <img src="../assets/icons/tabs/SimplifiedReporting-icon.svg" alt="Simplified Reporting-icon" />
+                        </div>
+                        <div className="">
+                          <h4 className="text-base  font-semibold text-textdark mb-1">Simplified Reporting</h4>
+                          <p className="small-text">Access easy-to-read reports that help you measure success and plan your next move.</p>
+                        </div>
+                      </li>
+
+
+                    </ul>
+                  </div>
+                  </motion.div>
+                  <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
                   <div className="flex justify-center">
-                    <img src="../assets/images/analytics.png" className="max-w-full object-contain" alt="analytics" />
+                    <img src="../assets/images/analytics.webp" className="max-w-full object-contain" alt="analytics" />
 
                   </div>
                   </motion.div>
@@ -567,6 +753,8 @@ const MainLayout: React.FC = () => {
       </div>
       {/* <!-- End Section features --> */}
 
+
+
       {/* <!-- Section Getting Started --> */}
       <div className="custom-container container-lg relative z-0 max-[767px]:my-2 p-0 lg:p-10 xl:p-16" >
         <div className="grid grid-cols-1 items-center justify-center mb-0 md:mb-8 lg:mb-12">
@@ -579,7 +767,7 @@ const MainLayout: React.FC = () => {
        
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1fr,410px] gap-8 max-[640px]:w-[calc(100%+2rem)] max-[640px]:max-w-[calc(100%+2rem)]  max-[640px]:-ml-4">
         <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
-          <div className="flex relative max-[1280px]:overflow-hidden">
+          <div className="flex relative max-[768px]:max-w-[375px] max-[768px]:m-auto max-[1280px]:overflow-hidden">
             <img src="../assets/images/getting-started-img.png" className="max-w-full w-full z-10 hidden sm:block" alt="about" />
             <img src="../assets/images/getting-started-img-mobile.png" className="max-w-full w-full z-10 block sm:hidden " alt="about" />
             <div className="absolute max-[640px]:max-w-12 left-12 sm:left-4 xl:left-20 top-16 z-10 animate-updown">
@@ -588,7 +776,7 @@ const MainLayout: React.FC = () => {
             <div className="absolute max-[640px]:max-w-16 top-24 right-12 xl:right-20 z-10 animate-updown">
               <img src="../assets/images/insta-gs.png" className="" alt="instagram" />
             </div>
-            <div className="absolute max-[640px]:max-w-[70px] left-1/2 -translate-x-1/2 bottom-20 xl:bottom-20 -ml-20 z-10 animate-downup">
+            <div className="absolute max-[640px]:max-w-[70px]  left-1/2 -translate-x-1/2 bottom-20 xl:bottom-20 -ml-20 sm:-ml-32 z-10 animate-downup">
               <img src="../assets/images/linkedin-gs.png" className="" alt="Linkedin" />
             </div>
             <div className="absolute -left-20 -bottom-20 max-[640px]:hidden">
@@ -729,7 +917,7 @@ const MainLayout: React.FC = () => {
 
       {/* <!-- Section Generative AI --> */}
       <div className="custom-container">
-        <div className="grid grid-cols-1 items-center gap-0 md:gap-6 lg:grid-cols-2 xl:grid-cols-[495px,1fr] ">
+        <div className="grid grid-cols-1 items-center gap-0 md:gap-6 md:grid-cols-2 xl:grid-cols-[495px,1fr] ">
        
           <div className="flex  flex-col items-start justify-between">
             <h4 className="sec-title">Stunning Visuals Powered by<span className="text-themeblue"> Generative AI</span></h4>
@@ -768,7 +956,7 @@ const MainLayout: React.FC = () => {
 
       {/* <!-- Section advance-AI-Engine --> */}
       <div className="custom-container">
-        <div className="grid grid-cols-1 items-center max-[575px]:my-4 gap-8 lg:gap-14 lg:grid-cols-2 xl:grid-cols-[550px,1fr]">
+        <div className="grid grid-cols-1 items-center max-[575px]:my-4 gap-8 lg:gap-14 md:grid-cols-2 xl:grid-cols-[550px,1fr]">
           <div className="hidden sm:flex  flex-col items-star">
           <motion.div initial={{ opacity: 0, x: -160 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5,delay: 0.1 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
             <div className=" w-full">
@@ -777,11 +965,16 @@ const MainLayout: React.FC = () => {
             </motion.div>
           </div>
 
-          <div className="flex  sm:hidden flex-col items-star">
+          <div className="flex  sm:hidden flex-col items-star mt-20 relative">
+          <div className="absolute -left-1/2 -top-32 bg-[#1877f24d] blur-[102px] h-[362px] w-[362px] rounded-full opacity-20 z-10">
+             {/* <img src="../assets/images/smarter-bg.webp" alt="smarter-bg" /> */}
+             </div>
           <motion.div initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5,  delay: 0.2  }} viewport={{ once: true, amount: 0.3 }} className="my-section">
          
             <div className=" w-full">
               <img src="../assets/images/advance-Ai-Engine.png" alt="GenerativeAI Engine" />
+             
+
             </div>
             </motion.div>
           </div>
@@ -997,10 +1190,12 @@ const MainLayout: React.FC = () => {
           </div>
 
         </div>
-        <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+       
         <div className="grid grid-cols-1 md:grid-cols-3 items-center  gap-3 lg:gap-6 max-w-[1200px] mx-auto mt-8 lg:mt-10 xl:mt-20 ">
-          <div className="col-span-1 mb-10 md:mb-0">
-            <div className="flex flex-wrap flex-col p-4 lg:py-8 lg:px-6 rounded-[40px] border border-[#D9D9D9] relative z-10">
+      
+          <div className="col-span-1">
+          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+            <div className="flex flex-wrap flex-col p-4 lg:py-8 lg:px-6 rounded-[40px] border border-[#D9D9D9] relative z-10 mt-10 md:mb-0">
               <div className="absolute top-0 left-0 -z-10  h-full">
                 <img src="../assets/images/pro-package.png" className="h-full w-full rounded-[40px]" alt="pro-package" />
               </div>
@@ -1043,9 +1238,10 @@ const MainLayout: React.FC = () => {
               </div>
             </div>
 
+          </motion.div>
           </div>
-
-          <div className="col-span-1 mb-10 md:mb-0 max-[767px]:-order-1">
+          <div className="col-span-1  max-[767px]:-order-1">
+          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
             <div className="flex flex-wrap flex-col p-4 lg:py-8 lg:px-6 rounded-[40px] z-10 relative">
               <div className="h-full w-full mx-auto absolute top-0 left-0 -z-10">
                 <img src="../assets/images/starter-package-bg.png" className="h-full w-full rounded-[40px] " alt="package-bg" />
@@ -1102,11 +1298,11 @@ const MainLayout: React.FC = () => {
 
               </ul>
             </div>
+          </motion.div>
           </div>
-
-
           <div className="col-span-1">
-            <div className="flex flex-wrap flex-col p-4 lg:py-8 lg:px-6 rounded-[40px] border border-[#D9D9D9] relative z-10">
+          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+            <div className="flex flex-wrap flex-col p-4 lg:py-8 lg:px-6 rounded-[40px] border border-[#D9D9D9] relative z-10 mt-10 md:mb-0">
               <div className="absolute top-0 right-0 -z-10 h-full">
                 <img src="../assets/images/unlimited-package.png" className="h-full w-full rounded-[40px]" alt="unlimited-package" />
               </div>
@@ -1149,9 +1345,10 @@ const MainLayout: React.FC = () => {
               </div>
             </div>
 
+          </motion.div>
           </div>
         </div>
-        </motion.div>
+        
       </div>
       {/* <!-- End Section Pricing --> */}
 
@@ -1215,9 +1412,10 @@ const MainLayout: React.FC = () => {
                 Got questions? We’ve got answers! Here are some of the most common queries about PostReach AI.</p>
             </div>
           </div>
-          <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.1 }} className="my-section">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 mb-8 xl:mb-10">
+         
           {latestBlog.map((item,index) => (
+             <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.1 }} className="my-section">
               <div className="blog-col" onClick={() => handleBlogDetail(item._id)} key={index}>
               <div className="blog-img-thumb">
               <img src={urlFor(item.blog_image).url()} className="h-full w-full rounded-xl" alt="blog-1" />
@@ -1236,12 +1434,14 @@ const MainLayout: React.FC = () => {
                 </div>
               </div>
             </div>
+            </motion.div>
             ))}
+            
           </div>
           <div className="grid grid-cols-1 items-center justify-center">
             <a onClick={handleViewBlog} className="mx-auto w-full sm:w-auto min-w-40 sm:max-w-max inline-flex items-center justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark cursor-pointer">View more </a>
           </div>
-          </motion.div>
+          
         </div>
       </div>
       {/* <!-- End Section Insights & Tips to Grow Your Social Media --> */}
@@ -1261,7 +1461,7 @@ const MainLayout: React.FC = () => {
               <h4 className="sec-title max-[575px]:text-[32px] max-[575px]:leading-[48px] w-full mb-0 text-white">Ready to Boost Your Social Media?</h4>
               <p className="para-text max-w-[520px] mb-3 text-white">
                 Start your free trial today and experience the power of PostReach AI. Simplify your social media management, save time, and grow your Business or Brand effortlessly. </p>
-              <a href="#" className="max-[640px]:mt-3 my-6 md:my-0 w-full sm:w-auto  min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-[#0A2761] bg-white  hover:bg-[#0A2761] hover:border-white hover:text-white">Start Your Free Trial Now!
+              <a href="#" className="max-[640px]:mt-3 my-6 lg:my-0 w-full sm:w-auto  min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-[#0A2761] bg-white  hover:bg-[#0A2761] hover:border-white hover:text-white">Start Your Free Trial Now!
               </a>
 
             </div>

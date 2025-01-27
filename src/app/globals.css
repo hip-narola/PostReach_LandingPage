@@ -32,8 +32,15 @@ body {
       @apply flex items-center justify-start max-w-[calc(100%-2rem)] min-[1365px]:max-w-[1200px]  w-full  mx-auto px-0 py-4 lg:py-3 rounded-2xl text-[#525252] gap-6 xl:gap-10;
   }
   .sidenav{
-    @apply w-full h-[100vh] bg-[#000000B2] z-[100] fixed top-0 left-0;
+    @apply w-full h-[100vh] bg-[#000000B2] z-[100] fixed top-0 -left-full block lg:hidden;
   }
+  .sidenav{
+    transition: 0.25s ease-in-out;
+  }
+  .sidenav.function{
+    transition: 0.25s ease-in-out;
+    left: 0;
+}
   .custom-container{
       @apply mx-auto max-w-[calc(100%-2rem)] pt-6 pb-6  min-[1365px]:max-w-[1200px] px-0 xl:px-0 xl:pt-12 xl:pb-12;
   }
@@ -264,14 +271,14 @@ ul.simple-easy-list .list-dotted-line:before {
 }
 
 .our-customer-slider button.react-multiple-carousel__arrow {
-  @apply  min-h-8  min-w-8  max-w-8  w-8 bottom-0 rounded-full border border-themeblue bg-white;
+  @apply  min-h-10  min-w-10  max-w-10  w-20 bottom-0 rounded-full border border-themeblue bg-white;
  
 }
 .our-customer-slider button.react-multiple-carousel__arrow:hover{
   background: #004BDE;
 }
 .our-customer-slider ul {
-  @apply pt-0 lg:pt-6 xl:pt-12 pb-12 ; 
+  @apply pt-0 lg:pt-6 xl:pt-12 pb-12 md:pb-16 ; 
  }
 
 .our-customer-slider button.react-multiple-carousel__arrow::before {

@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
                 <div className="">
                 <div className="marquee-container">
                     <div className="marquee">
-                    <img  src="../assets/images/marquee.png"  alt="marquee" />
+                    <img  src="../assets/images/marquee.webp"  alt="marquee" />
                         {/* {images}
                         {images}  */}
                         {/* Duplicate the images for seamless scrolling */}
