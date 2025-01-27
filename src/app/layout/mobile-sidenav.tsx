@@ -32,8 +32,7 @@ const Sidenav: React.FC = () => {
     
     return(
         <div>
-            {context.getMobilenav &&
-            <div className="sidenav">
+            <div className={`sidenav ${context.getMobilenav ? open : ''}`}>
              <div className="flex flex-col gap-0 p-0 bg-white min-h-[100vh] max-w-[calc(100vw-32px)]">
                 <div className="flex justify-between items-center p-4 mb-4 border-b-1 border-[#EFEFEF]">
                     <a  onClick={() => handleNavigation('home')} className="cursor-pointer">
@@ -57,8 +56,7 @@ const Sidenav: React.FC = () => {
                   <a href="#" className="flex-[50%] inline-flex justify-center text-center bg-themeblue text-base  font-bold px-2 py-3 rounded-full text-white border border-themeblue hover:border-textdark hover:text-textdark hover:bg-white">Log in</a>
                 </div>
           </div>
-          </div>
-            }
+            </div>
         </div>
     )
 }
