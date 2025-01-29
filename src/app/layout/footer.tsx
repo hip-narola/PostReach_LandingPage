@@ -56,23 +56,23 @@ const Footer: React.FC = () => {
                 </li>
                 <li className="h-6 w-6">
                     <a href="https://www.facebook.com/postreachai" target='blank'>
-                    <img src='../assets/icons/Social-icons/facebook-white.svg' alt="facebook" />
+                    <img src='../assets/icons/Social-icons/facebook-white.webp' alt="facebook" />
                     </a>
                 </li>
                 <li className="h-6 w-6">
                     <a href="https://www.instagram.com/postreachai" target='blank'>
-                    <img src='../assets/icons/Social-icons/instagram-white.svg' alt="Instagram" />
+                    <img src='../assets/icons/Social-icons/instagram-white.webp' alt="Instagram" />
                     </a>
                 </li>
 
                 <li className="h-6 w-6">
                     <a href="https://www.linkedin.com/postreachai" target='blank'>
-                    <img src='../assets/icons/Social-icons/linkedin-white.svg' alt="linkdein" />
+                    <img src='../assets/icons/Social-icons/linkedin-white.webp' alt="linkdein" />
                     </a>
                 </li>
                 <li className="h-6 w-6">
                     <a href="https://x.com/PostReachAI" target='blank'>
-                    <img src='../assets/icons/Social-icons/twitter-whte.svg' alt="twitter" />
+                    <img src='../assets/icons/Social-icons/twitter-whte.webp' alt="twitter" />
                     </a>
                 </li>
                 </ul>

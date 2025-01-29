@@ -18,7 +18,6 @@ import moment from 'moment';
 import { urlFor } from '../../sanity/client';
 import { useLoading } from '../context/LoadingContext';
 import { customerReview } from '../JSON-data/client-review';
-import  Gettingstartedsvg from '../common/getting-started-svg';
 
 const MainLayout: React.FC = () => {
   const router = useRouter();
@@ -32,6 +31,13 @@ const MainLayout: React.FC = () => {
   if (!context) {
     throw new Error('DataContext must be used within a DataProvider');
   }
+
+    // Group products in sets of 3 for mobile
+    const groupedProducts = [];
+    for (let i = 0; i < customerReview.length; i += 3) {
+      groupedProducts.push(customerReview.slice(i, i + 3));
+    }
+  
 
   const itemClasses = {
     base: "accordion",
@@ -714,7 +720,7 @@ const MainLayout: React.FC = () => {
 
 
       {/* <!-- Section Getting Started --> */}
-      <div className="custom-container container-lg relative z-0 max-[767px]:my-2 max-[767px]:px-4 p-0 lg:p-10 xl:p-16" >
+      <div className="custom-container min-[1232px]:max-w-[1200px] container-lg relative z-0 max-[767px]:my-2 max-[767px]:px-4 p-0 lg:py-10 xl:py-16" >
         <div className="getting-stareted-after">
         </div>
         <div className="grid grid-cols-1 items-center justify-center mb-0 md:mb-8 lg:mb-12">
@@ -725,7 +731,7 @@ const MainLayout: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1fr,508px]  gap-5 lg:gap-8 max-[640px]:w-[calc(100%+2rem)] max-[640px]:max-w-[calc(100%+2rem)]  max-[640px]:-ml-4 getting-stareted-main">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[620px,1fr]  xl:grid-cols-[1fr,508px]  gap-5 lg:gap-2 xl:gap-8 max-[640px]:w-[calc(100%+2rem)] max-[640px]:max-w-[calc(100%+2rem)]  max-[640px]:-ml-4 getting-stareted-main">
           <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
             <div className="flex relative max-[768px]:max-w-[375px] max-[768px]:m-auto max-[1280px]:overflow-hidden">
               <div className="hidden sm:block" >
@@ -746,7 +752,7 @@ const MainLayout: React.FC = () => {
               <div className="absolute -left-20 -bottom-20 -z-10  max-[640px]:hidden">
                 <img src="../assets/images/getting-started-shadow.png" className="" alt="getting-started-shadow" />
               </div>
-              <div className="absolute left-5 -top-[26px] -z-10 max-[1300px]:hidden">
+              <div className="absolute left-5 -top-[26px] -z-10 max-[1023px]:hidden">
               <div className="animatedsvg-wrapper">
               <svg
         width="512"
@@ -1021,12 +1027,14 @@ const MainLayout: React.FC = () => {
               Hear why businesses and creators love PostReach</p>
           </div>
         </div>
+
+        {/* desktop */}
         <div className="grid grid-cols-1 gap-6">
           <Carousel
             additionalTransfrom={0}
             arrows={customerReview.length > 1} // Only show arrows if more than 1 item
             autoPlaySpeed={3000}
-            infinite={false}
+            infinite={true}
             centerMode={false}
             className="our-customer-slider"
             containerClass="container-fluid"
@@ -1040,22 +1048,14 @@ const MainLayout: React.FC = () => {
               desktop: {
                 breakpoint: { max: 3000, min: 1024 },
                 items: 3,
-              },
-              mobile: {
-                breakpoint: { max: 640, min: 0 },
-                items: 1,
-              },
-              tablet: {
-                breakpoint: { max: 1024, min: 600 },
-                items: 2,
-              },
+              }
             }}
             rewind={false}
             rewindWithAnimation={false}
             rtl={false}
             shouldResetAutoplay
             sliderClass=""
-            slidesToSlide={3}
+            slidesToSlide={1}
             swipeable
 
           >
@@ -1099,6 +1099,72 @@ const MainLayout: React.FC = () => {
             ))}
           </Carousel>
         </div>
+        {/* desktop */}
+
+
+        {/* mobile - tablet */}
+        {/* <div className="relative">
+          <Carousel
+            responsive={{
+              tablet: { breakpoint: { max: 1024, min: 464 }, items: 2 },
+              mobile: { breakpoint: { max: 464, min: 0 }, items: 1 }
+            }}
+            arrows={true}
+            swipeable={true}
+            draggable={true}
+            showDots={false}
+            ssr={true} 
+            infinite={false}
+            autoPlay={false}
+            keyBoardControl={true}
+            containerClass="carousel-container"
+            itemClass="carousel-item-vertical"
+            customTransition="transform 300ms ease-in-out"
+          >
+            {groupedProducts.map((group, index) => (
+              <div key={index} className="flex flex-col gap-4">
+                {group.map((item,index1) => (
+                 <div className="flex  relative z-10 px-[3px] md:px-3" key={index1}>
+
+                <div className="flex  flex-col items-start bg-white rounded-3xl border border-[#EFEFEF] pt-6 pb-6 xl:pb-12 px-5 md:px-6 xl:px-8 h-full">
+                  <div className="ml-auto -mr-1">
+                    <img src={item.profileImage} className="max-w-9" alt="testimonial" />
+                  </div>
+                  <h4 className="text-[#292929] text-base font-bold">{item.title}</h4>
+                  <p className=" text-sm sm:text-base text-[#656565] mt-1 mb-6">
+                    {item.description}
+                  </p>
+                  <div className="mt-auto flex items-center gap-3">
+                    <div className="h-10 w-10 min-w-10 sm:w-12 sm:h-12 sm:min-w-12 rounded-full overflow-hidden">
+                      <img
+                        src={item.img}
+                        style={{
+                          display: 'block',
+                          height: '100%',
+                          margin: 'auto',
+                          width: '100%',
+                          objectFit: 'cover',
+                          borderRadius: '50%',
+                          background: '#D9D9D9',
+                        }}
+                        alt='User Image'
+                      />
+                    </div>
+                    <div>
+                      <h4 className="text-sm  text-[#292929] font-semibold">{item.clientName}</h4>
+                      <p className="text-sm  font-normal text-[#7C7C7C]">{item.designation}</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+                ))}
+              </div>
+            ))}
+          </Carousel>
+        </div> */}
+        {/* mobile - tablet */}
+        
       </div>
       {/* <!-- End Section What Our Happy Clients Say --> */}
 
@@ -1141,20 +1207,20 @@ const MainLayout: React.FC = () => {
 
       {/* <!-- Section Seamless Integrations --> */}
 
-      <div className="custom-container relative z-0 max-[575px]:pt-10 max-[575px]:pb-4  pt-7 my-12" ref={integrationRef}>
+      <div className="custom-container max-[767px]:max-w-[343px] min-[1232px]:max-w-[1200px] lg:pb-12 relative z-0 max-[575px]:pt-10 max-[575px]:pb-4  pt-7 my-12" ref={integrationRef}>
         <div className="absolute left-0 top-0 h-full w-full overflow-hidden -z-10">
-          <img src="../assets/images/SeamlessIntegrations-bg.png" className="max-w-full max-[640px]:hidden block min-[1365px]:max-w-[1200px] mx-auto  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
-          <img src="../assets/images/SeamlessIntegrations-bg-mobile.svg" className="max-w-full max-[640px]:block hidden object-top min-[1365px]:max-w-[1200px] mx-auto  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
+          <img src="../assets/images/SeamlessIntegrations-bg.png" className="max-w-full max-[767px]:hidden block min-[1365px]:max-w-[1200px] mx-auto seamless-bg  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
+          <img src="../assets/images/SeamlessIntegrations-bg-mobile.svg" className="max-w-full max-[767px]:block hidden object-top min-[1365px]:max-w-[1200px] mx-auto  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
         </div>
         <div className="grid grid-cols-1 items-center gap-x-6 lg:gap-x-10 xl:gap-x-16">
           <div className="col-span-1 text-center">
-            <div className="mx-auto max-w-[520px] max-[520px]:px-5 max-[520px]:pt-6">
-              <h4 className="sec-title w-full text-white max-[640px]:leading-[29px] max[640px]:mb-3"><span className="text-themeblue">Seamless Integrations</span> with Your Favorite Platforms</h4>
-              <p className="para-text  mx-auto max-[640px]:text-white max-[640px]:leading-[21px]">PostReach AI seamlessly integrates with your favorite social media platforms, simplifying your management and boosting efficiency.</p>
+            <div className="mx-auto max-w-[520px] max-[767px]:px-5 max-[767px]:pt-6">
+              <h4 className="sec-title lg:text-[40px] lg:leading-[52px] w-full text-white max-[640px]:leading-[29px] max[640px]:mb-3"><span className="text-themeblue">Seamless Integrations</span> with Your Favorite Platforms</h4>
+              <p className="para-text  mx-auto text-white max-[767px]:leading-[21px]">PostReach AI seamlessly integrates with your favorite social media platforms, simplifying your management and boosting efficiency.</p>
             </div>
           </div>
           <div className="col-span-1 text-center">
-            <ul className="w-full inline-flex justify-center gap-x-0 gap-y-12 max-[767px]:max-w-[245px] max-[767px]:flex-wrap md:gap-12 lg:gap-20 xl:gap-24 items-center pt-14 pb-10 lg:pt-28 lg:pb-16 ">
+            <ul className="w-full inline-flex justify-center gap-x-0 gap-y-12 max-[767px]:max-w-[245px] max-[767px]:flex-wrap md:gap-12 lg:gap-20 xl:gap-24 items-center pt-14 pb-10 lg:pt-28 lg:pb-8 ">
 
               <li className="max-[767px]:text-center max-[767px]:w-1/2">
                 <div className="h-[72px] w-[72px] sm:h-16 sm:w-16 rounded-full p-2 border-[0px] bg-white border-white  mx-auto animate-downup-sm delay-50">
@@ -1228,22 +1294,22 @@ const MainLayout: React.FC = () => {
                 </p>
                 <ul className="w-full inline-flex justify-start gap-3 sm:gap-4 items-center mt-4 sm:mt-6">
                   <li>
-                    <div className="h-6 w-6 mx-auto">
+                    <div className="h-6 w-6 lg:h-7 lg:w-7 mx-auto">
                       <img src="../assets/icons/facebook.svg" alt="facebook" />
                     </div>
                   </li>
                   <li>
-                    <div className="h-6 w-6 mx-auto">
+                    <div className="h-6 w-6 lg:h-7 lg:w-7 mx-auto">
                       <img src="../assets/icons/instagram.svg" alt="instagram" />
                     </div>
                   </li>
                   <li>
-                    <div className="h-6 w-6 mx-auto">
-                      <img src="../assets/icons/twitter.svg" alt="twitter" />
+                    <div className="h-6 w-6 lg:h-7 lg:w-7 mx-auto">
+                      <img src="../assets/icons/twitter-black.svg" alt="twitter" />
                     </div>
                   </li>
                   <li>
-                    <div className="h-6 w-6 mx-auto">
+                    <div className="h-6 w-6 lg:h-7 lg:w-7 mx-auto">
                       <img src="../assets/icons/linkedin.svg" alt="linkedin" />
                     </div>
                   </li>
@@ -1270,22 +1336,22 @@ const MainLayout: React.FC = () => {
                 </p>
                 <ul className="w-full inline-flex justify-start gap-3 sm:gap-4 items-center mt-4 sm:mt-6">
                   <li>
-                    <div className="h-6 w-6 mx-auto">
+                    <div className="h-6 w-6 lg:h-7 lg:w-7 mx-auto">
                       <img src="../assets/icons/facebook.svg" alt="facebook" />
                     </div>
                   </li>
                   <li>
-                    <div className="h-6 w-6 mx-auto">
+                    <div className="h-6 w-6 lg:h-7 lg:w-7 mx-auto">
                       <img src="../assets/icons/instagram.svg" alt="instagram" />
                     </div>
                   </li>
                   <li>
-                    <div className="h-6 w-6 mx-auto">
-                      <img src="../assets/icons/twitter.svg" alt="twitter" />
+                    <div className="h-6 w-6 lg:h-7 lg:w-7 mx-auto">
+                      <img src="../assets/icons/twitter-white.svg" alt="twitter" />
                     </div>
                   </li>
                   <li>
-                    <div className="h-6 w-6 mx-auto">
+                    <div className="h-6 w-6 lg:h-7 lg:w-7 mx-auto">
                       <img src="../assets/icons/linkedin.svg" alt="linkedin" />
                     </div>
                   </li>
@@ -1335,22 +1401,22 @@ const MainLayout: React.FC = () => {
                 </p>
                 <ul className="w-full inline-flex justify-start gap-3 sm:gap-4 items-center mt-4 sm:mt-6">
                   <li>
-                    <div className="h-6 w-6 mx-auto">
+                    <div className="h-6 w-6 lg:h-7 lg:w-7 mx-auto">
                       <img src="../assets/icons/facebook.svg" alt="facebook" />
                     </div>
                   </li>
                   <li>
-                    <div className="h-6 w-6 mx-auto">
+                    <div className="h-6 w-6 lg:h-7 lg:w-7 mx-auto">
                       <img src="../assets/icons/instagram.svg" alt="instagram" />
                     </div>
                   </li>
                   <li>
-                    <div className="h-6 w-6 mx-auto">
-                      <img src="../assets/icons/twitter.svg" alt="twitter" />
+                    <div className="h-6 w-6 lg:h-7 lg:w-7 mx-auto">
+                      <img src="../assets/icons/twitter-black.svg" alt="twitter" />
                     </div>
                   </li>
                   <li>
-                    <div className="h-6 w-6 mx-auto">
+                    <div className="h-6 w-6 lg:h-7 lg:w-7 mx-auto">
                       <img src="../assets/icons/linkedin.svg" alt="linkedin" />
                     </div>
                   </li>

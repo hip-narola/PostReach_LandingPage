@@ -482,6 +482,13 @@ ul.simple-easy-list .list-dotted-line:before {
   }
 }
 /* loader CSS */
+@media(max-width:1220px){
+  .seamless-bg{
+    border: 6px solid #FFFFFF63;
+    background: #000;
+    object-fit: none;
+  }
+}
 .getting-stareted-main{
     border: 6px solid #FFFFFF63;
     box-shadow: 0px 4px 100px 0px #F3F3F380;
@@ -501,7 +508,7 @@ ul.simple-easy-list .list-dotted-line:before {
   opacity: 0.3;
   border-radius: 50%;
 }
-@media(max-width:1365px){
+@media(max-width:1280px){
   .getting-stareted-main{
     padding-right: 0px;
 }
