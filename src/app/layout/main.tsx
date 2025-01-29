@@ -720,7 +720,7 @@ const MainLayout: React.FC = () => {
 
 
       {/* <!-- Section Getting Started --> */}
-      <div className="custom-container min-[1232px]:max-w-[1200px] container-lg relative z-0 max-[767px]:my-2 max-[767px]:px-4 p-0 lg:py-10 xl:py-16" >
+      <div className="custom-container min-[1232px]:max-w-[1200px] container-lg relative z-0 max-[640px]:my-2 max-[640px]:px-4 p-0 lg:py-10 xl:py-16" >
         <div className="getting-stareted-after">
         </div>
         <div className="grid grid-cols-1 items-center justify-center mb-0 md:mb-8 lg:mb-12">
@@ -731,13 +731,16 @@ const MainLayout: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[620px,1fr]  xl:grid-cols-[1fr,508px]  gap-5 lg:gap-2 xl:gap-8 max-[640px]:w-[calc(100%+2rem)] max-[640px]:max-w-[calc(100%+2rem)]  max-[640px]:-ml-4 getting-stareted-main">
+        <div className="grid grid-cols-1  lg:grid-cols-[620px,1fr]  xl:grid-cols-[1fr,508px]  gap-5 lg:gap-2 xl:gap-8 max-[640px]:w-[calc(100%+2rem)] max-[640px]:max-w-[calc(100%+2rem)]  max-[640px]:-ml-4 getting-stareted-main">
           <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
-            <div className="flex relative max-[768px]:max-w-[375px] max-[768px]:m-auto max-[1280px]:overflow-hidden">
+            <div className="flex relative max-[1023px]:max-w-[620px] max-[640px]:max-w-[375px] max-[1023px]:m-auto max-[1280px]:overflow-hidden">
               <div className="hidden sm:block" >
               <img src="../assets/images/getting-started-img.svg" alt="about" />
 {/* <Gettingstartedsvg /> */}
               </div>
+              {/* <div className="block sm:hidden">
+              <img src="../assets/images/getting-started-img-mobile-new.svg.svg" alt="about" />
+              </div> */}
               {/* <img src="../assets/images/getting-started-img.svg" className="max-w-full w-full z-10 hidden sm:block" alt="about" /> */}
               <img src="../assets/images/getting-started-img-mobile.png" className="max-w-full w-full z-10 block sm:hidden " alt="about" />
               <div className="absolute max-[640px]:max-w-12 left-12 sm:left-4 xl:left-20 top-16 z-10 animate-updown">
@@ -752,7 +755,9 @@ const MainLayout: React.FC = () => {
               <div className="absolute -left-20 -bottom-20 -z-10  max-[640px]:hidden">
                 <img src="../assets/images/getting-started-shadow.png" className="" alt="getting-started-shadow" />
               </div>
-              <div className="absolute left-5 -top-[26px] -z-10 max-[1023px]:hidden">
+
+             
+              <div className="absolute left-5 -top-[26px] -z-10 max-[640px]:hidden">
               <div className="animatedsvg-wrapper">
               <svg
         width="512"
@@ -1001,7 +1006,7 @@ const MainLayout: React.FC = () => {
             </motion.div>
           </div>
           <div className="flex  flex-col items-start justify-between">
-            <h4 className="sec-title max-[575px]:text-[28px] max-[575px]:leading-10">Smarter Social Media Powered by our <span className="text-themeblue"> Advanced AI Engine</span></h4>
+            <h4 className="sec-title max-[1023px]:text-[28px] max-[1023px]:leading-10">Smarter Social Media Powered by our <span className="text-themeblue"> Advanced AI Engine</span></h4>
             <p className="para-text">
               PostReach harnesses the most advanced large language models (LLMs), always updated to the latest versions for maximum performance. Unlike other tools, there’s no need to choose a model – we handle it all to deliver the best results effortlessly.
             </p>
@@ -1022,21 +1027,21 @@ const MainLayout: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 items-center justify-center mb-6 lg:mb-0">
           <div className="flex  flex-col items-start justify-center text-left">
-            <h4 className="sec-title  w-full max-[575px]:text-[28px] max-[575px]:leading-10">What Our<span className="text-themeblue"> Happy Clients Say</span></h4>
+            <h4 className="sec-title  w-full max-[1023px]:text-[28px] max-[1023px]:leading-10">What Our<span className="text-themeblue"> Happy Clients Say</span></h4>
             <p className="para-text">
               Hear why businesses and creators love PostReach</p>
           </div>
         </div>
 
         {/* desktop */}
-        <div className="grid grid-cols-1 gap-6">
+        <div className=" grid-cols-1 gap-6 hidden sm:grid">
           <Carousel
             additionalTransfrom={0}
             arrows={customerReview.length > 1} // Only show arrows if more than 1 item
             autoPlaySpeed={3000}
             infinite={true}
             centerMode={false}
-            className="our-customer-slider"
+            className="our-customer-slider "
             containerClass="container-fluid"
             draggable
             focusOnSelect={false}
@@ -1048,7 +1053,8 @@ const MainLayout: React.FC = () => {
               desktop: {
                 breakpoint: { max: 3000, min: 1024 },
                 items: 3,
-              }
+              },
+              tablet: { breakpoint: { max: 991, min: 640 }, items: 2 }
             }}
             rewind={false}
             rewindWithAnimation={false}
@@ -1061,11 +1067,11 @@ const MainLayout: React.FC = () => {
           >
             {/* start slide-item */}
             {customerReview && customerReview.map((item, index) => (
-              <div className="flex  relative z-10 px-[3px] md:px-3" key={index}>
+              <div className="flex  relative z-10  px-[3px] md:px-2 xl:px-3 h-full" key={index}>
 
                 <div className="flex  flex-col items-start bg-white rounded-3xl border border-[#EFEFEF] pt-6 pb-6 xl:pb-12 px-5 md:px-6 xl:px-8 h-full">
                   <div className="ml-auto -mr-1">
-                    <img src={item.profileImage} className="max-w-9" alt="testimonial" />
+                    <img src={item.profileImage} className="max-w-[25px] md:max-w-9" alt="testimonial" />
                   </div>
                   <h4 className="text-[#292929] text-base font-bold">{item.title}</h4>
                   <p className=" text-sm sm:text-base text-[#656565] mt-1 mb-6">
@@ -1103,32 +1109,33 @@ const MainLayout: React.FC = () => {
 
 
         {/* mobile - tablet */}
-        <div className="relative">
+        <div className="grid grid-cols-1 gap-6  sm:hidden">
           <Carousel
             responsive={{
-              tablet: { breakpoint: { max: 1024, min: 464 }, items: 2 },
-              mobile: { breakpoint: { max: 464, min: 0 }, items: 1 }
+              mobile: { breakpoint: { max: 640, min: 0 }, items: 1 }
             }}
             arrows={true}
             swipeable={true}
             draggable={true}
             showDots={false}
             ssr={true} 
-            infinite={false}
-            autoPlay={false}
+            infinite={true}
+            centerMode={false}
+            autoPlay={true}
             keyBoardControl={true}
+            className="our-customer-slider our-customer-slider-mobile"
             containerClass="carousel-container"
             itemClass="carousel-item-vertical"
             customTransition="transform 300ms ease-in-out"
           >
             {groupedProducts.map((group, index) => (
-              <div key={index} className="flex flex-col gap-4">
+              <div key={index} className="flex flex-col gap-3 h-full">
                 {group.map((item,index1) => (
-                 <div className="flex  relative z-10 px-[3px] md:px-3" key={index1}>
+                 <div className="flex  relative z-10 px-[3px] md:px-3 h-full" key={index1}>
 
-                <div className="flex  flex-col items-start bg-white rounded-3xl border border-[#EFEFEF] pt-6 pb-6 xl:pb-12 px-5 md:px-6 xl:px-8 h-full">
+                <div className="flex  flex-col items-start bg-white rounded-3xl border border-[#EFEFEF] pt-4 pb-6 xl:pb-12 px-5 md:px-6 xl:px-8 h-full">
                   <div className="ml-auto -mr-1">
-                    <img src={item.profileImage} className="max-w-9" alt="testimonial" />
+                    <img src={item.profileImage} className="max-w-[25px] md:max-w-9" alt="testimonial" />
                   </div>
                   <h4 className="text-[#292929] text-base font-bold">{item.title}</h4>
                   <p className=" text-sm sm:text-base text-[#656565] mt-1 mb-6">
@@ -1170,34 +1177,34 @@ const MainLayout: React.FC = () => {
 
       {/* <!-- Section As Featured In --> */}
 
-      <div className="custom-container" >
+      <div className="custom-container container-lg" >
         <div className="grid grid-cols-1 items-center gap-x-6 lg:gap-x-10 xl:gap-x-16">
           <div className="col-span-1 text-center">
-            <h4 className="sec-title w-full max-[575px]:text-[28px] max-[575px]:leading-10">As Featured In</h4>
+            <h4 className="sec-title w-full max-[1023px]:text-[28px] max-[1023px]:leading-10">As Featured In</h4>
           </div>
           <div className="col-span-1 our-customer-slider mt-4">
             <div className="marquee-container flex relative z-10 px-0 sm:px-8">
               <div className="marquee marquee-on">
-                <img src="../assets/images/featuredIn-slider/featuredIn1.webp" alt="featuredIn1" />
+                <img src="../assets/images/featuredIn-slider/featuredIn1.png" alt="featuredIn1" />
                 <img src="../assets/images/featuredIn-slider/featuredIn2.webp" alt="featuredIn2" />
                 <img src="../assets/images/featuredIn-slider/featuredIn3.webp" alt="featuredIn3" />
                 <img src="../assets/images/featuredIn-slider/featuredIn4.webp" alt="featuredIn4" />
                 <img src="../assets/images/featuredIn-slider/featuredIn5.webp" alt="featuredIn5" />
-                <img src="../assets/images/featuredIn-slider/featuredIn6.webp" alt="featuredIn6" />
+                {/* <img src="../assets/images/featuredIn-slider/featuredIn6.webp" alt="featuredIn6" /> */}
                 {/* Duplicate the images for seamless scrolling */}
-                <img src="../assets/images/featuredIn-slider/featuredIn1.webp" alt="featuredIn1" />
+                <img src="../assets/images/featuredIn-slider/featuredIn1.png" alt="featuredIn1" />
                 <img src="../assets/images/featuredIn-slider/featuredIn2.webp" alt="featuredIn2" />
                 <img src="../assets/images/featuredIn-slider/featuredIn3.webp" alt="featuredIn3" />
                 <img src="../assets/images/featuredIn-slider/featuredIn4.webp" alt="featuredIn4" />
                 <img src="../assets/images/featuredIn-slider/featuredIn5.webp" alt="featuredIn5" />
-                <img src="../assets/images/featuredIn-slider/featuredIn6.webp" alt="featuredIn6" />
+                {/* <img src="../assets/images/featuredIn-slider/featuredIn6.webp" alt="featuredIn6" /> */}
 
-                <img src="../assets/images/featuredIn-slider/featuredIn1.webp" alt="featuredIn1" />
+                <img src="../assets/images/featuredIn-slider/featuredIn1.png" alt="featuredIn1" />
                 <img src="../assets/images/featuredIn-slider/featuredIn2.webp" alt="featuredIn2" />
                 <img src="../assets/images/featuredIn-slider/featuredIn3.webp" alt="featuredIn3" />
                 <img src="../assets/images/featuredIn-slider/featuredIn4.webp" alt="featuredIn4" />
                 <img src="../assets/images/featuredIn-slider/featuredIn5.webp" alt="featuredIn5" />
-                <img src="../assets/images/featuredIn-slider/featuredIn6.webp" alt="featuredIn6" />
+                {/* <img src="../assets/images/featuredIn-slider/featuredIn6.webp" alt="featuredIn6" /> */}
               </div>
             </div>
           </div>
@@ -1262,7 +1269,10 @@ const MainLayout: React.FC = () => {
 
       {/* <!-- Section Pricing  --> */}
 
-      <div className="custom-container max-[640px]:mt-10" ref={pricingRef}>
+      <div className="custom-container relative max-[640px]:mt-10" ref={pricingRef}>
+        <div className="absolute w-[398px] h-[530px] -top-56 -right-40 sm:hidden">
+        <img src="../assets/images/blur-circle.png" className="h-full w-full" alt="blur-circle" />
+          </div>
         <div className="grid grid-cols-1 items-center gap-x-6 lg:gap-x-10 xl:gap-x-16 ">
           <div className="col-span-1 text-center">
             {/* <p className="sec-sub-title w-full">Pricing</p> */}
