@@ -34,6 +34,10 @@ const { setIsLoading } = useLoading();
     context.setMobilenav(true);
   }
 
+  const handleLogin = () =>{
+    window.open(`${process.env.NEXT_PUBLIC_POSTREACH_URL}/auth/signin`, "_blank", "noopener,noreferrer");
+  }
+
   return (
     <div className="">
         <header className="fixed  bg-white inset-x-0 top-0 z-50 max-w-[100vw] max-[1023px]:shadow-[0px_4px_12px_0px_#10194208]">
@@ -59,8 +63,8 @@ const { setIsLoading } = useLoading();
             <a onClick={() => handleNavigation('blog')} className="text-base font-normal leading-6 text-[#525252] cursor-pointer">Blog</a>
           </div>
           <div className="hidden gap-x-3 lg:flex lg:flex-1 lg:justify-end ">
-            <a href="#" className="min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-textdark border border-textdark hover:border-themeblue hover:text-themeblue">Start Free Trial</a>
-            <a href="#" className="min-w-40 inline-flex justify-center text-center bg-themeblue text-base leading-6 font-bold px-10 py-3 rounded-full text-white border border-themeblue hover:border-textdark hover:text-textdark hover:bg-white">Log in</a>
+            <a onClick={handleLogin} className=" cursor-pointer min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-textdark border border-textdark hover:border-themeblue hover:text-themeblue">Start Free Trial</a>
+            <a onClick={handleLogin} className=" cursor-pointer min-w-40 inline-flex justify-center text-center bg-themeblue text-base leading-6 font-bold px-10 py-3 rounded-full text-white border border-themeblue hover:border-textdark hover:text-textdark hover:bg-white">Log in</a>
           </div>
         </nav>
 

@@ -1103,7 +1103,7 @@ const MainLayout: React.FC = () => {
 
 
         {/* mobile - tablet */}
-        {/* <div className="relative">
+        <div className="relative">
           <Carousel
             responsive={{
               tablet: { breakpoint: { max: 1024, min: 464 }, items: 2 },
@@ -1162,7 +1162,7 @@ const MainLayout: React.FC = () => {
               </div>
             ))}
           </Carousel>
-        </div> */}
+        </div>
         {/* mobile - tablet */}
         
       </div>

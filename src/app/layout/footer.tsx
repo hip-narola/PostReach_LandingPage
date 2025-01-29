@@ -19,6 +19,7 @@ const Footer: React.FC = () => {
         router.prefetch(navigations.privacyPolicy);
         router.prefetch(navigations.termsCondition);
         router.prefetch(navigations.home);
+        router.prefetch(navigations.blogList);
       }, []);
 
     const handleNavigation = (type:string) => {
@@ -26,6 +27,8 @@ const Footer: React.FC = () => {
             router.push(navigations.privacyPolicy);
         }else  if(type == 'terms'){
             router.push(navigations.termsCondition);
+        }else if(type == 'blog'){
+            router.push(navigations.blogList)
         }else if(type == 'home'){
             context.setData(type);
             if(pathname !== navigations.home) {
@@ -104,7 +107,7 @@ const Footer: React.FC = () => {
                     <a href="#">Help Center</a>
                     </li>
                     <li>
-                    <a href="#">Blog</a>
+                    <a className="cursor-pointer" onClick={() =>handleNavigation('blog')}>Blog</a>
                     </li>
                 </ul>
                 </div>
