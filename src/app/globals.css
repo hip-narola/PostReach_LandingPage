@@ -40,7 +40,7 @@ body {
   .sidenav.function{
     transition: 0.25s ease-in-out;
     left: 0;
-}
+  }
   .custom-container{
       @apply mx-auto max-w-[calc(100%-2rem)] pt-6 pb-6  min-[1365px]:max-w-[1200px] px-0 xl:px-0 xl:pt-12 xl:pb-12;
   }
@@ -436,10 +436,10 @@ ul.simple-easy-list .list-dotted-line:before {
 
 @keyframes marquee {
   0% {
-    transform: translateX(0);
+    transform: translateX(-100%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(0);
   }
 }
 
@@ -482,3 +482,39 @@ ul.simple-easy-list .list-dotted-line:before {
   }
 }
 /* loader CSS */
+.getting-stareted-main{
+    border: 6px solid #FFFFFF63;
+    box-shadow: 0px 4px 100px 0px #F3F3F380;
+    backdrop-filter: blur(10.800000190734863px);
+    border-radius: 24px;
+    padding-right: 24px;
+}
+.getting-stareted-after{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  filter: blur(130px);
+  background: #1877F2;
+  width: 240.16px;
+  height: 240.16px;
+  z-index: -11;
+  opacity: 0.3;
+  border-radius: 50%;
+}
+@media(max-width:1365px){
+  .getting-stareted-main{
+    padding-right: 0px;
+}
+}
+@media(max-width:768px){
+  .getting-stareted-main{
+    margin-top: 32px;
+    padding-right: 0;
+    padding-bottom: 32px;
+    box-shadow: 0px 2.07px 51.81px 0px #F3F3F380;
+    backdrop-filter: blur(5.595770835876465px);
+}
+.getting-stareted-after{
+  display: none;
+}
+}

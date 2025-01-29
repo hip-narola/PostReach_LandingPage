@@ -16,12 +16,18 @@ const { setIsLoading } = useLoading();
 
   const router = useRouter();
   const pathname = usePathname();
+
   const handleNavigation = (type:string) => {
     context.setData(type);
-    if(pathname !== navigations.home) {
-      setIsLoading(true);
-      router.push(navigations.home);
-    };
+    if(type == 'blog'){
+      router.push(navigations.blogList)
+    }else{
+      if(pathname !== navigations.home) {
+        setIsLoading(true);
+        router.push(navigations.home);
+      };
+    }
+    
   }
 
   const handleMenu = ( ) => {

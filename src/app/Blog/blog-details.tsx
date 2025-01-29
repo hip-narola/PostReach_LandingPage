@@ -30,6 +30,11 @@ const BlogDetail: React.FC = () => {
     getRecommondedBlogs();
   }, []);
 
+  useEffect(() => {
+    router.prefetch(navigations.blogList);
+    router.prefetch(navigations.blogDetail);
+  }, []);
+
   const getBlog = async (id: string) => {
     const blog = await client.fetch(routes.blogWithId, { id }, options);
     setBlog(blog[0]);
@@ -63,6 +68,10 @@ const BlogDetail: React.FC = () => {
   const handleViewBlog = () => {
     router.push(navigations.blogList)
   };
+
+  const handleBlogDetail = (postId :string ) => {
+    router.push(`${navigations.blogDetail}/${postId}`)
+}
 
   return (
     <div>
@@ -219,7 +228,7 @@ const BlogDetail: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {recommondedBlogs.map((item, index) => (
-              <div className="blog-col" key={index}>
+              <div className="blog-col" key={index} onClick={() => handleBlogDetail(item._id)}>
                 <div className="blog-img-thumb">
                   <img
                     src={urlFor(item.blog_image).url()}

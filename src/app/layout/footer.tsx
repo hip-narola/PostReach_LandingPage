@@ -1,6 +1,6 @@
 'use client'
 import { usePathname, useRouter } from 'next/navigation';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import navigations from '../navigation-list/navigation';
 import { DataContext } from '../context/shareData';
 import { useLoading } from '../context/LoadingContext';
@@ -14,6 +14,12 @@ const Footer: React.FC = () => {
     if (!context) {
         throw new Error('DataContext must be used within a DataProvider');
     }
+
+    useEffect(() => {
+        router.prefetch(navigations.privacyPolicy);
+        router.prefetch(navigations.termsCondition);
+        router.prefetch(navigations.home);
+      }, []);
 
     const handleNavigation = (type:string) => {
         if(type == 'privacy'){
@@ -72,7 +78,7 @@ const Footer: React.FC = () => {
                 </ul>
                 <div className="">
                 <div className="marquee-container">
-                    <div className="marquee">
+                    <div className="marquee max-h-16 lg:max-h-[72px] ">
                     <img  src="../assets/images/marquee.webp"  alt="marquee" />
                         {/* {images}
                         {images}  */}
@@ -151,7 +157,7 @@ const Footer: React.FC = () => {
         <div className="custom-container py-2">
             <div className="flex flex-wrap items-center justify-between text-sm text-[#E9EBF8] font-normal">
             <p className="max-[767px]:py-4">
-                © 2024 MyRider | All Rights Reserved
+                © 2025 PostReachAI | All Rights Reserved
             </p>
             <ul className=" flex flex-wrap gap-6 max-[767px]:mb-4 ">
                 <li>

@@ -38,7 +38,11 @@ const BlogList: React.FC = () => {
       getAllCategory();
       getAutoCompleteList();
       getFeaturedBlogs();
-    },[])
+    },[]);
+
+    useEffect(() => {
+      router.prefetch(navigations.blogDetail);
+    }, []);
     
 
     const getAutoCompleteList = async() => {

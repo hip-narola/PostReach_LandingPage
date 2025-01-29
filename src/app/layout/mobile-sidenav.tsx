@@ -20,10 +20,14 @@ const Sidenav: React.FC = () => {
     const handleNavigation  = (type:string) => {
         context.setData(type);
         context.setMobilenav(false);
-        if(pathname !== navigations.home) {
-            setIsLoading(true);
-            router.push(navigations.home);
-        };
+        if(type == 'blog'){
+            router.push(navigations.blogList)
+        }else{
+            if(pathname !== navigations.home) {
+              setIsLoading(true);
+              router.push(navigations.home);
+            };
+          }
     }
 
     const handleClose  = () => {
