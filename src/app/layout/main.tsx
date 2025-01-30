@@ -131,8 +131,9 @@ const MainLayout: React.FC = () => {
 
       {/* <!-- Section Banner --> */}
       <div className="mx-auto   relative z-0 px-4 lg:px-0 pt-24 pb-12 lg:pt-28 lg:pb-0 xl:pt-40 overflow-hidden" ref={homeRef}>
-        <div className="absolute max-[767px]:bottom-0  md:top-0 left-0 -z-10 flex justify-center w-full text-center">
-          <img src="../assets/images/banner-bg.png" alt="banner-bg" />
+        <div className="absolute max-[375px]:-bottom-28 max-[767px]:bottom-0  md:top-0 left-0 -z-10 flex justify-center w-full text-center">
+          <img src="../assets/images/banner-bg.png" className="max-[375px]:hidden block" alt="banner-bg" />
+          <img src="../assets/images/banner375.png" className="max-[375px]:block hidden"  alt="banner-bg" />
         </div>
         <div className="text-center max-w-full md:max-w-[calc(100%-2rem)] min-[1365px]:max-w-[1200px] mx-auto">
           <h1 className="banner-title max-[600px]:hidden block relative">Automate Your
@@ -209,7 +210,7 @@ const MainLayout: React.FC = () => {
               Simplify social media management with smart automation, seamless integrations, and an intuitive design tailored for SMBs.</p>
           </div>
         </div>
-        <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
+        <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.3 }} className="my-section">
           <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-3 lg:gap-6 ">
 
             <div className="flex  flex-col items-start bg-white rounded-2xl p-4 lg:p-6">
@@ -238,7 +239,7 @@ const MainLayout: React.FC = () => {
         </motion.div>
 
         <div className="grid md:hidden grid-cols-1 md:grid-cols-3 gap-3 lg:gap-6">
-          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.2 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
+          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.2 }} viewport={{ once: false, amount: 0.3 }} className="my-section">
             <div className="flex  flex-col items-start bg-white rounded-2xl p-4 lg:p-6">
               <div className="max-w-10 lg:max-w-14">
                 <img src="../assets/icons/SocialMediaExpert.svg" alt="SocialMediaExpert" />
@@ -247,7 +248,7 @@ const MainLayout: React.FC = () => {
               <p className="para-text">Our AI engine crafts personalised posts tailored to your goals, audience, and brand voice.</p>
             </div>
           </motion.div>
-          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.3 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
+          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.3 }} viewport={{ once: false, amount: 0.3 }} className="my-section">
             <div className="flex  flex-col items-start bg-white rounded-2xl p-4 lg:p-6">
               <div className="max-w-10 lg:max-w-14">
                 <img src="../assets/icons/Automated-Scheduling.svg" alt="Automated-Scheduling" />
@@ -256,7 +257,7 @@ const MainLayout: React.FC = () => {
               <p className="para-text">Save time with fully automated content creation, scheduling, and posting to ensure effortless consistency for your business.</p>
             </div>
           </motion.div>
-          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.4 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
+          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.4 }} viewport={{ once: false, amount: 0.3 }} className="my-section">
             <div className="flex  flex-col items-start bg-white rounded-2xl p-4 lg:p-6">
               <div className="max-w-10 lg:max-w-14">
                 <img src="../assets/icons/built-for-you.svg" alt="built-for-you" />
@@ -301,13 +302,13 @@ const MainLayout: React.FC = () => {
                 {/* Autopilot Mode tabs content */}
 
                 <div className="grid md:hidden grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
-                  {/* <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section"> */}
-                  <motion.div initial={{ opacity: 0, x: (animationSide) }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  {/* <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section"> */}
+                  <motion.div initial={{ opacity: 0, x: (animationSide) }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                     <div className="flex justify-center">
                       <img src="../assets/images/autopilot-mode.webp" className="max-w-full object-contain" alt="autopilot-mode" />
                     </div>
                   </motion.div>
-                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                     <div className="flex  flex-col items-start max-[767px]:order-2">
                       <p className="para-text text-textdark">
                         Automate your social media completely, ensuring consistent posting without the hassle.
@@ -315,7 +316,7 @@ const MainLayout: React.FC = () => {
                       <ul className="flex flex-col gap-6 md:gap-7 mt-10">
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/fully-automated-icon.svg" alt="fully-automated-icon" />
+                            <img src="../assets/icons/tabs/fully-automated-icon.webp" className="w-12" alt="fully-automated-icon" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Fully Automated Content Creation</h4>
@@ -324,7 +325,7 @@ const MainLayout: React.FC = () => {
                         </li>
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/IntelligentScheduling-icon.svg" alt="IntelligentScheduling-icon" />
+                            <img src="../assets/icons/tabs/IntelligentScheduling-icon.webp" className="w-12" alt="IntelligentScheduling-icon" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Intelligent Scheduling</h4>
@@ -333,7 +334,7 @@ const MainLayout: React.FC = () => {
                         </li>
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/Hands-Free Posting-icon.svg" alt="Hands-Free Posting-icon" />
+                            <img src="../assets/icons/tabs/Hands-FreePosting-icon.webp" className="w-12" alt="Hands-Free Posting-icon" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Hands-Free Posting</h4>
@@ -347,8 +348,8 @@ const MainLayout: React.FC = () => {
 
                 </div>
                 <div className="hidden md:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
-                  <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
-                    {/* <motion.div initial={{ opacity: 0, x: animationSide}} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section"> */}
+                  <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
+                    {/* <motion.div initial={{ opacity: 0, x: animationSide}} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section"> */}
                     <div className="flex  flex-col items-start max-[767px]:order-2">
                       <p className="para-text text-textdark">
                         Automate your social media completely, ensuring consistent posting without the hassle.
@@ -356,7 +357,7 @@ const MainLayout: React.FC = () => {
                       <ul className="flex flex-col gap-6 md:gap-7 mt-10">
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/fully-automated-icon.svg" alt="fully-automated-icon" />
+                            <img src="../assets/icons/tabs/fully-automated-icon.webp" className="w-12" alt="fully-automated-icon" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Fully Automated Content Creation</h4>
@@ -365,7 +366,7 @@ const MainLayout: React.FC = () => {
                         </li>
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/IntelligentScheduling-icon.svg" alt="IntelligentScheduling-icon" />
+                            <img src="../assets/icons/tabs/IntelligentScheduling-icon.webp" className="w-12" alt="IntelligentScheduling-icon" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Intelligent Scheduling</h4>
@@ -374,7 +375,7 @@ const MainLayout: React.FC = () => {
                         </li>
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/Hands-Free Posting-icon.svg" alt="Hands-Free Posting-icon" />
+                            <img src="../assets/icons/tabs/Hands-FreePosting-icon.webp" className="w-12" alt="Hands-Free Posting-icon" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Hands-Free Posting</h4>
@@ -385,8 +386,8 @@ const MainLayout: React.FC = () => {
                       </ul>
                     </div>
                   </motion.div>
-                  <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
-                    {/* <motion.div initial={{ opacity: 0, x:(animationSide) }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section"> */}
+                  <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
+                    {/* <motion.div initial={{ opacity: 0, x:(animationSide) }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section"> */}
                     <div className="flex justify-center">
                       <img src="../assets/images/autopilot-mode.webp" className="max-w-full object-contain" alt="autopilot-mode" />
                     </div>
@@ -408,13 +409,13 @@ const MainLayout: React.FC = () => {
                 {/* ApprovalQueue tabs content */}
                 <div className="grid md:hidden grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
 
-                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                     <div className="flex justify-center">
                       <img src="../assets/images/ApprovalQueue.webp" className="max-w-full object-contain" alt="ApprovalQueue" />
 
                     </div>
                   </motion.div>
-                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                     <div className="flex  flex-col items-start max-[767px]:order-2">
                       <p className="para-text text-textdark">
                         Review, edit, or approve posts before publishing to control over your content.
@@ -422,7 +423,7 @@ const MainLayout: React.FC = () => {
                       <ul className="flex flex-col gap-6 md:gap-7 mt-10">
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/FullControlOverContent.svg" alt="FullControlOverContent" />
+                            <img src="../assets/icons/tabs/FullControlOverContent.webp" className="w-12" alt="FullControlOverContent" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Full Control Over Content</h4>
@@ -431,7 +432,7 @@ const MainLayout: React.FC = () => {
                         </li>
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/PreviewYourPosts.svg" alt="PreviewYourPosts" />
+                            <img src="../assets/icons/tabs/PreviewYourPosts.webp" className="w-12" alt="PreviewYourPosts" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Preview Your Posts</h4>
@@ -440,7 +441,7 @@ const MainLayout: React.FC = () => {
                         </li>
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/StreamlinedWorkflow.svg" alt="StreamlinedWorkflow" />
+                            <img src="../assets/icons/tabs/StreamlinedWorkflow.webp" className="w-12" alt="StreamlinedWorkflow" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Streamlined Workflow</h4>
@@ -454,7 +455,7 @@ const MainLayout: React.FC = () => {
                 </div>
 
                 <div className="hidden md:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
-                  <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                     <div className="flex  flex-col items-start max-[767px]:order-2">
                       <p className="para-text text-textdark">
                         Review, edit, or approve posts before publishing to control over your content.
@@ -462,7 +463,7 @@ const MainLayout: React.FC = () => {
                       <ul className="flex flex-col gap-6 md:gap-7 mt-10">
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/FullControlOverContent.svg" alt="FullControlOverContent" />
+                            <img src="../assets/icons/tabs/FullControlOverContent.webp" className="w-12" alt="FullControlOverContent" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Full Control Over Content</h4>
@@ -471,7 +472,7 @@ const MainLayout: React.FC = () => {
                         </li>
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/PreviewYourPosts.svg" alt="PreviewYourPosts" />
+                            <img src="../assets/icons/tabs/PreviewYourPosts.webp" className="w-12" alt="PreviewYourPosts" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Preview Your Posts</h4>
@@ -480,7 +481,7 @@ const MainLayout: React.FC = () => {
                         </li>
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/StreamlinedWorkflow.svg" alt="StreamlinedWorkflow" />
+                            <img src="../assets/icons/tabs/StreamlinedWorkflow.webp" className="w-12" alt="StreamlinedWorkflow" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Streamlined Workflow</h4>
@@ -491,7 +492,7 @@ const MainLayout: React.FC = () => {
                       </ul>
                     </div>
                   </motion.div>
-                  <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                     <div className="flex justify-center">
                       <img src="../assets/images/ApprovalQueue.webp" className="max-w-full object-contain" alt="ApprovalQueue" />
 
@@ -514,12 +515,12 @@ const MainLayout: React.FC = () => {
                 {/* Calendar View tabs content */}
                 <div className="grid md:hidden grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
 
-                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                     <div className="flex justify-center">
                       <img src="../assets/images/calendar-view.webp" className="max-w-full object-contain" alt="calendar-view" />
                     </div>
                   </motion.div>
-                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                     <div className="flex  flex-col items-start max-[767px]:order-2">
                       <p className="para-text text-textdark">
                         Visualize your posting schedule with an intuitive calendar to plan ahead and stay organized.
@@ -527,7 +528,7 @@ const MainLayout: React.FC = () => {
                       <ul className="flex flex-col gap-6 md:gap-7 mt-10">
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/ClearScheduleOverview.svg" alt="Clear Schedule Overview" />
+                            <img src="../assets/icons/tabs/ClearScheduleOverview.webp" className="w-12" alt="Clear Schedule Overview" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Clear Schedule Overview</h4>
@@ -536,7 +537,7 @@ const MainLayout: React.FC = () => {
                         </li>
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/Platform-SpecificInsights.svg" alt="Platform-Specific Insights-icon" />
+                            <img src="../assets/icons/tabs/Platform-SpecificInsights.webp" className="w-12" alt="Platform-Specific Insights-icon" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Platform-Specific Insights</h4>
@@ -545,7 +546,7 @@ const MainLayout: React.FC = () => {
                         </li>
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/PlanWeeksAdvance.svg" alt="Plan Weeks in Advance" />
+                            <img src="../assets/icons/tabs/PlanWeeksAdvance.webp" className="w-12" alt="Plan Weeks in Advance" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Plan Weeks in Advance</h4>
@@ -558,7 +559,7 @@ const MainLayout: React.FC = () => {
                   </motion.div>
                 </div>
                 <div className="hidden md:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
-                  <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                     <div className="flex  flex-col items-start max-[767px]:order-2">
                       <p className="para-text text-textdark">
                         Visualize your posting schedule with an intuitive calendar to plan ahead and stay organized.
@@ -566,7 +567,7 @@ const MainLayout: React.FC = () => {
                       <ul className="flex flex-col gap-6 md:gap-7 mt-10">
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/ClearScheduleOverview.svg" alt="Clear Schedule Overview" />
+                            <img src="../assets/icons/tabs/ClearScheduleOverview.webp" className="w-12" alt="Clear Schedule Overview" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Clear Schedule Overview</h4>
@@ -575,7 +576,7 @@ const MainLayout: React.FC = () => {
                         </li>
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/Platform-SpecificInsights.svg" alt="Platform-Specific Insights-icon" />
+                            <img src="../assets/icons/tabs/Platform-SpecificInsights.webp" className="w-12" alt="Platform-Specific Insights-icon" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Platform-Specific Insights</h4>
@@ -584,7 +585,7 @@ const MainLayout: React.FC = () => {
                         </li>
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/PlanWeeksAdvance.svg" alt="Plan Weeks in Advance" />
+                            <img src="../assets/icons/tabs/PlanWeeksAdvance.webp" className="w-12" alt="Plan Weeks in Advance" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Plan Weeks in Advance</h4>
@@ -595,7 +596,7 @@ const MainLayout: React.FC = () => {
                       </ul>
                     </div>
                   </motion.div>
-                  <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                     <div className="flex justify-center">
                       <img src="../assets/images/calendar-view.webp" className="max-w-full object-contain" alt="calendar-view" />
                     </div>
@@ -616,13 +617,13 @@ const MainLayout: React.FC = () => {
                 {/* analytics tabs content */}
                 <div className="grid md:hidden grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
 
-                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                     <div className="flex justify-center">
                       <img src="../assets/images/analytics.webp" className="max-w-full object-contain" alt="analytics" />
 
                     </div>
                   </motion.div>
-                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <motion.div initial={{ opacity: 0, x: animationSide }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                     <div className="flex  flex-col items-start max-[767px]:order-2">
                       <p className="para-text text-textdark">
                         See your social media growth in one easy-to-read dashboard and optimize your strategy.
@@ -630,7 +631,7 @@ const MainLayout: React.FC = () => {
                       <ul className="flex flex-col gap-6 md:gap-7 mt-10">
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/ActionableInsights.svg" alt="Actionable Insights-icon" />
+                            <img src="../assets/icons/tabs/ActionableInsights.webp" className="w-12" alt="Actionable Insights-icon" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Actionable Insights</h4>
@@ -639,7 +640,7 @@ const MainLayout: React.FC = () => {
                         </li>
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/Data-DrivenOptimisation.svg" alt="Data-Driven Optimisation-icon" />
+                            <img src="../assets/icons/tabs/Data-DrivenOptimisation.webp" className="w-12" alt="Data-Driven Optimisation-icon" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Data-Driven Optimisation</h4>
@@ -648,7 +649,7 @@ const MainLayout: React.FC = () => {
                         </li>
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/SimplifiedReporting-icon.svg" alt="Simplified Reporting-icon" />
+                            <img src="../assets/icons/tabs/SimplifiedReporting-icon.webp" className="w-12" alt="Simplified Reporting-icon" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Simplified Reporting</h4>
@@ -662,7 +663,7 @@ const MainLayout: React.FC = () => {
                   </motion.div>
                 </div>
                 <div className="hidden md:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[385px,1fr] gap-5 overflow-x-hidden">
-                  <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                     <div className="flex  flex-col items-start max-[767px]:order-2">
                       <p className="para-text text-textdark">
                         See your social media growth in one easy-to-read dashboard and optimize your strategy.
@@ -670,7 +671,7 @@ const MainLayout: React.FC = () => {
                       <ul className="flex flex-col gap-6 md:gap-7 mt-10">
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/ActionableInsights.svg" alt="Actionable Insights-icon" />
+                            <img src="../assets/icons/tabs/ActionableInsights.webp" className="w-12" alt="Actionable Insights-icon" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Actionable Insights</h4>
@@ -679,7 +680,7 @@ const MainLayout: React.FC = () => {
                         </li>
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/Data-DrivenOptimisation.svg" alt="Data-Driven Optimisation-icon" />
+                            <img src="../assets/icons/tabs/Data-DrivenOptimisation.webp" className="w-12" alt="Data-Driven Optimisation-icon" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Data-Driven Optimisation</h4>
@@ -688,7 +689,7 @@ const MainLayout: React.FC = () => {
                         </li>
                         <li className="flex gap-4">
                           <div className="min-w-12">
-                            <img src="../assets/icons/tabs/SimplifiedReporting-icon.svg" alt="Simplified Reporting-icon" />
+                            <img src="../assets/icons/tabs/SimplifiedReporting-icon.webp" className="w-12" alt="Simplified Reporting-icon" />
                           </div>
                           <div className="">
                             <h4 className="text-base  font-semibold text-textdark mb-1">Simplified Reporting</h4>
@@ -700,7 +701,7 @@ const MainLayout: React.FC = () => {
                       </ul>
                     </div>
                   </motion.div>
-                  <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+                  <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                     <div className="flex justify-center">
                       <img src="../assets/images/analytics.webp" className="max-w-full object-contain" alt="analytics" />
 
@@ -720,7 +721,7 @@ const MainLayout: React.FC = () => {
 
 
       {/* <!-- Section Getting Started --> */}
-      <div className="custom-container min-[1232px]:max-w-[1200px] container-lg relative z-0 max-[640px]:my-2 max-[640px]:px-4 p-0 lg:py-10 xl:py-16" >
+      <div className="custom-container min-[1232px]:max-w-[1200px] container-lg relative z-0 max-[640px]:my-2  p-0 lg:py-10 xl:py-16" >
         <div className="getting-stareted-after">
         </div>
         <div className="grid grid-cols-1 items-center justify-center mb-0 md:mb-8 lg:mb-12">
@@ -732,7 +733,7 @@ const MainLayout: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1  lg:grid-cols-[620px,1fr]  xl:grid-cols-[1fr,508px]  gap-5 lg:gap-2 xl:gap-8 max-[640px]:w-[calc(100%+2rem)] max-[640px]:max-w-[calc(100%+2rem)]  max-[640px]:-ml-4 getting-stareted-main">
-          <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
+          <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.3 }} className="my-section">
             <div className="flex relative max-[1023px]:max-w-[620px] max-[640px]:max-w-[375px] max-[1023px]:m-auto max-[1280px]:overflow-hidden">
               <div className="hidden sm:block" >
               <img src="../assets/images/getting-started-img.svg" alt="about" />
@@ -812,7 +813,7 @@ const MainLayout: React.FC = () => {
             </div>
           </motion.div>
           {/* <div className="hidden sm:flex self-center  flex-col items-start ">
-          <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
+          <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.3 }} className="my-section">
        
             <ul className="flex flex-col gap-4  simple-easy-list ">
               <li className="flex gap-6">
@@ -869,7 +870,7 @@ const MainLayout: React.FC = () => {
           <div className="flex  self-center  flex-col items-start ">
 
             <ul className="flex flex-col gap-0  simple-easy-list max-[767px]:px-3">
-              <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
+              <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: false, amount: 0.3 }} className="my-section">
                 <li className="flex gap-6 list-dotted-line mb-4">
                   <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
                     1
@@ -880,7 +881,7 @@ const MainLayout: React.FC = () => {
                   </div>
                 </li>
               </motion.div>
-              <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true, amount: 0.4 }} className="my-section">
+              <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: false, amount: 0.4 }} className="my-section">
                 <li className="flex gap-6 list-dotted-line mb-4">
                   <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
                     2
@@ -891,7 +892,7 @@ const MainLayout: React.FC = () => {
                   </div>
                 </li>
               </motion.div>
-              <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+              <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                 <li className="flex gap-6 list-dotted-line mb-4">
                   <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
                     3
@@ -902,7 +903,7 @@ const MainLayout: React.FC = () => {
                   </div>
                 </li>
               </motion.div>
-              <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true, amount: 0.6 }} className="my-section">
+              <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: false, amount: 0.6 }} className="my-section">
                 <li className="flex gap-6 list-dotted-line mb-4">
                   <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
                     4
@@ -913,7 +914,7 @@ const MainLayout: React.FC = () => {
                   </div>
                 </li>
               </motion.div>
-              <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+              <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                 <li className="flex gap-6">
                   <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full">
                     <img src='../assets/icons/done.svg' alt="check" />
@@ -924,14 +925,14 @@ const MainLayout: React.FC = () => {
                   </div>
                 </li>
               </motion.div>
-              <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+              <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                 <li className="flex gap-6">
                   <a href="#" className="mt-7 w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Get Started
                   </a>
                 </li>
               </motion.div>
             </ul>
-            {/* <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 , delay: 0.3 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+            {/* <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 , delay: 0.3 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
             <a href="#" className="mt-7 w-full sm:w-auto min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Get Started
             </a>
             </motion.div> */}
@@ -956,7 +957,7 @@ const MainLayout: React.FC = () => {
           </div>
 
           <div className="hidden sm:flex  flex-col items-star max-[767px]:-order-1 max-[575px]:w-[calc(100%+2rem)] max-[575px]:-ml-4">
-            <motion.div initial={{ opacity: 0, x: 160 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+            <motion.div initial={{ opacity: 0, x: 160 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
               <div className=" w-full relative max-[767px]:pt-5 max-[1280px]:overflow-hidden">
                 <img src="../assets/images/Generative-Ai.png" alt="GenerativeAI" className="relative z-10" />
                 <div className="absolute -right-20 -bottom-8 lg:-bottom-20">
@@ -967,7 +968,7 @@ const MainLayout: React.FC = () => {
           </div>
 
           <div className="flex sm:hidden  flex-col items-star max-[767px]:-order-1 max-[575px]:w-[calc(100%+2rem)] max-[575px]:-ml-4">
-            <motion.div initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
+            <motion.div initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: false, amount: 0.3 }} className="my-section">
               <div className=" w-full relative max-[767px]:pt-5 max-[1280px]:overflow-hidden">
                 <img src="../assets/images/Generative-Ai.png" alt="GenerativeAI" className="relative z-10" />
                 <div className="absolute -right-20 -bottom-8 lg:-bottom-20">
@@ -984,8 +985,12 @@ const MainLayout: React.FC = () => {
       {/* <!-- Section advance-AI-Engine --> */}
       <div className="custom-container">
         <div className="grid grid-cols-1 items-center max-[575px]:my-4 gap-8 lg:gap-14 md:grid-cols-2 xl:grid-cols-[550px,1fr]">
-          <div className="hidden sm:flex  flex-col items-star">
-            <motion.div initial={{ opacity: 0, x: -160 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+         
+          <div className="hidden sm:flex  flex-col items-star relative">
+ <div className="absolute -left-1/2 -bottom-6 w-full">
+          <img src="../assets/images/advance-Ai-Engine-bg-lg.webp" alt="GenerativeAI Engine" />
+          </div>
+            <motion.div initial={{ opacity: 0, x: -160 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
               <div className=" w-full">
                 <img src="../assets/images/advance-Ai-Engine.png" alt="GenerativeAI Engine" />
               </div>
@@ -996,7 +1001,7 @@ const MainLayout: React.FC = () => {
             <div className="absolute -left-1/2 -top-32 bg-[#1877f24d] blur-[102px] h-[362px] w-[362px] rounded-full opacity-20 z-10">
               {/* <img src="../assets/images/smarter-bg.webp" alt="smarter-bg" /> */}
             </div>
-            <motion.div initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true, amount: 0.3 }} className="my-section">
+            <motion.div initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: false, amount: 0.3 }} className="my-section">
 
               <div className=" w-full">
                 <img src="../assets/images/advance-Ai-Engine.png" alt="GenerativeAI Engine" />
@@ -1286,7 +1291,7 @@ const MainLayout: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 items-center  gap-3 lg:gap-6 max-w-[1200px] mx-auto mt-8 lg:mt-10 xl:mt-20 ">
 
           <div className="col-span-1">
-            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
               <div className="flex flex-wrap flex-col p-4 lg:py-8 lg:px-6 rounded-[40px] border border-[#D9D9D9] relative z-10 mt-10 md:mb-0">
                 <div className="absolute top-0 left-0 -z-10  h-full">
                   <img src="../assets/images/pro-package.png" className="h-full w-full rounded-[40px]" alt="pro-package" />
@@ -1333,7 +1338,7 @@ const MainLayout: React.FC = () => {
             </motion.div>
           </div>
           <div className="col-span-1  max-[767px]:-order-1">
-            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
               <div className="flex flex-wrap flex-col p-4 lg:py-8 lg:px-6 rounded-[40px] z-10 relative">
                 <div className="h-full w-full mx-auto absolute top-0 left-0 -z-10">
                   <img src="../assets/images/starter-package-bg.png" className="h-full w-full rounded-[40px] " alt="package-bg" />
@@ -1393,7 +1398,7 @@ const MainLayout: React.FC = () => {
             </motion.div>
           </div>
           <div className="col-span-1">
-            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
               <div className="flex flex-wrap flex-col p-4 lg:py-8 lg:px-6 rounded-[40px] border border-[#D9D9D9] relative z-10 mt-10 md:mb-0">
                 <div className="absolute top-0 right-0 -z-10 h-full">
                   <img src="../assets/images/unlimited-package.png" className="h-full w-full rounded-[40px]" alt="unlimited-package" />
@@ -1507,7 +1512,7 @@ const MainLayout: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 mb-8 xl:mb-10">
 
             {latestBlog.map((item, index) => (
-              <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.1 }} className="my-section"  key={index}>
+              <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.1 }} className="my-section"  key={index}>
                 <div className="blog-col" onClick={() => handleBlogDetail(item._id)}>
                   <div className="blog-img-thumb">
                     <img src={urlFor(item.blog_image).url()} className="h-full w-full rounded-xl" alt="blog-1" />
@@ -1538,7 +1543,7 @@ const MainLayout: React.FC = () => {
       </div>
       {/* <!-- End Section Insights & Tips to Grow Your Social Media --> */}
       {/* <!-- Section Ready to Boost Your Social Media? --> */}
-      <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true, amount: 0.5 }} className="my-section">
+      <motion.div initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: false, amount: 0.2 }} className="my-section">
         <div className="custom-container  relative z-0 pl-0 md:pl-6 lg:pl-16 pt-8 lg:pt-12 pb-0 my-4 max-[640px]:mb-12 sm:my-12">
 
           <div className="hidden sm:block absolute left-0 top-0 h-full w-full rounded-3xl overflow-hidden -z-10">

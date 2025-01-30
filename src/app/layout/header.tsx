@@ -45,7 +45,7 @@ const { setIsLoading } = useLoading();
           <div className="flex">
             <a onClick={() => handleNavigation('home')} className="cursor-pointer">
               <span className="logo">
-                <img src='../assets/images/PostReachLogo.webp' alt="logo" className="max-w-[132px] md:max-w-36 lg:max-w-48" />
+                <img src='../assets/images/PostReachLogo.webp' alt="logo" className="max-w-[132px] md:max-w-36 xl:max-w-48" />
               </span>
             </a>
           </div>
