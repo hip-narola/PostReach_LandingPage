@@ -733,17 +733,21 @@ const MainLayout: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1  lg:grid-cols-[620px,1fr]  xl:grid-cols-[1fr,508px]  gap-5 lg:gap-2 xl:gap-8 max-[640px]:w-[calc(100%+2rem)] max-[640px]:max-w-[calc(100%+2rem)]  max-[640px]:-ml-4 getting-stareted-main">
-          <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.3 }} className="my-section">
-            <div className="flex relative max-[1023px]:max-w-[620px] max-[640px]:max-w-[375px] max-[1023px]:m-auto max-[1280px]:overflow-hidden">
+          <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.3 }} className="my-section">
+            <div className="flex max-[640px]:justify-center relative max-[1023px]:max-w-[620px] max-[640px]:max-w-[375px] max-[1023px]:m-auto max-[1280px]:overflow-hidden">
               <div className="hidden sm:block" >
               <img src="../assets/images/getting-started-img.svg" alt="about" />
+{/* <Gettingstartedsvg /> */}
+              </div>
+              <div className="block sm:hidden" >
+              <img src="../assets/images/getting-started-img-sm.svg" alt="about" />
 {/* <Gettingstartedsvg /> */}
               </div>
               {/* <div className="block sm:hidden">
               <img src="../assets/images/getting-started-img-mobile-new.svg.svg" alt="about" />
               </div> */}
               {/* <img src="../assets/images/getting-started-img.svg" className="max-w-full w-full z-10 hidden sm:block" alt="about" /> */}
-              <img src="../assets/images/getting-started-img-mobile.png" className="max-w-full w-full z-10 block sm:hidden " alt="about" />
+              {/* <img src="../assets/images/getting-started-img-mobile.png" className="max-w-full w-full z-10 block sm:hidden " alt="about" /> */}
               <div className="absolute max-[640px]:max-w-12 left-12 sm:left-4 xl:left-20 top-16 z-10 animate-updown">
                 <img src="../assets/images/cursor.png" className="" alt="Cursor" />
               </div>
@@ -809,6 +813,39 @@ const MainLayout: React.FC = () => {
       </svg>
 
 </div>
+              </div>
+              <div className="max-[360px]:left-3  max-[360px]:top-7 absolute left-[26px] -top-[2px] -z-10 block sm:hidden">
+              <div className="animatedsvg-wrapper">
+           
+
+              <svg width="272" height="250" viewBox="0 0 272 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="theMotionPathcirclesm"d="M9.0619 191.002V72.3513C9.0619 61.7636 17.6449 53.1806 28.2326 53.1806H76.5652C79.5355 53.1806 82.465 53.8708 85.1229 55.1966L198.959 111.984C201.617 113.31 204.546 114 207.516 114H243.829C254.417 114 263 122.583 263 133.171V212.5" stroke="#B3B3B3" stroke-width="0.518127" stroke-dasharray="2.59 2.59" className="path-circle-sm"/>
+<path id="theMotionPathlinesm" d="M142.76 249.292V0" stroke="#B3B3B3" stroke-width="0.518127" stroke-dasharray="2.59 2.59"  className="path-line-sm"/>
+
+ {/* Moving Circle 1 */}
+ <circle cx="0" cy="0" r="3" fill="url(#grad2)">
+          <animateMotion dur="10s" begin="0s" fill="freeze" repeatCount="indefinite">
+            <mpath href="#theMotionPathlinesm" />
+          </animateMotion>
+        </circle>
+
+        {/* Gradient for Second Circle */}
+        <defs>
+          <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#717AF5" />
+            <stop offset="100%" stopColor="#DCD8F6" />
+          </linearGradient>
+        </defs>
+
+        {/* Moving Circle 2 with Gradient */}
+        <circle cx="0" cy="0" r="3" fill="url(#grad2)">
+          <animateMotion dur="12s" begin="0s" fill="freeze" repeatCount="indefinite">
+            <mpath href="#theMotionPathcirclesm" />
+          </animateMotion>
+        </circle>
+</svg>
+
+              </div>
               </div>
             </div>
           </motion.div>
@@ -959,7 +996,7 @@ const MainLayout: React.FC = () => {
           <div className="hidden sm:flex  flex-col items-star max-[767px]:-order-1 max-[575px]:w-[calc(100%+2rem)] max-[575px]:-ml-4">
             <motion.div initial={{ opacity: 0, x: 160 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
               <div className=" w-full relative max-[767px]:pt-5 max-[1280px]:overflow-hidden">
-                <img src="../assets/images/Generative-Ai.png" alt="GenerativeAI" className="relative z-10" />
+                <img src="../assets/images/Generative-Ai.webp" alt="GenerativeAI" className="relative z-10" />
                 <div className="absolute -right-20 -bottom-8 lg:-bottom-20">
                   <img src="../assets/images/generative-ai-shadow.png" className="" alt="generative-ai-shadow" />
                 </div>
@@ -970,7 +1007,7 @@ const MainLayout: React.FC = () => {
           <div className="flex sm:hidden  flex-col items-star max-[767px]:-order-1 max-[575px]:w-[calc(100%+2rem)] max-[575px]:-ml-4">
             <motion.div initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: false, amount: 0.3 }} className="my-section">
               <div className=" w-full relative max-[767px]:pt-5 max-[1280px]:overflow-hidden">
-                <img src="../assets/images/Generative-Ai.png" alt="GenerativeAI" className="relative z-10" />
+                <img src="../assets/images/Generative-Ai.webp" alt="GenerativeAI" className="relative z-10" />
                 <div className="absolute -right-20 -bottom-8 lg:-bottom-20">
                   <img src="../assets/images/generative-ai-shadow.png" className="" alt="generative-ai-shadow" />
                 </div>
