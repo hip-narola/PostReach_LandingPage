@@ -1328,7 +1328,7 @@ const MainLayout: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 items-center  gap-3 lg:gap-6 max-w-[1200px] mx-auto mt-8 lg:mt-10 xl:mt-20 ">
 
           <div className="col-span-1">
-            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
+            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.1 }} className="my-section">
               <div className="flex flex-wrap flex-col p-4 lg:py-8 lg:px-6 rounded-[40px] border border-[#D9D9D9] relative z-10 mt-10 md:mb-0">
                 <div className="absolute top-0 left-0 -z-10  h-full">
                   <img src="../assets/images/pro-package.png" className="h-full w-full rounded-[40px]" alt="pro-package" />
@@ -1375,7 +1375,7 @@ const MainLayout: React.FC = () => {
             </motion.div>
           </div>
           <div className="col-span-1  max-[767px]:-order-1">
-            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
+            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.1 }} className="my-section">
               <div className="flex flex-wrap flex-col p-4 lg:py-8 lg:px-6 rounded-[40px] z-10 relative">
                 <div className="h-full w-full mx-auto absolute top-0 left-0 -z-10">
                   <img src="../assets/images/starter-package-bg.png" className="h-full w-full rounded-[40px] " alt="package-bg" />
@@ -1435,7 +1435,7 @@ const MainLayout: React.FC = () => {
             </motion.div>
           </div>
           <div className="col-span-1">
-            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
+            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.1 }} className="my-section">
               <div className="flex flex-wrap flex-col p-4 lg:py-8 lg:px-6 rounded-[40px] border border-[#D9D9D9] relative z-10 mt-10 md:mb-0">
                 <div className="absolute top-0 right-0 -z-10 h-full">
                   <img src="../assets/images/unlimited-package.png" className="h-full w-full rounded-[40px]" alt="unlimited-package" />
