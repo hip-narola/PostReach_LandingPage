@@ -531,3 +531,15 @@ ul.simple-easy-list .list-dotted-line:before {
     border: 3px solid #FFFFFF63;
   }
 }
+
+.player{
+  padding:56.25% 0 0 0;
+  position:relative;
+}
+  .inside-player{
+    position:absolute;
+    top:0;left:0;
+    width:100%;
+    height:100%;
+    border-radius: 14px;
+}

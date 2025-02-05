@@ -24,7 +24,8 @@ const MainLayout: React.FC = () => {
   const options = { next: { revalidate: 30 } };
   const context = useContext(DataContext);
   const [animationSide, setAnimationSide] = useState(-100)
-  const [currentTab, setCurrentTab] = useState<number>(1)
+  const [currentTab, setCurrentTab] = useState<number>(1);
+  const [isOpen, setIsOpen] = useState(false);
   const { setIsLoading } = useLoading();
 
   const [latestBlog, setLatest] = useState<BlogType[]>([]);
@@ -126,6 +127,10 @@ const MainLayout: React.FC = () => {
     setCurrentTab(newTabIndex);
   };
 
+  const handleClose =() => {
+    setIsOpen(false)
+  }
+
   return (
     <div className="">
 
@@ -174,7 +179,7 @@ const MainLayout: React.FC = () => {
             <div className="absolute -top-14 md:-top-24 -right-4 md:-right-5 max-[767px]:max-w-40">
               <img src="../assets/icons/just-few-steps-arrow.svg" alt="just-few-steps-arrow.svg" />
             </div>
-            <a href="#" className="abosolute-div-center video-play-button absolute">
+            <a onClick={() => setIsOpen(true)} className="abosolute-div-center video-play-button absolute cursor-pointer">
               <img src="../assets/icons/play-icon.png" alt="play-icon" />
             </a>
             <img src="../assets/images/video-banner.png" alt="video-banner" />
@@ -733,8 +738,8 @@ const MainLayout: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1  lg:grid-cols-[620px,1fr]  xl:grid-cols-[1fr,508px]  gap-5 lg:gap-2 xl:gap-8 max-[640px]:w-[calc(100%+2rem)] max-[640px]:max-w-[calc(100%+2rem)]  max-[640px]:-ml-4 getting-stareted-main">
-          <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.3 }} className="my-section">
-            <div className="flex max-[640px]:justify-center relative max-[1023px]:max-w-[620px] max-[640px]:max-w-[375px] max-[1023px]:m-auto max-[1280px]:overflow-hidden">
+          <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.2 }} className="my-section">
+            <div className="flex max-[640px]:justify-center lg:mt-5 relative max-[1023px]:max-w-[620px] max-[640px]:max-w-[375px] max-[1023px]:m-auto max-[1280px]:overflow-hidden">
               <div className="hidden sm:block" >
               <img src="../assets/images/getting-started-img.svg" alt="about" />
 {/* <Gettingstartedsvg /> */}
@@ -748,20 +753,18 @@ const MainLayout: React.FC = () => {
               </div> */}
               {/* <img src="../assets/images/getting-started-img.svg" className="max-w-full w-full z-10 hidden sm:block" alt="about" /> */}
               {/* <img src="../assets/images/getting-started-img-mobile.png" className="max-w-full w-full z-10 block sm:hidden " alt="about" /> */}
-              <div className="absolute max-[640px]:max-w-12 left-12 sm:left-4 xl:left-20 top-16 z-10 animate-updown">
+              <div className="absolute max-[640px]:max-w-12 left-12 max-[640px]:-top-2 max-[640px]:left-8 sm:left-4 xl:left-10 top-4 z-10 animate-updown">
                 <img src="../assets/images/cursor.png" className="" alt="Cursor" />
               </div>
-              <div className="absolute max-[640px]:max-w-16 top-24 right-12 xl:right-20 z-10 animate-updown">
+              <div className="absolute max-[640px]:max-w-16  max-[640px]:top-10  max-[640px]:right-16 top-24 right-16 xl:right-16 z-10 animate-updown">
                 <img src="../assets/images/insta-gs.png" className="" alt="instagram" />
               </div>
-              <div className="absolute max-[640px]:max-w-[70px]  left-1/2 -translate-x-1/2 bottom-20 xl:bottom-20 -ml-20 sm:-ml-32 z-10 animate-downup">
+              <div className="absolute max-[640px]:max-w-[70px] max-[640px]:bottom-16  max-[640px]:-ml-24 left-1/2 -translate-x-1/2 bottom-20 xl:bottom-20 -ml-20 sm:-ml-36 z-10 animate-downup">
                 <img src="../assets/images/linkedin-gs.png" className="" alt="Linkedin" />
               </div>
               <div className="absolute -left-20 -bottom-20 -z-10  max-[640px]:hidden">
                 <img src="../assets/images/getting-started-shadow.png" className="" alt="getting-started-shadow" />
               </div>
-
-             
               <div className="absolute left-5 -top-[26px] -z-10 max-[640px]:hidden">
               <div className="animatedsvg-wrapper">
               <svg
@@ -816,8 +819,7 @@ const MainLayout: React.FC = () => {
               </div>
               <div className="max-[360px]:left-3  max-[360px]:top-7 absolute left-[26px] -top-[2px] -z-10 block sm:hidden">
               <div className="animatedsvg-wrapper">
-           
-
+          
               <svg width="272" height="250" viewBox="0 0 272 250" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path id="theMotionPathcirclesm"d="M9.0619 191.002V72.3513C9.0619 61.7636 17.6449 53.1806 28.2326 53.1806H76.5652C79.5355 53.1806 82.465 53.8708 85.1229 55.1966L198.959 111.984C201.617 113.31 204.546 114 207.516 114H243.829C254.417 114 263 122.583 263 133.171V212.5" stroke="#B3B3B3" stroke-width="0.518127" stroke-dasharray="2.59 2.59" className="path-circle-sm"/>
 <path id="theMotionPathlinesm" d="M142.76 249.292V0" stroke="#B3B3B3" stroke-width="0.518127" stroke-dasharray="2.59 2.59"  className="path-line-sm"/>
@@ -1259,12 +1261,12 @@ const MainLayout: React.FC = () => {
       <div className="custom-container max-[767px]:max-w-[343px] min-[1232px]:max-w-[1200px] lg:pb-12 relative z-0 max-[575px]:pt-10 max-[575px]:pb-4  pt-7 my-12" ref={integrationRef}>
         <div className="absolute left-0 top-0 h-full w-full overflow-hidden -z-10">
           <img src="../assets/images/SeamlessIntegrations-bg.png" className="max-w-full max-[767px]:hidden block min-[1365px]:max-w-[1200px] mx-auto seamless-bg  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
-          <img src="../assets/images/SeamlessIntegrations-bg-mobile.svg" className="max-w-full max-[767px]:block hidden object-top min-[1365px]:max-w-[1200px] mx-auto  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
+          <img src="../assets/images/SeamlessIntegrations-bg-mobile.png" className="max-w-full max-[767px]:block hidden object-top min-[1365px]:max-w-[1200px] mx-auto  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
         </div>
         <div className="grid grid-cols-1 items-center gap-x-6 lg:gap-x-10 xl:gap-x-16">
           <div className="col-span-1 text-center">
             <div className="mx-auto max-w-[520px] max-[767px]:px-5 max-[767px]:pt-6">
-              <h4 className="sec-title lg:text-[40px] lg:leading-[52px] w-full text-white max-[640px]:leading-[29px] max[640px]:mb-3"><span className="text-themeblue">Seamless Integrations</span> with Your Favorite Platforms</h4>
+              <h4 className="sec-title lg:text-[40px] lg:leading-[52px] w-full text-white max-[640px]:leading-[29px] max[640px]:mb-3"><span className="text-[#1491FF]">Seamless Integrations</span> with Your Favorite Platforms</h4>
               <p className="para-text  mx-auto text-white max-[767px]:leading-[21px]">PostReach AI seamlessly integrates with your favorite social media platforms, simplifying your management and boosting efficiency.</p>
             </div>
           </div>
@@ -1613,6 +1615,23 @@ const MainLayout: React.FC = () => {
         </div>
       </motion.div>
       {/* <!-- End Section Ready to Boost Your Social Media? --> */}
+
+             {/* Video Modal */}
+       {isOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50">
+          <div className="relative w-[calc(100%-2rem)] max-w-[1200px]">
+            <button className="z-10 absolute -top-4 -right-3 text-white text-xl  py-1 cursor-pointer invert" onClick={handleClose}>
+            <img className="max-w-6"  src='../assets/icons/filter-close-btn.svg'  />
+            </button>
+            {/* Video Player */}
+            <div className='player'>
+              <iframe className='inside-player' src="https://player.vimeo.com/video/1036601120?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="PostReachAI - Intro">
+              </iframe>
+            </div>
+          </div>
+        </div>
+        )}
+
     </div>
 
   );
