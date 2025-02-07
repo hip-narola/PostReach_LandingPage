@@ -38,6 +38,10 @@ const Footer: React.FC = () => {
         }
     }
 
+    const handleComingSoon = () => {
+        router.push(navigations.comingSoon);
+    }
+
   return (
     <div className="">
        {/* footer */}
@@ -98,13 +102,13 @@ const Footer: React.FC = () => {
                     <a href="#">About Us</a>
                     </li>
                     <li>
-                    <a href="#">Careers</a>
+                    <a onClick={handleComingSoon} className='cursor-pointer'>Careers</a>
                     </li>
                     <li>
-                    <a href="#">Affiliates</a>
+                    <a onClick={handleComingSoon} className='cursor-pointer'>Affiliates</a>
                     </li>
                     <li>
-                    <a href="#">Help Center</a>
+                    <a onClick={handleComingSoon} className='cursor-pointer'>Help Center</a>
                     </li>
                     <li>
                     <a className="cursor-pointer" onClick={() =>handleNavigation('blog')}>Blog</a>
@@ -115,19 +119,19 @@ const Footer: React.FC = () => {
                 <h4 className="text-base md:text-lg font-bold text-white mb-4">Compare</h4>
                 <ul className="text-sm md:text-base text-white font-normal flex flex-col gap-3">
                     <li>
-                    <a href="#">Hootsuite vs PostReach</a>
+                    <a onClick={handleComingSoon} className='cursor-pointer'>Hootsuite vs PostReach</a>
                     </li>
                     <li>
-                    <a href="#">Buffer vs PostReach</a>
+                    <a onClick={handleComingSoon} className='cursor-pointer'>Buffer vs PostReach</a>
                     </li>
                     <li>
-                    <a href="#">SpoutSocial vs PostReach</a>
+                    <a onClick={handleComingSoon} className='cursor-pointer'>SpoutSocial vs PostReach</a>
                     </li>
                     <li>
-                    <a href="#">SocialPilot vs PostReach</a>
+                    <a onClick={handleComingSoon} className='cursor-pointer'>SocialPilot vs PostReach</a>
                     </li>
                     <li>
-                    <a href="#">Later vs PostReach</a>
+                    <a onClick={handleComingSoon} className='cursor-pointer'>Later vs PostReach</a>
                     </li>
                 </ul>
                 </div>
@@ -135,19 +139,19 @@ const Footer: React.FC = () => {
                 <h4 className="text-base md:text-lg font-bold text-white mt-8 md:mt-0 mb-4">Free Tools</h4>
                 <ul className="text-sm md:text-base text-white font-normal flex flex-col gap-3">
                     <li>
-                    <a href="#">Post Compliance Checker</a>
+                    <a onClick={handleComingSoon} className='cursor-pointer'>Post Compliance Checker</a>
                     </li>
                     <li>
-                    <a href="#">Image to Post Generator</a>
+                    <a onClick={handleComingSoon} className='cursor-pointer'>Image to Post Generator</a>
                     </li>
                     <li>
-                    <a href="#">URL to Post Generator</a>
+                    <a onClick={handleComingSoon} className='cursor-pointer'>URL to Post Generator</a>
                     </li>
                     <li>
-                    <a href="#">Post Idea Generator</a>
+                    <a onClick={handleComingSoon} className='cursor-pointer'>Post Idea Generator</a>
                     </li>
                     <li>
-                    <a href="#">Instagram Caption Generator</a>
+                    <a onClick={handleComingSoon} className='cursor-pointer'>Instagram Caption Generator</a>
                     </li>
 
                 </ul>

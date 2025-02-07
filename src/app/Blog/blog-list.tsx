@@ -8,7 +8,7 @@ import { urlFor } from '../../sanity/client';
 
 import { client } from "../../sanity/client";
 import routes from '../navigation-list/route-list';
-import { BlogType, CategoryType } from '../response/responseTyep';
+import { BlogType, CategoryType } from '../response/responseType';
 import { useLoading } from '../context/LoadingContext';
 
 
@@ -97,8 +97,8 @@ const BlogList: React.FC = () => {
 
    
   
-   const handleBlogDetail = (postId :string ) => {
-        router.push(`${navigations.blogDetail}/${postId}`)
+   const handleBlogDetail = (slug :string ) => {
+        router.push(`${navigations.blogDetail}/${slug}`)
    }
 
    const handleFilter = () => {
@@ -191,7 +191,7 @@ const BlogList: React.FC = () => {
       {featuredBlog.length > 0 && 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-8 lg:py-14">
                 
-            <div className="blog-col" onClick={() => handleBlogDetail(featuredBlog[0]._id)}>
+            <div className="blog-col" onClick={() => handleBlogDetail(featuredBlog[0].slug.current)}>
             <div className="blog-img-thumb h-auto lg:h-80">
             <img src={urlFor(featuredBlog[0].blog_image).url()} className="h-full w-full rounded-xl" alt="blog-1" />
             </div>
@@ -214,7 +214,7 @@ const BlogList: React.FC = () => {
               {featuredBlog.map((item,index) => (
                 <div key={index}>
                   {index != 0 &&
-                    <div className="blog-col flex-row items-start gap-4" onClick={() => handleBlogDetail(item._id)}>
+                    <div className="blog-col flex-row items-start gap-4" onClick={() => handleBlogDetail(item.slug.current)}>
                     <div className="blog-img-thumb blog-img-thumb-sm flex-1 md:max-w-28 lg:max-w-full">
                     <img src={urlFor(item.blog_image).url()} className="h-full w-full rounded-xl" alt="blog-1" />
                     </div>
@@ -301,7 +301,7 @@ const BlogList: React.FC = () => {
        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8 md:my-10">
                 {blogList.map((item) => (
-                <div className="blog-col" key={item._id} onClick={() => handleBlogDetail(item._id)}>
+                <div className="blog-col" key={item._id} onClick={() => handleBlogDetail(item.slug.current)}>
                     <div className="blog-img-thumb">
                         <img 
                         src={urlFor(item.blog_image).url()}

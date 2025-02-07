@@ -9,7 +9,9 @@ const  navigations = {
     privacyPolicy :'/privacy-policy',
 
     //terms and condition 
-    termsCondition :'/terms-conditions'
+    termsCondition :'/terms-conditions',
+
+    comingSoon :'/coming-soon'
 }
 
 export default navigations;

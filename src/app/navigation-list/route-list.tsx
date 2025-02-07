@@ -2,7 +2,10 @@ const  routes = {
 
     blogs : `*[_type == "blog"]|order(publishedAt desc){...,category_id -> {name, _id}}` ,
     category : `*[_type == "category"]`,
-    blogWithId: `*[_type == "blog" && _id == $id]{...,category_id -> {name, _id}}`,
+    // blogWithId: `*[_type == "blog" && _id == $id]{...,category_id -> {name, _id}}`,
+
+    blogWithSlug : `*[_type == "blog" && slug.current == $slug]{...,category_id -> {name, _id}}`,
+
     blog_details: `*[_type == "blog_detail" && blog_id._ref == $id]`,
     recommondedBlog :`*[_type == "blog" && is_recommended == true] | order(_createdAt desc)`,
     featuredBlog :`*[_type == "blog" && is_featured == true] | order(_createdAt desc)[0...4]{...,category_id -> {name, _id}}`,

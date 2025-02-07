@@ -13,11 +13,17 @@ import { motion } from 'framer-motion';
 import { DataContext } from '../context/shareData';
 import routes from '../navigation-list/route-list';
 import { client } from "../../sanity/client";
-import { BlogType } from '../response/responseTyep';
+import { BlogType } from '../response/responseType';
 import moment from 'moment';
 import { urlFor } from '../../sanity/client';
 import { useLoading } from '../context/LoadingContext';
 import { customerReview } from '../JSON-data/client-review';
+
+declare global {
+  interface Window {
+    ml?: (action: string, formId: string, show: boolean) => void;
+  }
+}
 
 const MainLayout: React.FC = () => {
   const router = useRouter();
@@ -27,6 +33,7 @@ const MainLayout: React.FC = () => {
   const [currentTab, setCurrentTab] = useState<number>(1);
   const [isOpen, setIsOpen] = useState(false);
   const { setIsLoading } = useLoading();
+
 
   const [latestBlog, setLatest] = useState<BlogType[]>([]);
   if (!context) {
@@ -67,8 +74,8 @@ const MainLayout: React.FC = () => {
     router.push(navigations.blogList)
   }
 
-  const handleBlogDetail = (postId: string) => {
-    router.push(`${navigations.blogDetail}/${postId}`)
+  const handleBlogDetail = (slug: string) => {
+    router.push(`${navigations.blogDetail}/${slug}`)
   }
 
   const homeRef = useRef<HTMLDivElement | null>(null);
@@ -117,8 +124,6 @@ const MainLayout: React.FC = () => {
 
   const handleTabChange = (key: React.Key) => {
     const newTabIndex: number = parseInt(key as string);
-    console.log('newTabIndex =>', newTabIndex);
-    console.log('currentTab =>', currentTab);
 
     // Update animation direction
     setAnimationSide(newTabIndex > currentTab ? 100 : -100);
@@ -170,7 +175,16 @@ const MainLayout: React.FC = () => {
             500+ members in our waitlist
           </div>
           <div className="mt-6 flex items-center flex-col justify-center gap-x-6">
-            <a href="#" className="min-w-48 bg-themeblue text-sm md:text-base leading-6 font-semibold px-6 py-3 rounded-full text-white border border-themeblue hover:border-textdark hover:text-textdark hover:bg-white">Start Your Free Trial</a>
+            <a  className="cursor-pointer min-w-48 bg-themeblue text-sm md:text-base leading-6 font-semibold px-6 py-3 rounded-full text-white border border-themeblue hover:border-textdark hover:text-textdark hover:bg-white"
+             onClick={() => {
+              if (window.ml) {
+                window.ml('show', 'WWumUa', true);
+              } else {
+                console.error("MailerLite is not initialized.");
+              }
+              }}>
+                Join our waitlist
+            </a>
             <p className="text-sm text-textlight font-normal text-center mt-2">Credit Card not required, Cancel anytime.</p>
           </div>
 
@@ -966,7 +980,15 @@ const MainLayout: React.FC = () => {
               </motion.div>
               <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                 <li className="flex gap-6">
-                  <a href="#" className="mt-7 w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Get Started
+                  <a  className="cursor-pointer mt-7 w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark"
+                     onClick={() => {
+                      if (window.ml) {
+                        window.ml('show', 'WWumUa', true);
+                      } else {
+                        console.error("MailerLite is not initialized.");
+                      }
+                    }} >
+                    Join our waitlist
                   </a>
                 </li>
               </motion.div>
@@ -991,7 +1013,15 @@ const MainLayout: React.FC = () => {
             <p className="para-text">
               Unlike other tools, PostReach leverages the most advanced generative AI technologies to craft captivating visuals, ensuring your posts stand out and engage with your audience.
             </p>
-            <a className="mt-7  w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Get Started
+            <a className=" cursor-pointer mt-7  w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark"
+             onClick={() => {
+              if (window.ml) {
+                window.ml('show', 'WWumUa', true);
+              } else {
+                console.error("MailerLite is not initialized.");
+              }
+            }} >
+              Join our waitlist
             </a>
           </div>
 
@@ -1054,7 +1084,16 @@ const MainLayout: React.FC = () => {
             <p className="para-text">
               PostReach harnesses the most advanced large language models (LLMs), always updated to the latest versions for maximum performance. Unlike other tools, there’s no need to choose a model – we handle it all to deliver the best results effortlessly.
             </p>
-            <a href="#" className="mt-7 w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Get Started
+            <a  className="cursor-pointer mt-7 w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark"
+             onClick={() => {
+              if (window.ml) {
+                window.ml('show', 'WWumUa', true);
+              } else {
+                console.error("MailerLite is not initialized.");
+              }
+            }} 
+            >
+              Join our waitlist
             </a>
           </div>
 
@@ -1412,7 +1451,17 @@ const MainLayout: React.FC = () => {
                 </ul>
                 <div className="my-6 py-6 border-t border-b border-[#EFEFEF]">
                   <h4 className=" text-[32px] max-[640px]:leading-[38px] lg:text-4xl xl:text-[48px] xl:leading-[56px] text-white font-bold mb-4">$20.00<span className="opacity-80 font-normal text-base leading-5"> (Per Month)</span></h4>
-                  <a href="#" className="theme-primary-btn block  bg-white hover:bg-white font-bold text-textdark mt-auto w-full text-center py-3 leading-[22px]">Get Started</a>
+                  <a className="cursor-pointer theme-primary-btn block  bg-white hover:bg-white font-bold text-textdark mt-auto w-full text-center py-3 leading-[22px]"
+                    onClick={() => {
+                      if (window.ml) {
+                        window.ml('show', 'WWumUa', true);
+                      } else {
+                        console.error("MailerLite is not initialized.");
+                      }
+                    }} 
+                    >
+                    Join our waitlist
+                  </a>
 
                 </div>
                 <ul className="flex flex-wrap flex-col gap-4 mb-8 xl:mb-16">
@@ -1502,9 +1551,9 @@ const MainLayout: React.FC = () => {
             <h4 className="sec-title w-full mb-0">We Are Here <span className="text-themeblue"> To Help</span></h4>
             <p className="para-text max-w-[520px] mb-3">
               Got questions? We’ve got answers! Here are some of the most common queries about PostReach AI. </p>
-            <a href="#" className="mt-0 w-full sm:w-auto mb-8 min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Contact us
+            <a href="mailto:info@postreach.ai" className="mt-0 w-full sm:w-auto mb-8 min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">
+              Contact us
             </a>
-
           </div>
 
           <div className="flex  flex-col items-start justify-start max-[575px]:-mx-2">
@@ -1552,7 +1601,7 @@ const MainLayout: React.FC = () => {
 
             {latestBlog.map((item, index) => (
               <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.1 }} className="my-section"  key={index}>
-                <div className="blog-col" onClick={() => handleBlogDetail(item._id)}>
+                <div className="blog-col" onClick={() => handleBlogDetail(item.slug.current)}>
                   <div className="blog-img-thumb">
                     <img src={urlFor(item.blog_image).url()} className="h-full w-full rounded-xl" alt="blog-1" />
                   </div>
@@ -1597,7 +1646,15 @@ const MainLayout: React.FC = () => {
               <h4 className="sec-title max-[575px]:text-[32px] max-[575px]:leading-[48px] w-full mb-0 text-white">Ready to Boost Your Social Media?</h4>
               <p className="para-text max-w-[520px] mb-3 text-white">
                 Start your free trial today and experience the power of PostReach AI. Simplify your social media management, save time, and grow your Business or Brand effortlessly. </p>
-              <a href="#" className="max-[640px]:mt-3 my-6 lg:my-0 w-full sm:w-auto  min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-[#0A2761] bg-white  hover:bg-[#0A2761] hover:border-white hover:text-white">Start Your Free Trial Now!
+              <a  className="cursor-pointer max-[640px]:mt-3 my-6 lg:my-0 w-full sm:w-auto  min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-[#0A2761] bg-white  hover:bg-[#0A2761] hover:border-white hover:text-white"
+                onClick={() => {
+                  if (window.ml) {
+                    window.ml('show', 'WWumUa', true);
+                  } else {
+                    console.error("MailerLite is not initialized.");
+                  }
+                }} >
+                Join our waitlist!
               </a>
 
             </div>
@@ -1631,7 +1688,6 @@ const MainLayout: React.FC = () => {
           </div>
         </div>
         )}
-
     </div>
 
   );

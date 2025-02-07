@@ -1,31 +1,38 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { urlFor } from '../../sanity/client';
 import { client } from "../../sanity/client";
-import { BlogDetailType, BlogType } from '../response/responseTyep';
+import { BlogDetailType, BlogType } from '../response/responseType';
 import moment from 'moment';
 import routes from '../navigation-list/route-list';
 import navigations from '../navigation-list/navigation';
 import ProgressLoader from '../common/progress-loader';
 import { PortableText } from 'next-sanity';
+import { DataContext } from '../context/shareData';
 
 const options = { next: { revalidate: 30 } };
 
 const BlogDetail: React.FC = () => {
+  const context = useContext(DataContext);
   const [type, setType] = useState<string>('introduction');
   const [blog, setBlog] = useState<BlogType>();
   const [blogDetail, setBlogDetail] = useState<BlogDetailType[]>([]);
   const [recommondedBlogs, setRecommonded] = useState<BlogType[]>([]);
   const router = useRouter();
-  const { postId } = useParams();
+  const { slug } = useParams();
   // Dynamic refs for blog detail sections
   const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
+  if (!context) {
+    throw new Error('DataContext must be used within a DataProvider');
+}
+
+
   useEffect(() => {
-    if (typeof postId === 'string') {
-      getBlog(postId);
-      getBlogDetail(postId);
+    if (typeof slug === 'string') {
+      getBlog(slug);
+      
     }
     getRecommondedBlogs();
   }, []);
@@ -35,14 +42,16 @@ const BlogDetail: React.FC = () => {
     router.prefetch(navigations.blogDetail);
   }, []);
 
-  const getBlog = async (id: string) => {
-    const blog = await client.fetch(routes.blogWithId, { id }, options);
+  const getBlog = async (slug: string) => {
+    const blog = await client.fetch(routes.blogWithSlug, { slug }, options);
+    context.setMetadata(blog[0])
     setBlog(blog[0]);
+    getBlogDetail(blog[0]._id);
   };
 
   const getBlogDetail = async (id: string) => {
-    const blog = await client.fetch(routes.blog_details, { id }, options);
-    setBlogDetail(blog);
+    const blogDetail = await client.fetch(routes.blog_details, { id }, options);
+    setBlogDetail(blogDetail);
   };
 
   const getRecommondedBlogs = async () => {
@@ -74,6 +83,7 @@ const BlogDetail: React.FC = () => {
 }
 
   return (
+    
     <div>
       <div className="custom-container max-w-[calc(100%-1.5rem)] min-[1365px]:max-w-[1320px] xl:pl-0 2xl:pl-[70px] relative z-0 pb-0 md:pb-8 lg:pb-10 py-8 lg:py-10 px-0 mt-20 mb-3 md:mb-5">
         <div className="flex flex-row gap-6 xl:gap-12 2xl:gap-16">
@@ -228,7 +238,7 @@ const BlogDetail: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {recommondedBlogs.map((item, index) => (
-              <div className="blog-col" key={index} onClick={() => handleBlogDetail(item._id)}>
+              <div className="blog-col" key={index} onClick={() => handleBlogDetail(item.slug.current)}>
                 <div className="blog-img-thumb">
                   <img
                     src={urlFor(item.blog_image).url()}

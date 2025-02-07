@@ -437,10 +437,10 @@ ul.simple-easy-list .list-dotted-line:before {
 }
 @keyframes marquee {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(-100%);
   }
 }
 
