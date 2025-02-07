@@ -74,7 +74,7 @@ const { setIsLoading } = useLoading();
               className=" cursor-pointer min-w-40 inline-flex justify-center text-center bg-themeblue text-base leading-6 font-bold px-10 py-3 rounded-full text-white border border-themeblue hover:border-textdark hover:text-textdark hover:bg-white"
               onClick={() => {
                 if (window.ml) {
-                  window.ml('show', 'WWumUa', true);
+                  window.ml('show', '1014472', true);
                 } else {
                   console.error("MailerLite is not initialized.");
                 }
