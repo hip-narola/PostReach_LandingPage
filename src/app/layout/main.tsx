@@ -19,11 +19,7 @@ import { urlFor } from '../../sanity/client';
 import { useLoading } from '../context/LoadingContext';
 import { customerReview } from '../JSON-data/client-review';
 
-declare global {
-  interface Window {
-    ml?: (action: string, formId: string, show: boolean) => void;
-  }
-}
+
 
 const MainLayout: React.FC = () => {
   const router = useRouter();
@@ -86,8 +82,7 @@ const MainLayout: React.FC = () => {
   const handleScroll = (activeTab: string) => {
     setIsLoading(false);
     const offset = 100;
-    let ref;
-
+    let ref: HTMLElement | null = null;
     if (activeTab == 'home' && homeRef.current) {
       ref = homeRef.current
     }
@@ -104,19 +99,20 @@ const MainLayout: React.FC = () => {
       ref = pricingRef.current
     }
 
-   
-    if(ref){
-      const elementPosition = ref.getBoundingClientRect().top; 
-      const offsetPosition = elementPosition + window.scrollY - offset; // Adjust for header offset
+    setTimeout(() => {
+      if(ref){
+        const elementPosition = ref.getBoundingClientRect().top; 
+        const offsetPosition = elementPosition + window.scrollY - offset; // Adjust for header offset
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
-
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      }
+    }, 100);
   };
 
+  
   const getLatestdBlogs = async () => {
     const feature = await client.fetch(routes.LatestBlog, {}, options);
     setLatest(feature)
@@ -1056,16 +1052,15 @@ const MainLayout: React.FC = () => {
         <div className="grid grid-cols-1 items-center max-[575px]:my-4 gap-8 lg:gap-14 md:grid-cols-2 xl:grid-cols-[550px,1fr]">
          
           <div className="hidden sm:flex  flex-col items-star relative">
- <div className="absolute -left-1/2 -bottom-6 w-full">
-          <img src="../assets/images/advance-Ai-Engine-bg-lg.webp" alt="GenerativeAI Engine" />
-          </div>
+            <div className="absolute -left-1/2 -bottom-6 w-full">
+            <img src="../assets/images/advance-Ai-Engine-bg-lg.webp" alt="GenerativeAI Engine" />
+            </div>
             <motion.div initial={{ opacity: 0, x: -160 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
               <div className=" w-full">
                 <img src="../assets/images/advance-Ai-Engine.png" alt="GenerativeAI Engine" />
               </div>
             </motion.div>
           </div>
-
           <div className="flex  sm:hidden flex-col items-star mt-20 relative">
             <div className="absolute -left-1/2 -top-32 bg-[#1877f24d] blur-[102px] h-[362px] w-[362px] rounded-full opacity-20 z-10">
               {/* <img src="../assets/images/smarter-bg.webp" alt="smarter-bg" /> */}
@@ -1202,9 +1197,10 @@ const MainLayout: React.FC = () => {
             draggable={true}
             showDots={false}
             ssr={true} 
+            autoPlaySpeed={3000}
             infinite={true}
             centerMode={false}
-            autoPlay={true}
+            autoPlay={false}
             keyBoardControl={true}
             className="our-customer-slider our-customer-slider-mobile"
             containerClass="carousel-container"
@@ -1352,11 +1348,11 @@ const MainLayout: React.FC = () => {
 
       {/* <!-- Section Pricing  --> */}
 
-      <div className="custom-container relative max-[640px]:mt-10" ref={pricingRef}>
+      <div className="custom-container relative max-[640px]:mt-10">
         <div className="absolute w-[398px] h-[530px] -top-56 -right-40 sm:hidden">
         <img src="../assets/images/blur-circle.png" className="h-full w-full" alt="blur-circle" />
           </div>
-        <div className="grid grid-cols-1 items-center gap-x-6 lg:gap-x-10 xl:gap-x-16 ">
+        <div className="grid grid-cols-1 items-center gap-x-6 lg:gap-x-10 xl:gap-x-16" ref={pricingRef} >
           <div className="col-span-1 text-center">
             {/* <p className="sec-sub-title w-full">Pricing</p> */}
             <h4 className="sec-title w-full max-[640px]:text-[28px] max-[640px]:leading-[42px]">Choose the Plan That <span className="text-themeblue max-[640px]:block">Fits Your Needs</span></h4>
@@ -1673,12 +1669,12 @@ const MainLayout: React.FC = () => {
       </motion.div>
       {/* <!-- End Section Ready to Boost Your Social Media? --> */}
 
-             {/* Video Modal */}
+      {/* Video Modal */}
        {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50">
           <div className="relative w-[calc(100%-2rem)] max-w-[1200px]">
             <button className="z-10 absolute -top-4 -right-3 text-white text-xl  py-1 cursor-pointer invert" onClick={handleClose}>
-            <img className="max-w-6"  src='../assets/icons/filter-close-btn.svg'  />
+              <img className="max-w-6"  src='../assets/icons/filter-close-btn.svg'  />
             </button>
             {/* Video Player */}
             <div className='player'>
@@ -1689,7 +1685,6 @@ const MainLayout: React.FC = () => {
         </div>
         )}
     </div>
-
   );
 };
 

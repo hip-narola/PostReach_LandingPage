@@ -56,8 +56,15 @@ const Sidenav: React.FC = () => {
                   <a onClick={() => handleNavigation('blog')} className="flex items-center justify-between flex-row p-2 text-base font-normal leading-6 text-[#525252] cursor-pointer">Blog <img src="../assets/icons/caret-right.svg" alt="caret-right" /></a>
                 </div>
                 <div className="flex gap-x-3 px-2 lg:hidden lg:flex-1 lg:justify-end mt-8">
-                  <a href="#" className="flex-[50%] inline-flex justify-center text-center  text-base  font-bold px-2 py-3 rounded-full text-textdark border border-textdark hover:border-themeblue hover:text-themeblue">Start Free Trial</a>
-                  <a href="#" className="flex-[50%] inline-flex justify-center text-center bg-themeblue text-base  font-bold px-2 py-3 rounded-full text-white border border-themeblue hover:border-textdark hover:text-textdark hover:bg-white">Log in</a>
+                  {/* <a href="#" className="flex-[50%] inline-flex justify-center text-center  text-base  font-bold px-2 py-3 rounded-full text-textdark border border-textdark hover:border-themeblue hover:text-themeblue">Start Free Trial</a> */}
+                  <a onClick={() => {
+                    if (window.ml) {
+                    window.ml('show', 'WWumUa', true);
+                    context.setMobilenav(false);
+                    } else {
+                    console.error("MailerLite is not initialized.");
+                    }
+                     }} className="cursor-pointer flex-[50%] inline-flex justify-center text-center bg-themeblue text-base  font-bold px-2 py-3 rounded-full text-white border border-themeblue hover:border-textdark hover:text-textdark hover:bg-white">Join our waitlist</a>
                 </div>
           </div>
             </div>

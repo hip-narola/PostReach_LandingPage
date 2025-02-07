@@ -5,12 +5,6 @@ import navigations from '../navigation-list/navigation';
 import { DataContext } from '../context/shareData';
 import { useLoading } from '../context/LoadingContext';
 
-declare global {
-  interface Window {
-    ml?: (action: string, formId: string, show: boolean) => void;
-  }
-}
-
 const Header: React.FC = () => {
 const { setIsLoading } = useLoading();
   const context = useContext(DataContext);
@@ -24,7 +18,6 @@ const { setIsLoading } = useLoading();
   const pathname = usePathname();
 
   const handleNavigation = (type:string) => {
-    context.setData(type);
     if(type == 'blog'){
       router.push(navigations.blogList)
     }else{
@@ -33,6 +26,7 @@ const { setIsLoading } = useLoading();
         router.push(navigations.home);
       };
     }
+    context.setData(type);
     
   }
 

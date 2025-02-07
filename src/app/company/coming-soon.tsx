@@ -12,18 +12,11 @@ const ComingSoon: React.FC = () => {
         </div>
         <div className="text-center min-h-64  lg:min-h-96 flex items-center justify-center max-w-full md:max-w-[calc(100%-2rem)] min-[1365px]:max-w-[1200px] mx-auto">
           <h1 className="banner-title max-[600px]:hidden block relative">
-          Comming Soon..
-              
+            Comming Soon..
           </h1>
           <h1 className="banner-title max-[600px]:block hidden relative">
-          Comming Soon..
-
+            Comming Soon..
           </h1>
-
-         
-        
-
-         
         </div>
       </div>
     
