@@ -535,6 +535,8 @@ ul.simple-easy-list .list-dotted-line:before {
 .player{
   padding:56.25% 0 0 0;
   position:relative;
+  background: #fff;
+  border-radius: 16px;
 }
   .inside-player{
     position:absolute;

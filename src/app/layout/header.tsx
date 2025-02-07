@@ -4,7 +4,11 @@ import React, { useContext } from 'react';
 import navigations from '../navigation-list/navigation';
 import { DataContext } from '../context/shareData';
 import { useLoading } from '../context/LoadingContext';
-
+declare global {
+  interface Window {
+    ml?: (action: string, formId: string, show: boolean) => void;
+  }
+}
 const Header: React.FC = () => {
 const { setIsLoading } = useLoading();
   const context = useContext(DataContext);

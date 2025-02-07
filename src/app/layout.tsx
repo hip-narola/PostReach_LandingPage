@@ -12,11 +12,7 @@ import { routeTitleMapping } from "./navigation-list/match-route";
 import GlobalLoader from "./common/Loader/common-loader";
 import { useContext} from "react";
 
-declare global {
-  interface Window {
-    ml?: (action: string, formId: string, show: boolean) => void;
-  }
-}
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -100,7 +96,7 @@ function RootLayoutContent({
                     l=d.createElement(e),l.async=1,l.src=u,
                     n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);
                   })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-                  ml('account', '1014472');
+                 
                 `,
               }}
             />
@@ -117,7 +113,7 @@ function RootLayoutContent({
                     l=d.createElement(e),l.async=1,l.src=u,
                     n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);
                   })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-                  ml('account', '1014472');
+                  
                 `,
               }}
             />

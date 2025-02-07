@@ -20,7 +20,6 @@ import { useLoading } from '../context/LoadingContext';
 import { customerReview } from '../JSON-data/client-review';
 
 
-
 const MainLayout: React.FC = () => {
   const router = useRouter();
   const options = { next: { revalidate: 30 } };
@@ -171,16 +170,7 @@ const MainLayout: React.FC = () => {
             500+ members in our waitlist
           </div>
           <div className="mt-6 flex items-center flex-col justify-center gap-x-6">
-            <a  className="cursor-pointer min-w-48 bg-themeblue text-sm md:text-base leading-6 font-semibold px-6 py-3 rounded-full text-white border border-themeblue hover:border-textdark hover:text-textdark hover:bg-white"
-             onClick={() => {
-              if (window.ml) {
-                window.ml('show', 'WWumUa', true);
-              } else {
-                console.error("MailerLite is not initialized.");
-              }
-              }}>
-                Join our waitlist
-            </a>
+            <a href="#" className="min-w-48 bg-themeblue text-sm md:text-base leading-6 font-semibold px-6 py-3 rounded-full text-white border border-themeblue hover:border-textdark hover:text-textdark hover:bg-white">Join our waitlist</a>
             <p className="text-sm text-textlight font-normal text-center mt-2">Credit Card not required, Cancel anytime.</p>
           </div>
 
@@ -748,7 +738,7 @@ const MainLayout: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1  lg:grid-cols-[620px,1fr]  xl:grid-cols-[1fr,508px]  gap-5 lg:gap-2 xl:gap-8 max-[640px]:w-[calc(100%+2rem)] max-[640px]:max-w-[calc(100%+2rem)]  max-[640px]:-ml-4 getting-stareted-main">
-          <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.2 }} className="my-section">
+          <motion.div initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.1 }} className="my-section">
             <div className="flex max-[640px]:justify-center lg:mt-5 relative max-[1023px]:max-w-[620px] max-[640px]:max-w-[375px] max-[1023px]:m-auto max-[1280px]:overflow-hidden">
               <div className="hidden sm:block" >
               <img src="../assets/images/getting-started-img.svg" alt="about" />
@@ -976,15 +966,7 @@ const MainLayout: React.FC = () => {
               </motion.div>
               <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                 <li className="flex gap-6">
-                  <a  className="cursor-pointer mt-7 w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark"
-                     onClick={() => {
-                      if (window.ml) {
-                        window.ml('show', 'WWumUa', true);
-                      } else {
-                        console.error("MailerLite is not initialized.");
-                      }
-                    }} >
-                    Join our waitlist
+                  <a href="#" className="mt-7 w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Join our waitlist
                   </a>
                 </li>
               </motion.div>
@@ -1009,15 +991,7 @@ const MainLayout: React.FC = () => {
             <p className="para-text">
               Unlike other tools, PostReach leverages the most advanced generative AI technologies to craft captivating visuals, ensuring your posts stand out and engage with your audience.
             </p>
-            <a className=" cursor-pointer mt-7  w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark"
-             onClick={() => {
-              if (window.ml) {
-                window.ml('show', 'WWumUa', true);
-              } else {
-                console.error("MailerLite is not initialized.");
-              }
-            }} >
-              Join our waitlist
+            <a className="mt-7  w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Join our waitlist
             </a>
           </div>
 
@@ -1079,16 +1053,7 @@ const MainLayout: React.FC = () => {
             <p className="para-text">
               PostReach harnesses the most advanced large language models (LLMs), always updated to the latest versions for maximum performance. Unlike other tools, there’s no need to choose a model – we handle it all to deliver the best results effortlessly.
             </p>
-            <a  className="cursor-pointer mt-7 w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark"
-             onClick={() => {
-              if (window.ml) {
-                window.ml('show', 'WWumUa', true);
-              } else {
-                console.error("MailerLite is not initialized.");
-              }
-            }} 
-            >
-              Join our waitlist
+            <a href="#" className="mt-7 w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Join our waitlist
             </a>
           </div>
 
@@ -1447,17 +1412,7 @@ const MainLayout: React.FC = () => {
                 </ul>
                 <div className="my-6 py-6 border-t border-b border-[#EFEFEF]">
                   <h4 className=" text-[32px] max-[640px]:leading-[38px] lg:text-4xl xl:text-[48px] xl:leading-[56px] text-white font-bold mb-4">$20.00<span className="opacity-80 font-normal text-base leading-5"> (Per Month)</span></h4>
-                  <a className="cursor-pointer theme-primary-btn block  bg-white hover:bg-white font-bold text-textdark mt-auto w-full text-center py-3 leading-[22px]"
-                    onClick={() => {
-                      if (window.ml) {
-                        window.ml('show', 'WWumUa', true);
-                      } else {
-                        console.error("MailerLite is not initialized.");
-                      }
-                    }} 
-                    >
-                    Join our waitlist
-                  </a>
+                  <a href="#" className="theme-primary-btn block  bg-white hover:bg-white font-bold text-textdark mt-auto w-full text-center py-3 leading-[22px]">Join our waitlist</a>
 
                 </div>
                 <ul className="flex flex-wrap flex-col gap-4 mb-8 xl:mb-16">
@@ -1642,15 +1597,7 @@ const MainLayout: React.FC = () => {
               <h4 className="sec-title max-[575px]:text-[32px] max-[575px]:leading-[48px] w-full mb-0 text-white">Ready to Boost Your Social Media?</h4>
               <p className="para-text max-w-[520px] mb-3 text-white">
                 Start your free trial today and experience the power of PostReach AI. Simplify your social media management, save time, and grow your Business or Brand effortlessly. </p>
-              <a  className="cursor-pointer max-[640px]:mt-3 my-6 lg:my-0 w-full sm:w-auto  min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-[#0A2761] bg-white  hover:bg-[#0A2761] hover:border-white hover:text-white"
-                onClick={() => {
-                  if (window.ml) {
-                    window.ml('show', 'WWumUa', true);
-                  } else {
-                    console.error("MailerLite is not initialized.");
-                  }
-                }} >
-                Join our waitlist!
+              <a href="#" className="max-[640px]:mt-3 my-6 lg:my-0 w-full sm:w-auto  min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-[#0A2761] bg-white  hover:bg-[#0A2761] hover:border-white hover:text-white">Join our waitlist!
               </a>
 
             </div>
