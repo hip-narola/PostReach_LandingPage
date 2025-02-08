@@ -4,11 +4,6 @@ import React, { useContext } from 'react';
 import navigations from '../navigation-list/navigation';
 import { DataContext } from '../context/shareData';
 import { useLoading } from '../context/LoadingContext';
-declare global {
-  interface Window {
-    ml?: (action: string, formId: string, show: boolean) => void;
-  }
-}
 const Header: React.FC = () => {
 const { setIsLoading } = useLoading();
   const context = useContext(DataContext);
@@ -74,7 +69,7 @@ const { setIsLoading } = useLoading();
               className=" cursor-pointer min-w-40 inline-flex justify-center text-center bg-themeblue text-base leading-6 font-bold px-10 py-3 rounded-full text-white border border-themeblue hover:border-textdark hover:text-textdark hover:bg-white"
               onClick={() => {
                 if (window.ml) {
-                  window.ml('show', '1014472', true);
+                  window.ml('show', 'WWumUa', true);
                 } else {
                   console.error("MailerLite is not initialized.");
                 }

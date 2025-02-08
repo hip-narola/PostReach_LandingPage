@@ -12,7 +12,11 @@ import { routeTitleMapping } from "./navigation-list/match-route";
 import GlobalLoader from "./common/Loader/common-loader";
 import { useContext} from "react";
 
-
+declare global {
+  interface Window {
+    ml?: (action: string, formId: string, show: boolean) => void;
+  }
+}
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
