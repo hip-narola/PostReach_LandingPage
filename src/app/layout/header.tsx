@@ -4,11 +4,6 @@ import React, { useContext } from 'react';
 import navigations from '../navigation-list/navigation';
 import { DataContext } from '../context/shareData';
 import { useLoading } from '../context/LoadingContext';
-declare global {
-  interface Window {
-    ml?: (action: string, formId: string, show: boolean) => void;
-  }
-}
 const Header: React.FC = () => {
 const { setIsLoading } = useLoading();
   const context = useContext(DataContext);
@@ -16,8 +11,7 @@ const { setIsLoading } = useLoading();
   if (!context) {
       throw new Error('DataContext must be used within a DataProvider');
   }
-
-
+   
   const router = useRouter();
   const pathname = usePathname();
 
@@ -71,10 +65,10 @@ const { setIsLoading } = useLoading();
               {/* <a onClick={handleLogin} className=" cursor-pointer min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-textdark border border-textdark hover:border-themeblue hover:text-themeblue">Start Free Trial</a> */}
               {/* <a onClick={handleLogin} className=" cursor-pointer min-w-40 inline-flex justify-center text-center bg-themeblue text-base leading-6 font-bold px-10 py-3 rounded-full text-white border border-themeblue hover:border-textdark hover:text-textdark hover:bg-white">Join our waitlist</a> */}
               <button
-              className=" cursor-pointer min-w-40 inline-flex justify-center text-center bg-themeblue text-base leading-6 font-bold px-10 py-3 rounded-full text-white border border-themeblue hover:border-textdark hover:text-textdark hover:bg-white"
+              className="ml-onclick-form cursor-pointer min-w-40 inline-flex justify-center text-center bg-themeblue text-base leading-6 font-bold px-10 py-3 rounded-full text-white border border-themeblue hover:border-textdark hover:text-textdark hover:bg-white"
               onClick={() => {
                 if (window.ml) {
-                  window.ml('show', '1014472', true);
+                  window.ml('show', 'n1oinc', true);
                 } else {
                   console.error("MailerLite is not initialized.");
                 }

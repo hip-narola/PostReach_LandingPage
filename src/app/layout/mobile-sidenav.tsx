@@ -59,7 +59,7 @@ const Sidenav: React.FC = () => {
                   {/* <a href="#" className="flex-[50%] inline-flex justify-center text-center  text-base  font-bold px-2 py-3 rounded-full text-textdark border border-textdark hover:border-themeblue hover:text-themeblue">Start Free Trial</a> */}
                   <a onClick={() => {
                     if (window.ml) {
-                    window.ml('show', 'WWumUa', true);
+                        window.ml('show', 'n1oinc', true);
                     context.setMobilenav(false);
                     } else {
                     console.error("MailerLite is not initialized.");

@@ -11,8 +11,13 @@ import { usePathname } from "next/navigation";
 import { routeTitleMapping } from "./navigation-list/match-route";
 import GlobalLoader from "./common/Loader/common-loader";
 import { useContext} from "react";
+import Script from "next/script";
 
-
+declare global {
+  interface Window {
+    ml?: (action: string, formId: string, show?: boolean) => void;
+  }
+}
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -87,35 +92,39 @@ function RootLayoutContent({
               }}
             />
           )}
-           {/* Add MailerLite Universal Script Here */}
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  (function(w,d,e,u,f,l,n){
-                    w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};
-                    l=d.createElement(e),l.async=1,l.src=u,
-                    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);
-                  })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-                  ml('account', '1014472');
-                `,
+            {/* MailerLite Universal Script */}
+            <Script
+              strategy="afterInteractive"
+              src="https://assets.mailerlite.com/js/universal.js"
+              onLoad={() => {
+                if (typeof window !== "undefined" && window.ml) {
+                  window.ml("account", "1014472");
+                }
               }}
+            />
+            <Script
+              strategy="afterInteractive"
+              src="https://assets.mailerlite.com/jsonp/1014472/forms/n1oinc?callback=ml.fn.addOnClickForm"
+              async
             />
         </head>
         :   
         <head>
           <title>{pageTitle}</title>
-           {/* Add MailerLite Universal Script Here */}
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  (function(w,d,e,u,f,l,n){
-                    w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};
-                    l=d.createElement(e),l.async=1,l.src=u,
-                    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);
-                  })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-                  ml('account', '1014472');
-                `,
+           {/* MailerLite Universal Script */}
+           <Script
+              strategy="afterInteractive"
+              src="https://assets.mailerlite.com/js/universal.js"
+              onLoad={() => {
+                if (typeof window !== "undefined" && window.ml) {
+                  window.ml("account", "1014472");
+                }
               }}
+            />
+            <Script
+              strategy="afterInteractive"
+              src="https://assets.mailerlite.com/jsonp/1014472/forms/n1oinc?callback=ml.fn.addOnClickForm"
+              async
             />
         </head>
       }

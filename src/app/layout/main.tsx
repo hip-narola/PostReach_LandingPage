@@ -138,7 +138,7 @@ const MainLayout: React.FC = () => {
       <div className="mx-auto   relative z-0 px-4 lg:px-0 pt-24 pb-12 lg:pt-28 lg:pb-0 xl:pt-40 overflow-hidden" ref={homeRef}>
         <div className="absolute max-[375px]:-bottom-28 max-[767px]:bottom-0  md:top-0 left-0 -z-10 flex justify-center w-full text-center">
           <img src="../assets/images/banner-bg.png" className="max-[375px]:hidden block" alt="banner-bg" />
-          <img src="../assets/images/banner375.png" className="max-[375px]:block hidden"  alt="banner-bg" />
+          <img src="../assets/images/banner375.webp" className="max-[375px]:block hidden"  alt="banner-bg" />
         </div>
         <div className="text-center max-w-full md:max-w-[calc(100%-2rem)] min-[1365px]:max-w-[1200px] mx-auto">
           <h1 className="banner-title max-[600px]:hidden block relative">Automate Your
@@ -170,7 +170,14 @@ const MainLayout: React.FC = () => {
             500+ members in our waitlist
           </div>
           <div className="mt-6 flex items-center flex-col justify-center gap-x-6">
-            <a href="#" className="min-w-48 bg-themeblue text-sm md:text-base leading-6 font-semibold px-6 py-3 rounded-full text-white border border-themeblue hover:border-textdark hover:text-textdark hover:bg-white">Join our waitlist</a>
+            <a  className="cursor-pointer min-w-48 bg-themeblue text-sm md:text-base leading-6 font-semibold px-6 py-3 rounded-full text-white border border-themeblue hover:border-textdark hover:text-textdark hover:bg-white"
+            onClick={() => {
+              if (window.ml) {
+                window.ml('show', 'n1oinc', true);
+              } else {
+                console.error("MailerLite is not initialized.");
+              }
+            }} >Join our waitlist</a>
             <p className="text-sm text-textlight font-normal text-center mt-2">Credit Card not required, Cancel anytime.</p>
           </div>
 
@@ -182,7 +189,7 @@ const MainLayout: React.FC = () => {
             <a onClick={() => setIsOpen(true)} className="abosolute-div-center video-play-button absolute cursor-pointer">
               <img src="../assets/icons/play-icon.png" alt="play-icon" />
             </a>
-            <img src="../assets/images/video-banner.png" alt="video-banner" />
+            <img src="../assets/images/video-banner.webp" alt="video-banner" />
 
             <div className="banner-fb-icon absolute -left-6 xl:-left-14 top-1/2 -mt-12 lg:-mt-16 max-w-14 xl:max-w-20">
               <img src="../assets/images/banner-fb.png" alt="banner-fb-icon" />
@@ -763,7 +770,7 @@ const MainLayout: React.FC = () => {
                 <img src="../assets/images/linkedin-gs.png" className="" alt="Linkedin" />
               </div>
               <div className="absolute -left-20 -bottom-20 -z-10  max-[640px]:hidden">
-                <img src="../assets/images/getting-started-shadow.png" className="" alt="getting-started-shadow" />
+                <img src="../assets/images/getting-started-shadow.webp" className="" alt="getting-started-shadow" />
               </div>
               <div className="absolute left-5 -top-[26px] -z-10 max-[640px]:hidden">
               <div className="animatedsvg-wrapper">
@@ -966,7 +973,14 @@ const MainLayout: React.FC = () => {
               </motion.div>
               <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
                 <li className="flex gap-6">
-                  <a href="#" className="mt-7 w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Join our waitlist
+                  <a onClick={() => {
+                    if (window.ml) {
+                      window.ml('show', 'n1oinc', true);
+                    } else {
+                      console.error("MailerLite is not initialized.");
+                    }
+                  }}  className="cursor-pointer mt-7 w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">
+                    Join our waitlist
                   </a>
                 </li>
               </motion.div>
@@ -991,7 +1005,14 @@ const MainLayout: React.FC = () => {
             <p className="para-text">
               Unlike other tools, PostReach leverages the most advanced generative AI technologies to craft captivating visuals, ensuring your posts stand out and engage with your audience.
             </p>
-            <a className="mt-7  w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Join our waitlist
+            <a className="cursor-pointer mt-7  w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark"
+            onClick={() => {
+              if (window.ml) {
+                window.ml('show', 'n1oinc', true);
+              } else {
+                console.error("MailerLite is not initialized.");
+              }
+            }} >Join our waitlist
             </a>
           </div>
 
@@ -1000,7 +1021,7 @@ const MainLayout: React.FC = () => {
               <div className=" w-full relative max-[767px]:pt-5 max-[1280px]:overflow-hidden">
                 <img src="../assets/images/Generative-Ai.webp" alt="GenerativeAI" className="relative z-10" />
                 <div className="absolute -right-20 -bottom-8 lg:-bottom-20">
-                  <img src="../assets/images/generative-ai-shadow.png" className="" alt="generative-ai-shadow" />
+                  <img src="../assets/images/generative-ai-shadow.webp" className="" alt="generative-ai-shadow" />
                 </div>
               </div>
             </motion.div>
@@ -1011,7 +1032,7 @@ const MainLayout: React.FC = () => {
               <div className=" w-full relative max-[767px]:pt-5 max-[1280px]:overflow-hidden">
                 <img src="../assets/images/Generative-Ai.webp" alt="GenerativeAI" className="relative z-10" />
                 <div className="absolute -right-20 -bottom-8 lg:-bottom-20">
-                  <img src="../assets/images/generative-ai-shadow.png" className="" alt="generative-ai-shadow" />
+                  <img src="../assets/images/generative-ai-shadow.webp" className="" alt="generative-ai-shadow" />
                 </div>
               </div>
             </motion.div>
@@ -1053,7 +1074,14 @@ const MainLayout: React.FC = () => {
             <p className="para-text">
               PostReach harnesses the most advanced large language models (LLMs), always updated to the latest versions for maximum performance. Unlike other tools, there’s no need to choose a model – we handle it all to deliver the best results effortlessly.
             </p>
-            <a href="#" className="mt-7 w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Join our waitlist
+            <a className=" cursor-pointer mt-7 w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark"
+            onClick={() => {
+              if (window.ml) {
+                window.ml('show', 'n1oinc', true);
+              } else {
+                console.error("MailerLite is not initialized.");
+              }
+            }} >Join our waitlist
             </a>
           </div>
 
@@ -1260,8 +1288,8 @@ const MainLayout: React.FC = () => {
 
       <div className="custom-container max-[767px]:max-w-[343px] min-[1232px]:max-w-[1200px] lg:pb-12 relative z-0 max-[575px]:pt-10 max-[575px]:pb-4  pt-7 my-12" ref={integrationRef}>
         <div className="absolute left-0 top-0 h-full w-full overflow-hidden -z-10">
-          <img src="../assets/images/SeamlessIntegrations-bg.png" className="max-w-full max-[767px]:hidden block min-[1365px]:max-w-[1200px] mx-auto seamless-bg  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
-          <img src="../assets/images/SeamlessIntegrations-bg-mobile.png" className="max-w-full max-[767px]:block hidden object-top min-[1365px]:max-w-[1200px] mx-auto  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
+          <img src="../assets/images/SeamlessIntegrations-bg.webp" className="max-w-full max-[767px]:hidden block min-[1365px]:max-w-[1200px] mx-auto seamless-bg  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
+          <img src="../assets/images/SeamlessIntegrations-bg-mobile.webp" className="max-w-full max-[767px]:block hidden object-top min-[1365px]:max-w-[1200px] mx-auto  h-full w-full object-cover rounded-3xl" alt="dot-bg" />
         </div>
         <div className="grid grid-cols-1 items-center gap-x-6 lg:gap-x-10 xl:gap-x-16">
           <div className="col-span-1 text-center">
@@ -1315,7 +1343,7 @@ const MainLayout: React.FC = () => {
 
       <div className="custom-container relative max-[640px]:mt-10">
         <div className="absolute w-[398px] h-[530px] -top-56 -right-40 sm:hidden">
-        <img src="../assets/images/blur-circle.png" className="h-full w-full" alt="blur-circle" />
+        <img src="../assets/images/blur-circle.webp" className="h-full w-full" alt="blur-circle" />
           </div>
         <div className="grid grid-cols-1 items-center gap-x-6 lg:gap-x-10 xl:gap-x-16" ref={pricingRef} >
           <div className="col-span-1 text-center">
@@ -1333,7 +1361,7 @@ const MainLayout: React.FC = () => {
             <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.1 }} className="my-section">
               <div className="flex flex-wrap flex-col p-4 lg:py-8 lg:px-6 rounded-[40px] border border-[#D9D9D9] relative z-10 mt-10 md:mb-0">
                 <div className="absolute top-0 left-0 -z-10  h-full">
-                  <img src="../assets/images/pro-package.png" className="h-full w-full rounded-[40px]" alt="pro-package" />
+                  <img src="../assets/images/pro-package.webp" className="h-full w-full rounded-[40px]" alt="pro-package" />
                 </div>
                 <div className="w-max m-auto text-center -mt-9 lg:-mt-14">
                   <div className="flex flex-row items-center gap-2 py-2 px-6 text-base md:text-lg font-semibold rounded-[50px] border border-themeblue text-themeblue bg-white">
@@ -1380,7 +1408,7 @@ const MainLayout: React.FC = () => {
             <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.1 }} className="my-section">
               <div className="flex flex-wrap flex-col p-4 lg:py-8 lg:px-6 rounded-[40px] z-10 relative">
                 <div className="h-full w-full mx-auto absolute top-0 left-0 -z-10">
-                  <img src="../assets/images/starter-package-bg.png" className="h-full w-full rounded-[40px] " alt="package-bg" />
+                  <img src="../assets/images/starter-package-bg.webp" className="h-full w-full rounded-[40px] " alt="package-bg" />
                 </div>
                 <div className="inline-flex max-w-max mt-8 lg:mt-6  text-2xl leading-9 lg:text-[28px] sm:leading-8 text-white font-bold rounded-lg">
                   Starter Package
@@ -1412,7 +1440,14 @@ const MainLayout: React.FC = () => {
                 </ul>
                 <div className="my-6 py-6 border-t border-b border-[#EFEFEF]">
                   <h4 className=" text-[32px] max-[640px]:leading-[38px] lg:text-4xl xl:text-[48px] xl:leading-[56px] text-white font-bold mb-4">$20.00<span className="opacity-80 font-normal text-base leading-5"> (Per Month)</span></h4>
-                  <a href="#" className="theme-primary-btn block  bg-white hover:bg-white font-bold text-textdark mt-auto w-full text-center py-3 leading-[22px]">Join our waitlist</a>
+                  <a  className="cursor-pointer theme-primary-btn block  bg-white hover:bg-white font-bold text-textdark mt-auto w-full text-center py-3 leading-[22px]"
+                  onClick={() => {
+                    if (window.ml) {
+                      window.ml('show', 'n1oinc', true);
+                    } else {
+                      console.error("MailerLite is not initialized.");
+                    }
+                  }} >Join our waitlist</a>
 
                 </div>
                 <ul className="flex flex-wrap flex-col gap-4 mb-8 xl:mb-16">
@@ -1440,7 +1475,7 @@ const MainLayout: React.FC = () => {
             <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: false, amount: 0.1 }} className="my-section">
               <div className="flex flex-wrap flex-col p-4 lg:py-8 lg:px-6 rounded-[40px] border border-[#D9D9D9] relative z-10 mt-10 md:mb-0">
                 <div className="absolute top-0 right-0 -z-10 h-full">
-                  <img src="../assets/images/unlimited-package.png" className="h-full w-full rounded-[40px]" alt="unlimited-package" />
+                  <img src="../assets/images/unlimited-package.webp" className="h-full w-full rounded-[40px]" alt="unlimited-package" />
                 </div>
                 <div className="w-max m-auto text-center -mt-9 lg:-mt-14">
                   <div className="flex flex-row items-center gap-2 py-2 px-6 text-lg font-semibold rounded-[50px] border border-themeblue text-themeblue bg-white">
@@ -1493,10 +1528,10 @@ const MainLayout: React.FC = () => {
 
         <div className="items-start grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-[485px,1fr] gap-x-4 lg:gap-x-6 xl:gap-x-14 z-10 relative">
           <div className="max-[575px]:hidden block absolute top-12 -left-16 -z-10  h-full max-w-[400px]">
-            <img src="../assets/images/blur-circle.png" className="h-full w-full" alt="blur-circle" />
+            <img src="../assets/images/blur-circle.webp" className="h-full w-full" alt="blur-circle" />
           </div>
           <div className="max-[575px]:block hidden absolute -bottom-1/2 -left-[7rem] -z-10  h-full max-w-full">
-            <img src="../assets/images/blur-circle.png" className="h-full w-full" alt="blur-circle" />
+            <img src="../assets/images/blur-circle.webp" className="h-full w-full" alt="blur-circle" />
           </div>
           <div className="flex  flex-col items-start justify-between gap-3 text-left">
             <h4 className="sec-title w-full mb-0">We Are Here <span className="text-themeblue"> To Help</span></h4>
@@ -1586,10 +1621,10 @@ const MainLayout: React.FC = () => {
         <div className="custom-container  relative z-0 pl-0 md:pl-6 lg:pl-16 pt-8 lg:pt-12 pb-0 my-4 max-[640px]:mb-12 sm:my-12">
 
           <div className="hidden sm:block absolute left-0 top-0 h-full w-full rounded-3xl overflow-hidden -z-10">
-            <img src="../assets/images/maskbg.png" className="max-w-[1200px] h-full w-full" alt="mask-bg" />
+            <img src="../assets/images/maskbg.webp" className="max-w-[1200px] h-full w-full" alt="mask-bg" />
           </div>
           <div className="block sm:hidden absolute left-0 top-0 h-full w-full rounded-3xl overflow-hidden -z-10">
-            <img src="../assets/images/cta-mobile.png" className="max-w-[1200px] h-full w-full" alt="mask-bg" />
+            <img src="../assets/images/cta-mobile.webp" className="max-w-[1200px] h-full w-full" alt="mask-bg" />
           </div>
           <div className="items-center grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[400px,1fr] gap-x-10 mb-0 md:mb-12 lg:mb-24  relative max-[767px]:pl-5">
             {/* <div className="absolute h-[530px] w-[398px] bg-[#ACE1F333] backdrop-blur-2xl rounded-full"></div> */}
@@ -1597,14 +1632,21 @@ const MainLayout: React.FC = () => {
               <h4 className="sec-title max-[575px]:text-[32px] max-[575px]:leading-[48px] w-full mb-0 text-white">Ready to Boost Your Social Media?</h4>
               <p className="para-text max-w-[520px] mb-3 text-white">
                 Start your free trial today and experience the power of PostReach AI. Simplify your social media management, save time, and grow your Business or Brand effortlessly. </p>
-              <a href="#" className="max-[640px]:mt-3 my-6 lg:my-0 w-full sm:w-auto  min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-[#0A2761] bg-white  hover:bg-[#0A2761] hover:border-white hover:text-white">Join our waitlist!
+              <a  className="cursor-pointer max-[640px]:mt-3 my-6 lg:my-0 w-full sm:w-auto  min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-[#0A2761] bg-white  hover:bg-[#0A2761] hover:border-white hover:text-white" 
+              onClick={() => {
+                if (window.ml) {
+                  window.ml('show', 'n1oinc', true);
+                } else {
+                  console.error("MailerLite is not initialized.");
+                }
+              }} >Join our waitlist!
               </a>
 
             </div>
 
             <div className="flex  flex-col items-start justify-start relative max-[640px]:mt-4">
               <div className="">
-                <img src="../assets/images/freetrial-img.png" className="h-full w-full max-w-full" alt="" />
+                <img src="../assets/images/freetrial-img.webp" className="h-full w-full max-w-full" alt="" />
               </div>
               <div className="absolute bottom-5 max-[767px]:max-w-14 -left-4 md:-left-8">
                 <img src="../assets/images/heart-freetrial.png" className="h-full w-full max-w-full" alt="" />

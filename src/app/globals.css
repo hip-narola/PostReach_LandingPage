@@ -248,7 +248,7 @@ ul.simple-easy-list li:not(:last-child):before {
   position: absolute;
   content: "";
   /* border: 1px dashed #BDBDBD; */
-  background:url("/../assets/icons/dotted-line.svg");
+  background:url("/../assets/icons/dotted-line.webp");
   height: 100%;
   width: 1px;
   left: 15px;
@@ -259,7 +259,7 @@ ul.simple-easy-list .list-dotted-line:before {
   position: absolute;
   content: "";
   /* border: 1px dashed #BDBDBD; */
-  background:url("/../assets/icons/dotted-line.svg");
+  background:url("/../assets/icons/dotted-line.webp");
   height: 100%;
   width: 1px;
   left: 15px;
