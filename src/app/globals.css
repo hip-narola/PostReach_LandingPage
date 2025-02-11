@@ -253,6 +253,7 @@ ul.simple-easy-list li:not(:last-child):before {
   width: 1px;
   left: 15px;
   top: 15px;
+  background-size: cover;
 }
 ul.simple-easy-list .list-dotted-line:before {
   z-index: -1;
@@ -264,6 +265,7 @@ ul.simple-easy-list .list-dotted-line:before {
   width: 1px;
   left: 15px;
   top: 15px;
+  background-size: cover;
 }
 /* Customer Slider */
 .our-customer-slider {
