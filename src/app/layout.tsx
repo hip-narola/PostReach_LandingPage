@@ -78,6 +78,22 @@ function RootLayoutContent({
             {/* <meta property="structured data" content={metadata?.structured_data || ""} /> */}
             <meta property="robots" content={metadata?.robots || ""} />
             <meta property="focus keywords" content={metadata?.focus_keywords || ""} />
+
+            {/* Google Analytics */}
+            <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-QQSS4GX170" />
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'G-QQSS4GX170');
+                `,
+              }}
+            />
+
             {metadata.structured_data && (
             <script
               type="application/ld+json"
@@ -111,6 +127,22 @@ function RootLayoutContent({
         :   
         <head>
           <title>{pageTitle}</title>
+
+          {/* Google Analytics */}
+          <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-QQSS4GX170" />
+          <Script
+            id="google-analytics"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-QQSS4GX170');
+              `,
+            }}
+          />
+
            {/* MailerLite Universal Script */}
            <Script
               strategy="afterInteractive"
@@ -133,6 +165,22 @@ function RootLayoutContent({
           getMobilenav ? "overflow-y-hidden" : ""
         } overflow-x-hidden antialiased bg-white`}
       >
+
+        <Script
+          id="clarity-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "pftbt6yt4s");
+            `,
+          }}
+        />
+
+
        
         <NextUIProvider className="max-[1280px]:max-w-[100vw] max-[1280px]:overflow-x-hidden">
           <LoadingProvider>
