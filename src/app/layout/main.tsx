@@ -1667,7 +1667,7 @@ const MainLayout: React.FC = () => {
             </button>
             {/* Video Player */}
             <div className='player'>
-              <iframe className='inside-player' src="https://player.vimeo.com/video/1036601120?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="PostReachAI - Intro">
+              <iframe className='inside-player' src="https://player.vimeo.com/video/1036601120?autoplay=1&badge=0&autopause=0&player_id=0&app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="PostReachAI - Intro">
               </iframe>
             </div>
           </div>
