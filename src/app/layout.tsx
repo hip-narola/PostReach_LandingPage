@@ -127,6 +127,8 @@ function RootLayoutContent({
         :   
         <head>
           <title>{pageTitle}</title>
+          <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+
 
           {/* Google Analytics */}
           <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-QQSS4GX170" />
