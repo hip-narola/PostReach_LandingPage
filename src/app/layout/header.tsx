@@ -1,6 +1,6 @@
 'use client'
 import { usePathname, useRouter } from 'next/navigation';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import navigations from '../navigation-list/navigation';
 import { DataContext } from '../context/shareData';
 import { useLoading } from '../context/LoadingContext';
@@ -14,6 +14,11 @@ const { setIsLoading } = useLoading();
    
   const router = useRouter();
   const pathname = usePathname();
+
+  useEffect(() => {
+    router.prefetch(navigations.home);
+    router.prefetch(navigations.blogList);
+  }, []);
 
   const handleNavigation = (type:string) => {
     if(type == 'blog'){

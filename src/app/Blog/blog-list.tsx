@@ -39,7 +39,12 @@ const BlogList: React.FC = () => {
       getAutoCompleteList();
       getFeaturedBlogs();
     },[]);
+
+    useEffect(() => {
+      router.prefetch(navigations.blogDetail);
+    }, []);
     
+
     const getAutoCompleteList = async() => {
           
         const query = `*[_type == "blog"]{author_name, title}`;

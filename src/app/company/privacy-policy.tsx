@@ -1,7 +1,14 @@
 'use client'
-import React from 'react';
+import { useRouter } from 'next/navigation';
+import React, { useEffect } from 'react';
+import navigations from '../navigation-list/navigation';
 
 const PrivacyPolicy: React.FC = () => {
+    const router = useRouter();
+    useEffect(() => {
+        router.prefetch(navigations.home);
+        router.prefetch(navigations.blogList);
+      }, []);
 
     return (
         <div className="custom-container relative z-0 py-8 lg:py-10 px-0 mt-20 mb-5">

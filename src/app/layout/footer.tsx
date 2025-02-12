@@ -1,6 +1,6 @@
 'use client'
 import { usePathname, useRouter } from 'next/navigation';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import navigations from '../navigation-list/navigation';
 import { DataContext } from '../context/shareData';
 import { useLoading } from '../context/LoadingContext';
@@ -14,6 +14,13 @@ const Footer: React.FC = () => {
     if (!context) {
         throw new Error('DataContext must be used within a DataProvider');
     }
+
+    useEffect(() => {
+        router.prefetch(navigations.privacyPolicy);
+        router.prefetch(navigations.termsCondition);
+        router.prefetch(navigations.home);
+        router.prefetch(navigations.blogList);
+      }, []);
 
     const handleNavigation = (type:string) => {
         if(type == 'privacy'){

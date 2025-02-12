@@ -58,6 +58,13 @@ const MainLayout: React.FC = () => {
     handleScroll(context.getData);
   }, [context.getData]);
 
+  useEffect(() => {
+    router.prefetch(navigations.blogList);
+    router.prefetch(navigations.blogDetail);
+  }, []);
+
+
+
   const handleViewBlog = () => {
     router.push(navigations.blogList)
   }

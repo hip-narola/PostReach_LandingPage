@@ -1,5 +1,5 @@
 'use client'
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { DataContext } from '../context/shareData';
 import { useLoading } from '../context/LoadingContext';
 import navigations from '../navigation-list/navigation';
@@ -15,6 +15,11 @@ const Sidenav: React.FC = () => {
     if (!context) {
         throw new Error('DataContext must be used within a DataProvider');
     }
+
+    useEffect(() => {
+        router.prefetch(navigations.home);
+        router.prefetch(navigations.blogList);
+      }, []);
   
 
     const handleNavigation  = (type:string) => {

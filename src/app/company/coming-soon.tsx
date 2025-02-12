@@ -1,8 +1,14 @@
 'use client'
-import React from 'react';
+import { useRouter } from 'next/navigation';
+import React, { useEffect } from 'react';
+import navigations from '../navigation-list/navigation';
 
 const ComingSoon: React.FC = () => {
-
+  const router = useRouter();
+  useEffect(() => {
+      router.prefetch(navigations.home);
+      router.prefetch(navigations.blogList);
+    }, []);
     return (
       
         <div className="mx-auto   relative z-0 px-4 lg:px-0 pt-24 pb-12 lg:pt-28 lg:pb-0 xl:pt-40 overflow-hidden min-h-[calc(100vh-425px)] flex items-center justify-center">
