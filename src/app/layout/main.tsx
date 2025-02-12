@@ -137,8 +137,12 @@ const MainLayout: React.FC = () => {
       {/* <!-- Section Banner --> */}
       <div className="mx-auto   relative z-0 px-4 lg:px-0 pt-24 pb-12 lg:pt-28 lg:pb-0 xl:pt-40 overflow-hidden" ref={homeRef}>
         <div className="absolute max-[375px]:-bottom-28 max-[767px]:bottom-0  md:top-0 left-0 -z-10 flex justify-center w-full text-center">
-          <img src="../assets/images/banner-bg.webp" className="max-[375px]:hidden block" alt="banner-bg" />
-          <img src="../assets/images/banner375.webp" className="max-[375px]:block hidden"  alt="banner-bg" />
+          <img src="../assets/images/banner-bg.webp" width="1440" 
+  height="600" 
+  className="max-[375px]:hidden block w-full h-auto max-w-[1440px]" 
+  alt="Banner Background" />
+          <img src="../assets/images/banner375.webp" width="375" 
+  height="600"  className="max-[375px]:block hidden w-full h-auto max-w-[375px]"  alt="banner-bg" />
         </div>
         <div className="text-center max-w-full md:max-w-[calc(100%-2rem)] min-[1365px]:max-w-[1200px] mx-auto">
           <h1 className="banner-title max-[600px]:hidden block relative">Automate Your
@@ -916,8 +920,9 @@ const MainLayout: React.FC = () => {
           <div className="flex  self-center  flex-col items-start ">
 
             <ul className="flex flex-col gap-0  simple-easy-list max-[767px]:px-3">
-              <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: false, amount: 0.3 }} className="my-section">
-                <li className="flex gap-6 list-dotted-line mb-4">
+             <li>
+             <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: false, amount: 0.3 }} className="my-section">
+                <div className="flex gap-6 list-dotted-line mb-4">
                   <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
                     1
                   </div>
@@ -925,10 +930,12 @@ const MainLayout: React.FC = () => {
                     <h4 className="text-base  font-semibold text-textdark mb-1">Sign Up in Seconds</h4>
                     <p className="small-text">Create your account quickly and start your journey to effortless social media management.</p>
                   </div>
-                </li>
+                </div>
               </motion.div>
+             </li>
+              <li>
               <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: false, amount: 0.4 }} className="my-section">
-                <li className="flex gap-6 list-dotted-line mb-4">
+                <div className="flex gap-6 list-dotted-line mb-4">
                   <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
                     2
                   </div>
@@ -936,10 +943,12 @@ const MainLayout: React.FC = () => {
                     <h4 className="text-base  font-semibold text-textdark mb-1">Complete a 5-Minute Questionnaire</h4>
                     <p className="small-text">Answer a few easy questions about your business and audience to help our AI understand your needs.</p>
                   </div>
-                </li>
+                </div>
               </motion.div>
+              </li>
+              <li>
               <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
-                <li className="flex gap-6 list-dotted-line mb-4">
+                <div className="flex gap-6 list-dotted-line mb-4">
                   <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
                     3
                   </div>
@@ -947,10 +956,12 @@ const MainLayout: React.FC = () => {
                     <h4 className="text-base  font-semibold text-textdark mb-1">Let the AI Work Its Magic</h4>
                     <p className="small-text">Watch as PostReach AI generates tailored posts designed to engage your audience.</p>
                   </div>
-                </li>
+                </div>
               </motion.div>
+              </li>
+              <li>
               <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: false, amount: 0.6 }} className="my-section">
-                <li className="flex gap-6 list-dotted-line mb-4">
+                <div className="flex gap-6 list-dotted-line mb-4">
                   <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full border border-textdark text-textdark bg-white">
                     4
                   </div>
@@ -958,10 +969,12 @@ const MainLayout: React.FC = () => {
                     <h4 className="text-base  font-semibold text-textdark mb-1">Review and Approve Content</h4>
                     <p className="small-text">Preview and approve your posts to ensure they align perfectly with your brand.</p>
                   </div>
-                </li>
+                </div>
               </motion.div>
+              </li>
+              <li>
               <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
-                <li className="flex gap-6">
+                <div className="flex gap-6">
                   <div className="w-8 h-8 min-w-8 min-h-8 text-base leading-none flex items-center justify-center rounded-full">
                     <img src='../assets/icons/done.svg' alt="check" />
                   </div>
@@ -969,10 +982,12 @@ const MainLayout: React.FC = () => {
                     <h4 className="text-base  font-semibold text-textdark mb-1">Sit Back as Posts Go Live</h4>
                     <p className="small-text">Our AI schedules and publishes your approved content, keeping your social media active and consistent.</p>
                   </div>
-                </li>
+                </div>
               </motion.div>
-              <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
-                <li className="flex gap-6">
+              </li>
+             <li>
+             <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
+                <div className="flex gap-6">
                   <a onClick={() => {
                     if (window.ml) {
                       window.ml('show', 'n1oinc', true);
@@ -982,8 +997,9 @@ const MainLayout: React.FC = () => {
                   }}  className="cursor-pointer mt-7 w-full sm:w-auto min-w-[200px] inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">
                     Join our waitlist
                   </a>
-                </li>
+                </div>
               </motion.div>
+             </li>
             </ul>
             {/* <motion.div initial={{ opacity: 0, y: 150 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 , delay: 0.3 }} viewport={{ once: false, amount: 0.5 }} className="my-section">
             <a href="#" className="mt-7 w-full sm:w-auto min-w-40 inline-flex justify-center text-center  text-base  font-bold px-5 py-3 rounded-full text-white bg-themeblue border border-themeblue hover:bg-white hover:border-textdark hover:text-textdark">Get Started
@@ -1377,22 +1393,22 @@ const MainLayout: React.FC = () => {
                 <ul className="w-full inline-flex justify-start gap-3 sm:gap-4 items-center mt-4 sm:mt-6">
                   <li>
                     <div className="h-6 w-6 lg:h-7 lg:w-7 mx-auto">
-                      <img src="../assets/icons/facebook.svg" alt="facebook" />
+                      <img src="../assets/icons/facebook.svg" alt="Social-icon-facebook" />
                     </div>
                   </li>
                   <li>
                     <div className="h-6 w-6 lg:h-7 lg:w-7 mx-auto">
-                      <img src="../assets/icons/instagram.svg" alt="instagram" />
+                      <img src="../assets/icons/instagram.svg" alt="Social-icon-instagram" />
                     </div>
                   </li>
                   <li>
                     <div className="h-6 w-6 lg:h-7 lg:w-7 mx-auto">
-                      <img src="../assets/icons/twitter-black.svg" alt="twitter" />
+                      <img src="../assets/icons/twitter-black.svg" alt="Social-icon-twitter" />
                     </div>
                   </li>
                   <li>
                     <div className="h-6 w-6 lg:h-7 lg:w-7 mx-auto">
-                      <img src="../assets/icons/linkedin.svg" alt="linkedin" />
+                      <img src="../assets/icons/linkedin.svg" alt="Social-icon-linkedin" />
                     </div>
                   </li>
                 </ul>

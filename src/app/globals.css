@@ -243,18 +243,18 @@ body {
 ul.simple-easy-list li{
 position: relative;
 }
-ul.simple-easy-list li:not(:last-child):before {
+/* ul.simple-easy-list li:not(:last-child):before {
   z-index: -1;
   position: absolute;
   content: "";
-  /* border: 1px dashed #BDBDBD; */
+
   background:url("/../assets/icons/dotted-line.webp");
   height: 100%;
   width: 1px;
   left: 15px;
   top: 15px;
   background-size: cover;
-}
+} */
 ul.simple-easy-list .list-dotted-line:before {
   z-index: -1;
   position: absolute;
