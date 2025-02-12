@@ -37,11 +37,6 @@ const BlogDetail: React.FC = () => {
     getRecommondedBlogs();
   }, []);
 
-  useEffect(() => {
-    router.prefetch(navigations.blogList);
-    router.prefetch(navigations.blogDetail);
-  }, []);
-
   const getBlog = async (slug: string) => {
     const blog = await client.fetch(routes.blogWithSlug, { slug }, options);
     context.setMetadata(blog[0])

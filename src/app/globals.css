@@ -47,12 +47,12 @@ body {
   .container-lg{
     @apply mx-auto max-w-[calc(100%-2rem)] pt-6 pb-6  min-[1365px]:max-w-[1328px];
   }
-  .card-F7FCFF{
+  /* .card-F7FCFF{
       @apply p-3 md:p-6 border-0 md:border border-[#E4E7EC] bg-[#F7FCFF] rounded-none md:rounded-[32px];
   }
   .card-FCFBFF{
       @apply p-3 md:p-6  border-0 md:border border-[#F3F3F3] bg-[#FCFBFF] rounded-none md:rounded-[32px];
-  }
+  } */
   .banner-title{
     @apply relative text-[32px] leading-[38px] md:text-4xl lg:text-[48px] lg:leading-[58px]  xl:text-[64px] xl:leading-[78px] font-bold  text-textdark;
   }
