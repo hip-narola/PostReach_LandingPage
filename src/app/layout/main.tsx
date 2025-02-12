@@ -130,8 +130,8 @@ const MainLayout: React.FC = () => {
       {/* <!-- Section Banner --> */}
       <div className="mx-auto   relative z-0 px-4 lg:px-0 pt-24 pb-12 lg:pt-28 lg:pb-0 xl:pt-40 overflow-hidden" ref={homeRef}>
         <div className="absolute max-[375px]:-bottom-28 max-[767px]:bottom-0  md:top-0 left-0 -z-10 flex justify-center w-full text-center">
-          <img src="../assets/images/banner-bg.webp" className="max-[375px]:hidden block" alt="banner-bg" />
-          <img src="../assets/images/banner375.webp" className="max-[375px]:block hidden"  alt="banner-bg" />
+          {/* <img src="../assets/images/banner-bg.webp" className="max-[375px]:hidden block" alt="banner-bg" />
+          <img src="../assets/images/banner375.webp" className="max-[375px]:block hidden"  alt="banner-bg" /> */}
         </div>
         <div className="text-center max-w-full md:max-w-[calc(100%-2rem)] min-[1365px]:max-w-[1200px] mx-auto">
           <h1 className="banner-title max-[600px]:hidden block relative">Automate Your
