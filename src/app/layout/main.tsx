@@ -182,7 +182,7 @@ const MainLayout: React.FC = () => {
             <a onClick={() => setIsOpen(true)} className="abosolute-div-center video-play-button absolute cursor-pointer">
               <img src="../assets/icons/play-icon.png" alt="play-icon" />
             </a>
-            <img src="../assets/images/video-banner.webp" alt="video-banner" />
+            {/* <img src="../assets/images/video-banner.webp" alt="video-banner" /> */}
 
             <div className="banner-fb-icon absolute -left-6 xl:-left-14 top-1/2 -mt-12 lg:-mt-16 max-w-14 xl:max-w-20">
               <img src="../assets/images/banner-fb.png" alt="banner-fb-icon" />
