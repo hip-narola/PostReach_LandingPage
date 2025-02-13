@@ -143,7 +143,7 @@ const MainLayout: React.FC = () => {
           width={1440}
           height={600}
           alt="Banner Background"
-          priority
+          priority // Ensures it loads ASAP
           className="max-[375px]:hidden block w-full h-auto max-w-[1440px]"
         />
          

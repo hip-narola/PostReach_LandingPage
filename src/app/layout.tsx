@@ -69,6 +69,7 @@ function RootLayoutContent({
       {metadata ?
         <head>
             <title>{metadata.seo_title}</title>
+            <link rel="preload" as="image" href="/assets/images/banner-bg.webp" type="image/webp" />
             <meta name="description" content={metadata?.seo_description || "Default description"} />
             <meta property="og:title" content={metadata?.og_title || "Default OG Title"} />
             <meta property="og:description" content={metadata?.og_description || "Default OG Description"} />
@@ -127,7 +128,7 @@ function RootLayoutContent({
         :   
         <head>
           <title>{pageTitle}</title>
-
+          <link rel="preload" as="image" href="/assets/images/banner-bg.webp" type="image/webp" />
           {/* Google Analytics */}
           <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-QQSS4GX170" />
           <Script
