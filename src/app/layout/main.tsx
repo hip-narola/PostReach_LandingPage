@@ -18,6 +18,7 @@ import moment from 'moment';
 import { urlFor } from '../../sanity/client';
 import { useLoading } from '../context/LoadingContext';
 import { customerReview } from '../JSON-data/client-review';
+import Image from 'next/image';
 
 
 const MainLayout: React.FC = () => {
@@ -137,12 +138,33 @@ const MainLayout: React.FC = () => {
       {/* <!-- Section Banner --> */}
       <div className="mx-auto   relative z-0 px-4 lg:px-0 pt-24 pb-12 lg:pt-28 lg:pb-0 xl:pt-40 overflow-hidden" ref={homeRef}>
         <div className="absolute max-[375px]:-bottom-28 max-[767px]:bottom-0  md:top-0 left-0 -z-10 flex justify-center w-full text-center">
-          <img src="../assets/images/banner-bg.webp" width="1440" 
-  height="600" 
-  className="max-[375px]:hidden block w-full h-auto max-w-[1440px]" 
-  alt="Banner Background" />
-          <img src="../assets/images/banner375.webp" width="375" 
-  height="600"  className="max-[375px]:block hidden w-full h-auto max-w-[375px]"  alt="banner-bg" />
+        <Image
+          src="/assets/images/banner-bg.webp"
+          width={1440}
+          height={600}
+          alt="Banner Background"
+          priority
+          className="max-[375px]:hidden block w-full h-auto max-w-[1440px]"
+        />
+         
+          {/* <img src="../assets/images/banner-bg.webp" width="1440" 
+              height="600" 
+              className="max-[375px]:hidden block w-full h-auto max-w-[1440px]" 
+              alt="Banner Background" /> */}
+
+        <Image
+          src="/assets/images/banner375.webp"
+          width={375}
+          height={600}
+          alt="banner-bg"
+          priority
+          className="max-[375px]:block hidden w-full h-auto max-w-[375px]"
+        />
+  
+          {/* <img src="../assets/images/banner375.webp" width="375" 
+          height="600"  className="max-[375px]:block hidden w-full h-auto max-w-[375px]"  alt="banner-bg" /> */}
+
+            
         </div>
         <div className="text-center max-w-full md:max-w-[calc(100%-2rem)] min-[1365px]:max-w-[1200px] mx-auto">
           <h1 className="banner-title max-[600px]:hidden block relative">Automate Your
